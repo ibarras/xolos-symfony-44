@@ -14,14 +14,12 @@ class HomeController extends AbstractController
      */
     public function index(IcTraduccionRepository $noticiaRepository): Response
     {
-        //$noticias = $this->getDoctrine()->getRepository(IcTraduccion::class);
-        $n = $noticiaRepository->getNoticias(1);
 
-      //  $noticias = $NoticiasRepository->getNoticias('es');
-        dd(count($n));
+        $noticias = $noticiaRepository->getNoticias(1);
 
         return $this->render('frontend/home/index.html.twig', [
             'controller_name' => 'HomeController',
+            ['noticias' => $noticias]
         ]);
     }
 }
