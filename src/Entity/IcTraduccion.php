@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="ic_traduccion", indexes={@ORM\Index(name="IDX_D35005D6CE25AE0A", columns={"id_categoria"}), @ORM\Index(name="IDX_D35005D667B77375", columns={"id_locale"}), @ORM\Index(name="IDX_D35005D6EFBDF6E6", columns={"id_noticia"}), @ORM\Index(name="IDX_D35005D6FCF8192D", columns={"id_usuario"})})
  * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\IcTraduccionRepository")
  */
 class IcTraduccion
 {
