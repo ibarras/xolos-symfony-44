@@ -15,6 +15,7 @@ class HomeController extends AbstractController
      */
     public function index(IcTraduccionRepository $noticiaRepository): Response
     {
+        //pasamos a una rama index
 
         $noticias = $noticiaRepository->getNews(1, null, IcConfig::LIMITE_NOTICIAS_PORTADA);
 
