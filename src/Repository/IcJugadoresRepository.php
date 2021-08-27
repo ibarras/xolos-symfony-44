@@ -2,19 +2,26 @@
 
 namespace App\Repository;
 
-use Doctrine\ORM\EntityRepository;
+use App\Entity\IcJugadores;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Form\Extension\Core\ChoiceList\ObjectChoiceList;
 
-class IcJugadoresRepository extends EntityRepository
+class IcJugadoresRepository extends ServiceEntityRepository
 {
+
+    public function __construct(ManagerRegistry $registry)
+    {
+        parent::__construct($registry, IcJugadores::class);
+    }
 
     public function getPlayers($active = true, $categoria)
     {
         $em = $this->getEntityManager();
         $query = $em->createQuery('  
-				SELECT j FROM FrontendBundle:IcJugadores j
+				    SELECT j FROM App\Entity\IcJugadores j
 					WHERE j.esActivo =:status 
-        				AND j.idJugadorCategoria =:categoria
+        			AND j.idJugadorCategoria =:categoria
 					ORDER BY j.idPosicionJugador ASC
         		')
             ->setParameter('status', $active)
@@ -28,7 +35,7 @@ class IcJugadoresRepository extends EntityRepository
     {
         $em = $this->getEntityManager();
         $query = $em->createQuery('
-				SELECT jb FROM FrontendBundle:IcJugadorBiografia jb
+				    SELECT jb FROM App\Entity\IcJugadorBiografia jb
 				    JOIN jb.idLocale l
 				    JOIN jb.idJugador j
 					WHERE l.locale =:locale	AND j.id =:idJugador
@@ -45,7 +52,7 @@ class IcJugadoresRepository extends EntityRepository
         $em = $this->getEntityManager();
         $query = $em->createQuery('
 					SELECT pj
-					FROM FrontendBundle:IcPartidoJugadores pj
+					FROM App\Entity\IcPartidoJugadores pj
 					JOIN pj.idJugador j
 					JOIN pj.idCalendario c 
 					WHERE pj.idJugador = :jugador
@@ -71,7 +78,7 @@ class IcJugadoresRepository extends EntityRepository
     
     	$query = $em->createQuery('
 					SELECT j
-					FROM FrontendBundle:IcJugadores j
+					FROM App\Entity\IcJugadores j
 					WHERE j.id = :jugador
 					')->setParameter('jugador', $jugador);
     		
@@ -83,7 +90,7 @@ class IcJugadoresRepository extends EntityRepository
     		$em = $this->getEntityManager();
     			$query = $em->createQuery('
     					SELECT pj
-    					FROM FrontendBundle:IcPartidoJugadores pj
+    					FROM App\Entity\IcPartidoJugadores pj
     					JOIN pj.idJugador j
     					WHERE pj.idCalendario = :partido
     					ORDER BY j.idPosicionJugador DESC
@@ -99,7 +106,7 @@ class IcJugadoresRepository extends EntityRepository
 
         $query = $em->createQuery('
 					SELECT ct
-					FROM FrontendBundle:IcCuerpoTecnico ct
+					FROM App\Entity\IcCuerpoTecnico ct
 					WHERE ct.esActivo = :estatus
 					AND ct.idCategoriaJugador = :tipo
 					ORDER BY ct.idPosicion ASC

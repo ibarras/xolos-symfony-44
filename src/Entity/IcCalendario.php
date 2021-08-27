@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="ic_calendario", indexes={@ORM\Index(name="IDX_FE0BC2D45ADCD613", columns={"id_torneo"}), @ORM\Index(name="IDX_FE0BC2D4BE31F08D", columns={"id_equipo_visitante"}), @ORM\Index(name="IDX_FE0BC2D4D25F2570", columns={"id_tecnico"}), @ORM\Index(name="IDX_FE0BC2D4E2ABE6E6", columns={"id_equipo"})})
  * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\IcCalendarioRepository")
  */
 class IcCalendario
 {
