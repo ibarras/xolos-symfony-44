@@ -2,18 +2,25 @@
 
 namespace App\Repository;
 
-use Doctrine\ORM\EntityRepository;
+use App\Entity\IcGaleria;
+use App\Entity\IcGaleriaFotos;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Form\Extension\Core\ChoiceList\ObjectChoiceList;
 
-class IcGaleriasRepository extends EntityRepository
+class IcGaleriasRepository extends ServiceEntityRepository
 {
 
+    public function __construct(ManagerRegistry $registry)
+    {
+        parent::__construct($registry, IcGaleriaFotos::class);
+    }
 
     public function getGaleriaFotos($idGaleria)
     {
         $em = $this->getEntityManager();
         $query = $em->createQuery('
-				SELECT gf FROM FrontendBundle:IcGaleriaFotos gf
+				SELECT gf FROM App\Entity\IcGaleriaFotos gf
 				    JOIN gf.idGaleria g
 				    JOIN g.idUsuario u
 				    JOIN g.idCategoria c
@@ -27,7 +34,7 @@ class IcGaleriasRepository extends EntityRepository
     {
         $em = $this->getEntityManager();
         $query = $em->createQuery('
-				SELECT gf FROM FrontendBundle:IcGaleriaFotos gf
+				SELECT gf FROM  App\Entity\IcGaleriaFotos gf
 				    JOIN gf.idGaleria g
 				    JOIN g.idUsuario u
 				    JOIN g.idCategoria c

@@ -8,12 +8,18 @@
 
 namespace App\Repository;
 
-use Doctrine\ORM\EntityRepository;
+use App\Entity\IcCalendario;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use App\IcUtils\IcConfig;
-use Symfony\Component\Intl\Data\Util\ArrayAccessibleResourceBundle;
+use Doctrine\Persistence\ManagerRegistry;
 
-class IcCalendarioRepository extends EntityRepository
+class IcCalendarioRepository extends ServiceEntityRepository
 {
+    public function __construct(ManagerRegistry $registry)
+    {
+        parent::__construct($registry, IcCalendario::class);
+    }
+
     /**
      * Funcion para obtener el calendario por torneo en especifico
      * @param $torneo
@@ -23,9 +29,11 @@ class IcCalendarioRepository extends EntityRepository
     public function getCalendarioPorTorneo($torneo, $jornada=null)
     {
         $em = $this->getEntityManager();
-        $query = $em->createQuery('SELECT c FROM FrontendBundle:IcCalendario c
-        WHERE c.idTorneo = :torneo
-        ORDER BY c.jornada ASC ')->setParameter('torneo',$torneo);
+        $query = $em->createQuery(
+            'SELECT c FROM App\Entity\IcCalendario c
+            WHERE c.idTorneo = :torneo
+            ORDER BY c.jornada ASC '
+            )->setParameter('torneo',$torneo);
         return $query->getResult();
     }
 
@@ -40,7 +48,7 @@ class IcCalendarioRepository extends EntityRepository
         $em = $this->getEntityManager();
         $query = $em->createQueryBuilder()
             ->select('c')
-            ->from('FrontendBundle:IcCalendario','c')
+            ->from('App\Entity\IcCalendario','c')
             ->where('c.idTorneo = :torneo')
             ->orderBy('c.jornada', 'ASC')
             ->setParameter('torneo', $torneo);
@@ -68,11 +76,9 @@ class IcCalendarioRepository extends EntityRepository
     	$em = $this->getEntityManager();
     
     	$query = $em->createQuery('
-				SELECT c FROM FrontendBundle:IcCalendario c
-    
+				    SELECT c FROM App\Entity\IcCalendario c
 					WHERE c.id = :id
-    					AND c.idTorneo = :torneo
-    
+    				AND c.idTorneo = :torneo
 				')->setParameter('id', $id)->setParameter('torneo', $torneo);
     
     	return $query->getSingleResult();
@@ -88,11 +94,12 @@ class IcCalendarioRepository extends EntityRepository
     public function getNextThreeMatches($torneo)
     {
         $em = $this->getEntityManager();
-        $query = $em->createQuery('SELECT c FROM FrontendBundle:IcCalendario c
-        WHERE c.idTorneo = :torneo
-        AND c.esActivo = TRUE
-        ORDER BY c.jornada ASC
-        ')->setParameter('torneo',$torneo)->setMaxResults(IcConfig::IC_LIMITE_INDEX_PARTIDOS);
+        $query = $em->createQuery(
+            'SELECT c FROM App\Entity\IcCalendario c
+            WHERE c.idTorneo = :torneo
+            AND c.esActivo = TRUE
+            ORDER BY c.jornada ASC
+            ')->setParameter('torneo',$torneo)->setMaxResults(IcConfig::IC_LIMITE_INDEX_PARTIDOS);
         return $query->getResult();
     }
 

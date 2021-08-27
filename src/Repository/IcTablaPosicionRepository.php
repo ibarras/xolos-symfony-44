@@ -12,18 +12,5 @@ use Doctrine\ORM\EntityRepository;
 
 class IcTablaPosicionRepository extends EntityRepository
 {
-    /**
-     * Funcion para para obtener la tabla de posiciones de un torneo
-     * @param $torneo
-     * @return array
-     */
 
-    public function getTablaLiga($torneo)
-    {
-        $em = $this->getEntityManager();
-        $q = $em->createQuery('SELECT t FROM FrontendBundle:IcTablaPosicion t
-        WHERE t.idTemporada = :torneo
-        ORDER BY t.pts DESC, t.dif DESC, t.gf DESC, t.jj ASC')->setParameter('torneo',$torneo);
-        return $q->getResult();
-    }
 }

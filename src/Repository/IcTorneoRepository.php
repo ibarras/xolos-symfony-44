@@ -8,10 +8,17 @@
 
 namespace App\Repository;
 
-use Doctrine\ORM\EntityRepository;
+use App\Entity\IcTorneo;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Persistence\ManagerRegistry;
 
-class IcTorneoRepository extends EntityRepository
+class IcTorneoRepository extends ServiceEntityRepository
 {
+    public function __construct(ManagerRegistry $registry)
+    {
+        parent::__construct($registry, IcTorneo::class);
+    }
+
     /**
      * Metodo para obtener el ID del torneo <LIGA> / <ALTERNO>
      *
@@ -23,7 +30,9 @@ class IcTorneoRepository extends EntityRepository
     {
         $em = $this->getEntityManager();
         $q = $em->createQuery('
-        SELECT t FROM FrontendBundle:IcTorneo t WHERE t.tipo = :tipo')->setParameter('tipo', $tipo);
+            SELECT t FROM App\Entity\IcTorneo t 
+            WHERE t.tipo = :tipo'
+            )->setParameter('tipo', $tipo);
         return $q->getOneOrNullResult();
 
     }
@@ -37,7 +46,10 @@ class IcTorneoRepository extends EntityRepository
     public function getTorneoNombre($nombre = null)
     {
         $em = $this->getEntityManager();
-        $q = $em->createQuery('SELECT t FROM FrontendBundle:IcTorneo t WHERE t.nombre = :nombre')->setParameter('nombre', $nombre);
+        $q = $em->createQuery(
+            'SELECT t FROM App\Entity\IcTorneo t 
+            WHERE t.nombre = :nombre'
+            )->setParameter('nombre', $nombre);
         return $q->getOneOrNullResult();
     }
     /**
@@ -48,12 +60,28 @@ class IcTorneoRepository extends EntityRepository
         $em = $this->getEntityManager();
         $q = $em->createQueryBuilder();
         $q->select('t')
-            ->from('FrontendBundle:IcTorneo','t')
+            ->from('App\Entity\IcTorneo','t')
             ->where('t.tipo != :dif')
             ->orderBy('t.tipo', 'ASC')
             ->setParameter('dif', $dif);
         return $q->getQuery()->getResult();
     }
 
+    /**
+     * Funcion para para obtener la tabla de posiciones de un torneo
+     * @param $torneo
+     * @return array
+     */
+
+    public function getTablaLiga($torneo)
+    {
+        $em = $this->getEntityManager();
+        $q = $em->createQuery(
+            'SELECT t FROM App\Entity\IcTablaPosicion t
+            WHERE t.idTemporada = :torneo
+            ORDER BY t.pts DESC, t.dif DESC, t.gf DESC, t.jj ASC'
+            )->setParameter('torneo',$torneo);
+        return $q->getResult();
+    }
 
 }
