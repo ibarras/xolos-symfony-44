@@ -64,7 +64,7 @@ class IcTraduccionRepository extends ServiceEntityRepository
 
         $q = $em->createQueryBuilder();
         $q->select('nt')
-            ->from('FrontendBundle:IcTraduccion', 'nt')
+            ->from('App\Entity\IcTraduccion', 'nt')
             ->join('nt.idNoticia', 'n')
             ->join('nt.idLocale', 'l')
             ->join('nt.idCategoria', 'c')
