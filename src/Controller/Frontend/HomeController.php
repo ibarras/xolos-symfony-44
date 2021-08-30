@@ -90,7 +90,7 @@ class HomeController extends AbstractController
      * @Route("/list", name="frontend_list")
      */
 
-    public function listByCategory(IcTraduccionRepository $traduccionRepository, PaginatorInterface $paginator, Request $request): Response
+    public function listPostByCategory(IcTraduccionRepository $traduccionRepository, PaginatorInterface $paginator, Request $request): Response
     {
         $category = $request->get('category');
 
