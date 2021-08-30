@@ -3,6 +3,7 @@
 namespace App\Controller\Frontend;
 
 use App\Entity\IcTorneo;
+use App\Entity\IcTraduccion;
 use App\IcUtils\IcConfig;
 use App\Repository\IcCalendarioRepository;
 use App\Repository\IcGaleriasRepository;
@@ -63,5 +64,17 @@ class HomeController extends AbstractController
                 'jugadores'     => $jugadores,
             ]
         ]);
+    }
+
+    public function show(IcTraduccion $traduccion): Response
+    {
+        if(!$traduccion)
+            return $this->createNotFoundException('Noticia no encontrada.');
+
+            return $this->render('frontend/home/show.html.twig',
+                    [
+                        'noticia'      => $traduccion,
+                    ]
+                );
     }
 }
