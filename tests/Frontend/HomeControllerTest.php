@@ -5,9 +5,6 @@ namespace App\Tests\Frontend;
 use App\Entity\IcTraduccion;
 use Symfony\Bridge\Doctrine\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use App\Repository\IcTraduccionRepository;
-use Doctrine\Persistence\ObjectManager;
-use Doctrine\Persistence\ObjectRepository;
 
 class HomeControllerTest extends WebTestCase
 {
