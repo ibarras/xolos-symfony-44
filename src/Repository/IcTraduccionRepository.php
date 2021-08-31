@@ -103,7 +103,7 @@ class IcTraduccionRepository extends ServiceEntityRepository
     public function getNewsByLocale($id, $locale = 'es'){
         $em = $this->getEntityManager();
         $query = $em->createQuery('
-				SELECT nt FROM FrontendBundle:IcTraduccion nt
+				SELECT nt FROM App\Entity\IcTraduccion nt
 				    JOIN nt.idNoticia n
 				    JOIN nt.idLocale l
 					WHERE l.locale =:locale	AND n.id =:id_noticia
