@@ -110,6 +110,5 @@ class HomeController extends AbstractController
                 $news, $request->query->getInt('page', 1), 10
             );
         return $this->render('frontend/home/list.html.twig', ['pagination' => $all]);
-
     }
 }
