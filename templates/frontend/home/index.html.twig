@@ -1,20 +1,232 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
-
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <!-- Nota Principal full screen -->
+    <div class="w-full mb-4">
+        <video class="filter brightness-50" loop muted autoplay playsinline data-video="0">
+            <source src="https://www.juventus.com/images/video/upload/t_video_mp4/dev/video/20210816_HERO_NUOVA_DIVISA_28MB.mp4" type="video/mp4;codecs=avc1.42E01E, mp4a.40.2">
+        </video>
+    </div>
+    <!-- Noticias -->
+    <div class="w-full">
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+        <div class="bg-white">
+            <div class="max-w-2xl mx-auto py-8 px-4 sm:py-8 sm:px-6 lg:max-w-7xl lg:px-8">
+                <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">Noticias</h2>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/martinibarra/Projects/Symfony/clubtijuana/src/Controller/Frontend/HomeController.php'|file_link(0) }}">src/Controller/Frontend/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/martinibarra/Projects/Symfony/clubtijuana/templates/frontend/home/index.html.twig'|file_link(0) }}">templates/frontend/home/index.html.twig</a></code></li>
-    </ul>
-</div>
+                <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+                    {% for noticia in noticias %}
+                        <div class="group relative">
+                            <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                                <img src="https://admin.xolos.com.mx/uploads/galeria/noticias/{{ noticia.imagenPrincipal }}" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                            </div>
+                            <div class="mt-4 flex justify-between">
+                                <div>
+                                    <h3 class="text-sm text-gray-700">
+                                        <a href="#">
+                                            <span aria-hidden="true" class="absolute inset-0"></span>
+                                            {{ noticia.titulo }}
+                                        </a>
+                                    </h3>
+                                    <p class="mt-1 text-sm text-gray-500">{{ noticia.intro }}</p>
+                                </div>
+                                <p class="text-sm font-medium text-gray-900">{{ noticia.id }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                    <!-- More products... -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Jugadores -->
+    <div class="w-full">
+
+        <div class="bg-white">
+            <div class="max-w-2xl mx-auto py-8 px-4 sm:py-8 sm:px-6 lg:max-w-7xl lg:px-8">
+                <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">Primer Equipo</h2>
+
+                <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+                    {% for jugador in jugadores|slice(0, 4) %}
+                    <div class="group relative">
+                        <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                            <img src="https://admin.xolos.com.mx/uploads/galeria/foto_jugador/{{ jugador.fotografia }}" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                        </div>
+                        <div class="mt-4 flex justify-between">
+                            <div>
+                                <h3 class="text-sm text-gray-700">
+                                    <a href="#">
+                                        <span aria-hidden="true" class="absolute inset-0"></span>
+                                        {{ jugador.nombre }}
+                                    </a>
+                                </h3>
+                                <p class="mt-1 text-sm text-gray-500">{{ jugador.idPosicionJugador.descripcion }}</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900"># {{ jugador.numero }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    <!-- More products... -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Tabla de posiciones -->
+    <div class="w-full">
+        <div class="container mx-auto px-4 sm:px-8">
+            <div class="py-8">
+                <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">Tabla General</h2>
+                <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+                    <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
+                        <table class="min-w-full leading-normal">
+                            <thead>
+                            <tr>
+                                <th
+                                        class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                    #
+                                </th>
+                                <th
+                                        class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                    Equipo
+                                </th>
+                                <th
+                                        class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                    J.
+                                </th>
+                                <th
+                                        class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider hidden lg:table-cell">
+                                    G.
+                                </th>
+                                <th
+                                        class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider hidden lg:table-cell">
+                                    E.
+                                </th>
+                                <th
+                                        class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider hidden lg:table-cell">
+                                    P.
+                                </th>
+                                <th
+                                        class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider hidden lg:table-cell">
+                                    GF.
+                                </th>
+                                <th
+                                        class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider hidden lg:table-cell">
+                                    GC.
+                                </th>
+                                <th
+                                        class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider hidden md:table-cell">
+                                    +/-.
+                                </th>
+                                <th
+                                        class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                    Pts.
+                                </th>
+                                <th
+                                        colspan="5" class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider hidden xl:table-cell">
+                                    Ultimos 5
+                                </th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% set xolos = 33 %}
+                            {% for equipo in tabla|slice(0,8) %}
+                                {% if equipo.idEquipo.id == xolos %}
+                                    <tr class="text-white bg-red-600 text-md text-white font-bold">
+                                {% else %}
+                                    <tr>
+                                {% endif %}
+                                <td class="px-5 py-5 border-b border-gray-200 text-sm">
+                                    <p class="whitespace-no-wrap">{{ loop.index }}º</p>
+                                </td>
+                                <td class="px-5 py-5 border-b border-gray-200 text-sm">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 w-10 h-10">
+                                            <img class="w-full h-full rounded-full"
+                                                 src="https://admin.xolos.com.mx/uploads/galeria/equipos/{{ equipo.idEquipo.logo }}"
+                                                 alt="" />
+                                        </div>
+                                        <div class="ml-3">
+                                            <p class="whitespace-no-wrap">
+                                                {{ equipo.idEquipo.nombre }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-5 py-5 border-b border-gray-200 text-sm">
+                                    <p class="whitespace-no-wrap text-center">
+                                        {{ equipo.jj }}
+                                    </p>
+                                </td>
+                                <td class="px-5 py-5 border-b border-gray-200 text-sm hidden lg:table-cell">
+                                    <p class="whitespace-no-wrap text-center">
+                                        {{ equipo.jg }}
+                                    </p>
+                                </td>
+                                <td class="px-5 py-5 border-b border-gray-200 text-sm hidden lg:table-cell">
+                                    <p class="whitespace-no-wrap text-center">
+                                        {{ equipo.je }}
+                                    </p>
+                                </td>
+                                <td class="px-5 py-5 border-b border-gray-200 text-sm hidden lg:table-cell">
+                                    <p class="whitespace-no-wrap text-center">
+                                        {{ equipo.jp }}
+                                    </p>
+                                </td>
+                                <td class="px-5 py-5 border-b border-gray-200 text-sm hidden lg:table-cell">
+                                    <p class="whitespace-no-wrap text-center">
+                                        {{ equipo.gf }}
+                                    </p>
+                                </td>
+                                <td class="px-5 py-5 border-b border-gray-200 text-sm hidden lg:table-cell">
+                                    <p class="whitespace-no-wrap text-center">
+                                        {{ equipo.gc }}
+                                    </p>
+                                </td>
+                                <td class="px-5 py-5 border-b border-gray-200 text-sm hidden md:table-cell">
+                                    <p class="whitespace-no-wrap text-center">
+                                        {{ equipo.dif }}
+                                    </p>
+                                </td>
+                                <td class="px-5 py-5 border-b border-gray-200 text-sm">
+                                    <p class="whitespace-no-wrap text-center">
+                                        {{ equipo.pts }}
+                                    </p>
+                                </td>
+                                <td class="px-5 py-5 border-b border-gray-200 text-sm hidden xl:table-cell">
+                                    <p class="whitespace-no-wrap text-center">
+                                        G
+                                    </p>
+                                </td>
+                                <td class="px-5 py-5 border-b border-gray-200 text-sm hidden xl:table-cell">
+                                    <p class="whitespace-no-wrap text-center">
+                                        G
+                                    </p>
+                                </td>
+                                <td class="px-5 py-5 border-b border-gray-200 text-sm hidden xl:table-cell">
+                                    <p class="whitespace-no-wrap text-center">
+                                        P
+                                    </p>
+                                </td>
+                                <td class="px-5 py-5 border-b border-gray-200 text-sm hidden xl:table-cell">
+                                    <p class="whitespace-no-wrap text-center">
+                                        E
+                                    </p>
+                                </td>
+                                <td class="px-5 py-5 border-b border-gray-200 text-sm hidden xl:table-cell">
+                                    <p class="whitespace-no-wrap text-center">
+                                        G
+                                    </p>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
