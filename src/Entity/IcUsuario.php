@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * IcUsuario
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="ic_usuario", uniqueConstraints={@ORM\UniqueConstraint(name="uniq_989974e492fc23a8", columns={"username_canonical"}), @ORM\UniqueConstraint(name="uniq_989974e4c05fb297", columns={"confirmation_token"}), @ORM\UniqueConstraint(name="uniq_989974e4a0d96fbf", columns={"email_canonical"})})
  * @ORM\Entity
  */
-class IcUsuario
+class IcUsuario implements UserInterface
 {
     /**
      * @var int
@@ -138,6 +139,8 @@ class IcUsuario
     {
         return $this->id;
     }
+
+
 
     public function getUsername(): ?string
     {
@@ -295,10 +298,10 @@ class IcUsuario
         return $this;
     }
 
-    public function getRoles(): ?array
-    {
-        return $this->roles;
-    }
+//    public function getRoles(): ?array
+//    {
+//        return $this->roles;
+//    }
 
     public function setRoles(array $roles): self
     {
@@ -329,6 +332,37 @@ class IcUsuario
         $this->credentialsExpireAt = $credentialsExpireAt;
 
         return $this;
+    }
+
+    public function getRoles(): ?array
+    {
+        return $this->roles;  //['ROLE_USER'];
+    }
+
+    public function eraseCredentials()
+    {
+    }
+
+    public function serialize()
+    {
+        return serialize([
+            $this->id,
+            $this->username,
+            $this->usernameCanonical,
+            $this->emailCanonical,
+            $this->email,
+            $this->enabled
+        ]);
+    }
+
+    public function unserialize($serialized)
+    {
+        list($this->id,
+            $this->username,
+            $this->usernameCanonical,
+            $this->emailCanonical,
+            $this->email,
+            $this->enabled ) = unserialize($serialized);
     }
 
 

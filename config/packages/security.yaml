@@ -1,23 +1,79 @@
 security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    encoders:
+        App\Entity\IcUsuario:
+            algorithm: bcrypt
+    role_hierarchy:
+        ROLE_COORDINADOR: ROLE_USER
+        ROLE_ADMIN: ROLE_COORDINADOR
+        ROLE_SUPER_ADMIN: ROLE_ADMIN
+
     providers:
-        users_in_memory: { memory: null }
+        my_provider:
+            entity:
+                class: App\Entity\IcUsuario
+                property: username
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
-        main:
-            anonymous: lazy
-            provider: users_in_memory
+#### login form ####
 
-            # activate different ways to authenticate
-            # https://symfony.com/doc/current/security.html#firewalls-authentication
+#        main:
+#            anonymous: true
+#            pattern: ^/*
+#            form_login:
+#                login_path: /login
+#                check_path: /login
+#                default_target_path: procesos_inicio
+#                provider: my_provider
+#                csrf_token_generator: security.csrf.token_manager
+#            logout:
+#                path: app_logout
+#                target: /login
+#            guard:
+#                authenticators:
+#                    - App\Security\LoginFormAuthenticator
 
-            # https://symfony.com/doc/current/security/impersonating_user.html
-            # switch_user: true
+#### end login form  ####
 
-    # Easy way to control access for large sections of your site
-    # Note: Only the *first* access control that matches will be used
+
+#### JWT config - Symfony 4.4 lts ####
+        login:
+            pattern:  ^/api/login
+            stateless: true
+            anonymous: true
+            provider: my_provider
+            json_login:
+                check_path:               /api/login_check
+                success_handler:          lexik_jwt_authentication.handler.authentication_success
+                failure_handler:          lexik_jwt_authentication.handler.authentication_failure
+
+        api:
+            pattern:  ^/api
+            stateless: true
+            provider: my_provider
+            guard:
+                authenticators:
+                     - lexik_jwt_authentication.jwt_token_authenticator
+
+#Test config
+#
+# curl -X POST -H "Content-Type: application/json" https://127.0.0.1:8000/api/login_check -d '{"username":"mic","password":"realpassword"}'
+#
+
+#### end JWT Config ####
+
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/api/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/api,       roles: IS_AUTHENTICATED_FULLY }
+#        - { path: ^/api/*,       roles: [ROLE_FACEBOOK, ROLE_APP, ROLE_USER , ROLE_COORDINADOR] }
+#        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+#        - { path: ^/autorizacion/*, role: IS_AUTHENTICATED_ANONYMOUSLY }
+#        - { path: ^/admin/*, role: [ROLE_ADMIN, ROLE_GERENTE, ROLE_DIRECTIVO, ROLE_COORDINADOR] }
+#        - { path: ^/admin/*, role: [ ROLE_USER, ROLE_COORDINADOR, ROLE_PROCESOS ] }
+#        - { path: ^/*, role: [ROLE_USER, ROLE_COORDINADOR ] }
+
+
+

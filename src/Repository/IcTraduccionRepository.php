@@ -7,13 +7,13 @@ use App\IcUtils\IcConfig;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
+
 class IcTraduccionRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, IcTraduccion::class);
     }
-
 
     /**
      * Metodo para obtener todas las noticias, opcional <categoria> <limite>
