@@ -26,8 +26,7 @@ class HomeController extends AbstractController
                             IcJugadoresRepository $jugadoresRepository, Request $request): Response
     {
 
-        $l = new IcLocaleController();
-        $l->setEnAction($request);
+
         /**
          * Metodo para obtener las noticias principales.
          */

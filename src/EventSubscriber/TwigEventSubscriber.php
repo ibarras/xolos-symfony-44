@@ -27,8 +27,8 @@ class TwigEventSubscriber implements EventSubscriberInterface
     }
     public function onKernelController(ControllerEvent $event)
     {
-        $this->twig->addGlobal('conferences',
-                $this->repository->getNewsByCategory(1, $this->session->get('_locale'), IcConfig::LIMITE_NOTICIAS_PORTADA));
+        $this->twig->addGlobal('lastNews',
+                $this->repository->getNewsByCategory(1, $this->session->get('_locale', 'es'), IcConfig::LIMITE_NOTICIAS_PORTADA));
 
     }
 
