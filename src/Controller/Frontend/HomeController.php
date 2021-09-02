@@ -23,8 +23,9 @@ class HomeController extends AbstractController
      */
     public function index(  IcTraduccionRepository $traduccionRepository, IcGaleriasRepository  $galeryRepository,
                             IcTorneoRepository $torneoRepository, IcCalendarioRepository $calendarioRepository,
-                            IcJugadoresRepository $jugadoresRepository): Response
+                            IcJugadoresRepository $jugadoresRepository, Request $request): Response
     {
+
 
         /**
          * Metodo para obtener las noticias principales.
@@ -64,7 +65,7 @@ class HomeController extends AbstractController
                 'tabla'         => $tabla,
                 'calendario'    => $calendario,
                 'jugadores'     => $jugadores,
-        ]);
+            ]);
     }
 
     /**
@@ -105,9 +106,10 @@ class HomeController extends AbstractController
                 'No hay elementos en esa categoria.'
             );
 
-            $all = $paginator->paginate(
-                $news, $request->query->getInt('page', 1), 10
-            );
+        $all = $paginator->paginate(
+            $news, $request->query->getInt('page', 1), 10
+        );
+
         return $this->render('frontend/home/list.html.twig', ['pagination' => $all]);
     }
 }
