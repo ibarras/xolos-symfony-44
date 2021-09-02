@@ -7,13 +7,13 @@ use App\IcUtils\IcConfig;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
+
 class IcTraduccionRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, IcTraduccion::class);
     }
-
 
     /**
      * Metodo para obtener todas las noticias, opcional <categoria> <limite>
@@ -24,7 +24,7 @@ class IcTraduccionRepository extends ServiceEntityRepository
      */
 
 
-    public function getNews($idioma = null, $esGlobal = null, $index = null)
+    public function getNews($idioma = null, $esGlobal = null, $limit = null)
     {
         $em = $this->getEntityManager();
         $q = $em->createQueryBuilder();
@@ -40,8 +40,8 @@ class IcTraduccionRepository extends ServiceEntityRepository
         if($esGlobal)
             $q->andWhere('nt.esGlobal = true');
 
-        if($index)
-            $q->setMaxResults($index);
+        if($limit)
+            $q->setMaxResults($limit);
 
         return $q->getQuery()->getResult();
 
@@ -103,7 +103,7 @@ class IcTraduccionRepository extends ServiceEntityRepository
     public function getNewsByLocale($id, $locale = 'es'){
         $em = $this->getEntityManager();
         $query = $em->createQuery('
-				SELECT nt FROM FrontendBundle:IcTraduccion nt
+				SELECT nt FROM App\Entity\IcTraduccion nt
 				    JOIN nt.idNoticia n
 				    JOIN nt.idLocale l
 					WHERE l.locale =:locale	AND n.id =:id_noticia
