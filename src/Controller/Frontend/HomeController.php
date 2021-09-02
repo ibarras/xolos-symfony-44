@@ -56,6 +56,8 @@ class HomeController extends AbstractController
          */
         $jugadores = $jugadoresRepository->getPlayers(true, IcConfig::CATEGORIA_NOTICIA_PRIMER_EQUIPO);
 
+        dump($noticias);
+
         return $this->render('frontend/home/index.html.twig',
             [
                 'noticias'      => $noticias,
