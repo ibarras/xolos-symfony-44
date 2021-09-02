@@ -24,7 +24,7 @@ class IcTraduccionRepository extends ServiceEntityRepository
      */
 
 
-    public function getNews($idioma = null, $esGlobal = null, $index = null)
+    public function getNews($idioma = null, $esGlobal = null, $limit = null)
     {
         $em = $this->getEntityManager();
         $q = $em->createQueryBuilder();
@@ -40,8 +40,8 @@ class IcTraduccionRepository extends ServiceEntityRepository
         if($esGlobal)
             $q->andWhere('nt.esGlobal = true');
 
-        if($index)
-            $q->setMaxResults($index);
+        if($limit)
+            $q->setMaxResults($limit);
 
         return $q->getQuery()->getResult();
 
