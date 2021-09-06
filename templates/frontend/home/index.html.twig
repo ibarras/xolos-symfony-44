@@ -1,233 +1,809 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    <!-- Nota Principal full screen -->
-    <div class="w-full mb-4">
-        <video class="filter brightness-50" loop muted autoplay playsinline data-video="0">
-            <source src="https://www.juventus.com/images/video/upload/t_video_mp4/dev/video/20210816_HERO_NUOVA_DIVISA_28MB.mp4" type="video/mp4;codecs=avc1.42E01E, mp4a.40.2">
+{% block content %}
+    
+    <div class=" h-screen w-auto">
+        <!-- <img src="https://xolos.com.mx/bundles/frontend/images/contacto_estadio.jpg" alt="" class="h-screen w-auto object-cover"> -->
+        <video class="h-screen w-screen object-cover filter brightness-50" muted autoplay loop playsinline data-video="0">
+            <source src="https://www.juventus.com/images/video/upload/t_video_mp4/dev/video/20210816_HERO_NUOVA_DIVISA_28MB.mp4" type="video/mp4">
         </video>
-    </div>
-    <!-- Noticias -->
-    <div class="w-full">
-
-        <div class="bg-white">
-            <div class="max-w-2xl mx-auto py-8 px-4 sm:py-8 sm:px-6 lg:max-w-7xl lg:px-8">
-                <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">Noticias</h2>
-
-                <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-                    {% for noticia in noticias %}
-                        <div class="group relative">
-                            <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                                <img src="https://admin.xolos.com.mx/uploads/galeria/noticias/{{ noticia.imagenPrincipal }}" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
-                            </div>
-                            <div class="mt-4 flex justify-between">
-                                <div>
-                                    <h3 class="text-sm text-gray-700">
-                                        <a href="#">
-                                            <span aria-hidden="true" class="absolute inset-0"></span>
-                                            {{ noticia.titulo }}
-                                        </a>
-                                    </h3>
-                                    <p class="mt-1 text-sm text-gray-500">{{ noticia.intro }}</p>
-                                </div>
-                                <p class="text-sm font-medium text-gray-900">{{ noticia.id }}</p>
-                            </div>
-                        </div>
-                    {% endfor %}
-
-                    <!-- More products... -->
-                </div>
-            </div>
+        <div class="bg-black bg-opacity-60 w-full xl:w-6/12 lg:w-6/12 md:w-10/12 sm:w-11/12 absolute bottom-8 md:bottom-14 left-0 h-48">
+            <h1 class=" text-gray-50 mb-2 text-3xl mx-7 xl:text-5xl lg:text-4xl md:text-4xl sm:text-3xl mt-5">XOLOS INICIA PRETEMPORADA EN CASA</h1>
+            <h3 class=" text-red-600 text-base xl:text-4xl lg:text-xl md:text-base mb-2 mx-7 ">JUGARA CONTRA CHIVAS ESTE MIERCOLES</h3>
+            <a class=" text-gray-50 mt-2 xl:text-2xl mx-7 underline" href="https://tailwindui.com/components/marketing/sections/testimonials">LEER MAS</a>
         </div>
     </div>
-    <!-- Jugadores -->
-    <div class="w-full">
 
-        <div class="bg-white">
-            <div class="max-w-2xl mx-auto py-8 px-4 sm:py-8 sm:px-6 lg:max-w-7xl lg:px-8">
-                <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">Primer Equipo</h2>
-
-                <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-                    {% for jugador in jugadores|slice(0, 4) %}
-                    <div class="group relative">
-                        <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                            <img src="https://admin.xolos.com.mx/uploads/galeria/foto_jugador/{{ jugador.fotografia }}" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
-                        </div>
-                        <div class="mt-4 flex justify-between">
-                            <div>
-                                <h3 class="text-sm text-gray-700">
-                                    <a href="#">
-                                        <span aria-hidden="true" class="absolute inset-0"></span>
-                                        {{ jugador.nombre }}
-                                    </a>
-                                </h3>
-                                <p class="mt-1 text-sm text-gray-500">{{ jugador.idPosicionJugador.descripcion }}</p>
-                            </div>
-                            <p class="text-sm font-medium text-gray-900"># {{ jugador.numero }}</p>
-                        </div>
-                    </div>
-                    {% endfor %}
-
-                    <!-- More products... -->
-                </div>
-            </div>
-        </div>
+    <!-- SEPARADOR NOTICIAS-->
+    <div class="relative h-36 -mb-14 md:mb-4">
+    <div class="bg-red-600 mt-6 md:mt-12 mb-0 h-16 w-11/12 md:w-6/12 flex justify-center md:absolute right-0 mx-auto md:mx-10 border-b-8 border-l-4 border-gray-300">
+        <h1 class="text-white text-4xl md:text-5xl m-auto font-semibold">NOTICIAS</h1>
     </div>
-    <!-- Tabla de posiciones -->
-    <div class="w-full">
-        <div class="container mx-auto px-4 sm:px-8">
-            <div class="py-8">
-                <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">Tabla General</h2>
-                <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
-                    <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
+    </div>
+    <!-- -->
+
+    <!-- CARROUSEL CON SPLIDE JS -->
+
+    <div class="splide px-5 md:px-10" style="height: 430px;">
+      <div class="splide__track h-96" >
+        <ul class="splide__list h-96" >
+          <li class="splide__slide h-96" >
+            <div class=" h-48 w-full md:flex">
+              <div class=" h-full w-full md:h-96 md:w-1/2">
+                <img class=" h-full w-full object-cover bg-center md:h-full " src="/pics/img/xolos1.jpg" alt="Xolos Notice">
+              </div>
+              <div class=" h-full px-3 pt-2 md:p-8 bg-gray-100 md:h-96 md:w-1/2  ">
+                <a href="Noticia.html" class=" mt-1 md:text-5xl leading-tight  text-gray-600 ">RESUMEN CLASICO FRONTERIZO</a>
+                <p class="mt-2 text-gray-500 md:mt-5 lg:mt-10 md:text-2xl">Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find your first customers.  you can use to find your first customers.</p>
+                <a href="{{path('frontend_show') }}" class="absolute bottom-2 right-2 md:right-6 lg:text-xl text-gray-600 hover:underline ">LEER NOTICIA COMPLETA ></a>
+              </div>
+            </div>
+          </li>
+          <li class="splide__slide h-96" >
+            <div class=" h-48 w-full md:flex">
+              <div class=" h-full w-full md:h-96 md:w-1/2">
+                <img class=" h-full w-full object-cover bg-center md:h-full " src="https://admin.xolos.com.mx/uploads/galeria/noticias/10867738461172e4217a8b.jpg" alt="Xolos Notice">
+              </div>
+              <div class=" h-full px-3 pt-2 md:p-8 bg-gray-100 md:h-96 md:w-1/2 ">
+                <a href="Noticia.html" class=" mt-1 md:text-5xl leading-tight  text-gray-600 ">VICTORIA EN CASA DE LOS CACHORROS</a>
+                <p class="mt-2 text-gray-500 md:mt-5 lg:mt-10 md:text-2xl">Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find your first customers.  you can use to find your first customers.</p>
+                <a href="{{path('frontend_show') }}" class="absolute bottom-2 right-2 md:right-6 lg:text-xl text-gray-600 hover:underline ">LEER NOTICIA COMPLETA ></a>
+              </div>
+            </div>
+          </li>
+          <li class="splide__slide h-96" >
+            <div class=" h-48 w-full md:flex">
+              <div class=" h-full w-full md:h-96 md:w-1/2">
+                <img class=" h-full w-full object-cover bg-center md:h-full " src="https://admin.xolos.com.mx/uploads/galeria/noticias/6834551206090d5279ea07.jpg" alt="Xolos Notice">
+              </div>
+              <div class=" h-full px-3 pt-2 md:p-8 bg-gray-100 md:h-96 md:w-1/2 ">
+                <a href="Noticia.html" class=" mt-1 md:text-5xl leading-tight  text-gray-600 ">FEMENIL SIGUE INVICTA EN LA LIGA</a>
+                <p class="mt-2 text-gray-500 md:mt-5 lg:mt-10 md:text-2xl">Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find your first customers.  you can use to find your first customers.</p>
+                <a href="{{path('frontend_show') }}" class="absolute bottom-2 right-2 md:right-6 lg:text-xl text-gray-600 hover:underline ">LEER NOTICIA COMPLETA ></a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+      <div class="h-28 ">
+        <div class="bg-red-600 mt-5 md:mt-10 mb-0 h-16 w-11/12 md:w-6/12 flex justify-center mx-auto md:mx-10 border-b-8 border-r-4 border-gray-300">
+            <h1 class="text-gray-100 text-4xl md:text-5xl m-auto font-semibold">VIDEOS</h1>
+        </div>
+        </div>
+
+    
+      <div class=" grid xl:grid-cols-3 xl:grid-rows-2 lg:grid-cols-3 lg:grid-rows-2 gap-3 w-full px-5 md:px-10 mb-8">
+          <div class="bg-white w-full h-80  bg-cover bg-bottom xl:col-span-2 lg:col-span-2 md:col-span-2 relative" style="background-image: url(https://admin.xolos.com.mx/uploads/galeria/noticias/1468039648610d9cadd0f31.jpg);">
+            <div class="w-full h-full absolute flex justify-center items-center ">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDMwLjA1MSAzMC4wNTEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSIiPjxnPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPHBhdGggZD0iTTE5Ljk4MiwxNC40MzhsLTYuMjQtNC41MzZjLTAuMjI5LTAuMTY2LTAuNTMzLTAuMTkxLTAuNzg0LTAuMDYyYy0wLjI1MywwLjEyOC0wLjQxMSwwLjM4OC0wLjQxMSwwLjY2OXY5LjA2OSAgIGMwLDAuMjg0LDAuMTU4LDAuNTQzLDAuNDExLDAuNjcxYzAuMTA3LDAuMDU0LDAuMjI0LDAuMDgxLDAuMzQyLDAuMDgxYzAuMTU0LDAsMC4zMS0wLjA0OSwwLjQ0Mi0wLjE0Nmw2LjI0LTQuNTMyICAgYzAuMTk3LTAuMTQ1LDAuMzEyLTAuMzY5LDAuMzEyLTAuNjA3QzIwLjI5NSwxNC44MDMsMjAuMTc3LDE0LjU4LDE5Ljk4MiwxNC40Mzh6IiBmaWxsPSIjZmZmZmZmIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L3BhdGg+Cgk8cGF0aCBkPSJNMTUuMDI2LDAuMDAyQzYuNzI2LDAuMDAyLDAsNi43MjgsMCwxNS4wMjhjMCw4LjI5Nyw2LjcyNiwxNS4wMjEsMTUuMDI2LDE1LjAyMWM4LjI5OCwwLDE1LjAyNS02LjcyNSwxNS4wMjUtMTUuMDIxICAgQzMwLjA1Miw2LjcyOCwyMy4zMjQsMC4wMDIsMTUuMDI2LDAuMDAyeiBNMTUuMDI2LDI3LjU0MmMtNi45MTIsMC0xMi41MTYtNS42MDEtMTIuNTE2LTEyLjUxNGMwLTYuOTEsNS42MDQtMTIuNTE4LDEyLjUxNi0xMi41MTggICBjNi45MTEsMCwxMi41MTQsNS42MDcsMTIuNTE0LDEyLjUxOEMyNy41NDEsMjEuOTQxLDIxLjkzNywyNy41NDIsMTUuMDI2LDI3LjU0MnoiIGZpbGw9IiNmZmZmZmYiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiIGNsYXNzPSIiPjwvcGF0aD4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI
+                +CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8L2c+PC9zdmc+" class=" h-14 w-14"/>
+            </div>
+                <section class="w-full h-full relative bg-gradient-to-t from-black via-transparent  to-transparent">
+                <h1 class="mx-4 absolute bottom-2 text-gray-100  text-4xl mb-2">ESTE ES UN TITULO</h1>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute bottom-5 mx-0 px-0 right-4" fill="none" viewBox="0 0 24 24" stroke="WHITE">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                  </svg>
+            </section>
+          </div>
+          <div class="bg-red-600 w-full h-80 bg-cover bg-center relative" style="background-image: url(https://admin.xolos.com.mx/uploads/galeria/noticias/17750423556117290b4a00c.jpg);">
+            <div class="w-full h-full absolute flex justify-center items-center ">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDMwLjA1MSAzMC4wNTEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSIiPjxnPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPHBhdGggZD0iTTE5Ljk4MiwxNC40MzhsLTYuMjQtNC41MzZjLTAuMjI5LTAuMTY2LTAuNTMzLTAuMTkxLTAuNzg0LTAuMDYyYy0wLjI1MywwLjEyOC0wLjQxMSwwLjM4OC0wLjQxMSwwLjY2OXY5LjA2OSAgIGMwLDAuMjg0LDAuMTU4LDAuNTQzLDAuNDExLDAuNjcxYzAuMTA3LDAuMDU0LDAuMjI0LDAuMDgxLDAuMzQyLDAuMDgxYzAuMTU0LDAsMC4zMS0wLjA0OSwwLjQ0Mi0wLjE0Nmw2LjI0LTQuNTMyICAgYzAuMTk3LTAuMTQ1LDAuMzEyLTAuMzY5LDAuMzEyLTAuNjA3QzIwLjI5NSwxNC44MDMsMjAuMTc3LDE0LjU4LDE5Ljk4MiwxNC40Mzh6IiBmaWxsPSIjZmZmZmZmIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L3BhdGg+Cgk8cGF0aCBkPSJNMTUuMDI2LDAuMDAyQzYuNzI2LDAuMDAyLDAsNi43MjgsMCwxNS4wMjhjMCw4LjI5Nyw2LjcyNiwxNS4wMjEsMTUuMDI2LDE1LjAyMWM4LjI5OCwwLDE1LjAyNS02LjcyNSwxNS4wMjUtMTUuMDIxICAgQzMwLjA1Miw2LjcyOCwyMy4zMjQsMC4wMDIsMTUuMDI2LDAuMDAyeiBNMTUuMDI2LDI3LjU0MmMtNi45MTIsMC0xMi41MTYtNS42MDEtMTIuNTE2LTEyLjUxNGMwLTYuOTEsNS42MDQtMTIuNTE4LDEyLjUxNi0xMi41MTggICBjNi45MTEsMCwxMi41MTQsNS42MDcsMTIuNTE0LDEyLjUxOEMyNy41NDEsMjEuOTQxLDIxLjkzNywyNy41NDIsMTUuMDI2LDI3LjU0MnoiIGZpbGw9IiNmZmZmZmYiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiIGNsYXNzPSIiPjwvcGF0aD4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI
+                    +CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8L2c+PC9zdmc+" class=" h-14 w-14"/>
+                </div>
+            <section class="w-full h-full relative bg-gradient-to-t from-black via-transparent  to-transparent">
+                <h1 class="mx-4 absolute bottom-2 text-gray-100 text-4xl  mb-2">ESTE ES UN TITULO</h1>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute bottom-5  right-4" fill="none" viewBox="0 0 24 24" stroke="WHITE">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                </svg>
+            </section>
+          </div> 
+          <div class="bg-red-600 w-full h-80 bg-cover bg-center relative" style="background-image: url(https://admin.xolos.com.mx/uploads/galeria/noticias/864029974610d9dfa0b9ac.jpg);">
+            <div class="w-full h-full absolute flex justify-center items-center ">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDMwLjA1MSAzMC4wNTEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSIiPjxnPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPHBhdGggZD0iTTE5Ljk4MiwxNC40MzhsLTYuMjQtNC41MzZjLTAuMjI5LTAuMTY2LTAuNTMzLTAuMTkxLTAuNzg0LTAuMDYyYy0wLjI1MywwLjEyOC0wLjQxMSwwLjM4OC0wLjQxMSwwLjY2OXY5LjA2OSAgIGMwLDAuMjg0LDAuMTU4LDAuNTQzLDAuNDExLDAuNjcxYzAuMTA3LDAuMDU0LDAuMjI0LDAuMDgxLDAuMzQyLDAuMDgxYzAuMTU0LDAsMC4zMS0wLjA0OSwwLjQ0Mi0wLjE0Nmw2LjI0LTQuNTMyICAgYzAuMTk3LTAuMTQ1LDAuMzEyLTAuMzY5LDAuMzEyLTAuNjA3QzIwLjI5NSwxNC44MDMsMjAuMTc3LDE0LjU4LDE5Ljk4MiwxNC40Mzh6IiBmaWxsPSIjZmZmZmZmIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L3BhdGg+Cgk8cGF0aCBkPSJNMTUuMDI2LDAuMDAyQzYuNzI2LDAuMDAyLDAsNi43MjgsMCwxNS4wMjhjMCw4LjI5Nyw2LjcyNiwxNS4wMjEsMTUuMDI2LDE1LjAyMWM4LjI5OCwwLDE1LjAyNS02LjcyNSwxNS4wMjUtMTUuMDIxICAgQzMwLjA1Miw2LjcyOCwyMy4zMjQsMC4wMDIsMTUuMDI2LDAuMDAyeiBNMTUuMDI2LDI3LjU0MmMtNi45MTIsMC0xMi41MTYtNS42MDEtMTIuNTE2LTEyLjUxNGMwLTYuOTEsNS42MDQtMTIuNTE4LDEyLjUxNi0xMi41MTggICBjNi45MTEsMCwxMi41MTQsNS42MDcsMTIuNTE0LDEyLjUxOEMyNy41NDEsMjEuOTQxLDIxLjkzNywyNy41NDIsMTUuMDI2LDI3LjU0MnoiIGZpbGw9IiNmZmZmZmYiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiIGNsYXNzPSIiPjwvcGF0aD4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI
+                    +CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8L2c+PC9zdmc+" class=" h-14 w-14"/>
+                </div>
+            <section class="w-full h-full relative bg-gradient-to-t from-black via-transparent  to-transparent">
+                <h1 class="mx-4 absolute bottom-2 text-gray-100 text-4xl mb-2">ESTE ES UN TITULO</h1>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute bottom-5  right-4" fill="none" viewBox="0 0 24 24" stroke="WHITE">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                </svg>
+            </section>
+          </div>
+          <div class="bg-red-600 w-full h-80 relative bg-cover bg-center xl:col-span-2 lg:col-span-2 md:col-span-2" style="background-image: url(https://admin.xolos.com.mx/uploads/galeria/noticias/697700591610e1902c7a43.jpg);">
+            <div class="w-full h-full absolute flex justify-center items-center ">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDMwLjA1MSAzMC4wNTEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSIiPjxnPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPHBhdGggZD0iTTE5Ljk4MiwxNC40MzhsLTYuMjQtNC41MzZjLTAuMjI5LTAuMTY2LTAuNTMzLTAuMTkxLTAuNzg0LTAuMDYyYy0wLjI1MywwLjEyOC0wLjQxMSwwLjM4OC0wLjQxMSwwLjY2OXY5LjA2OSAgIGMwLDAuMjg0LDAuMTU4LDAuNTQzLDAuNDExLDAuNjcxYzAuMTA3LDAuMDU0LDAuMjI0LDAuMDgxLDAuMzQyLDAuMDgxYzAuMTU0LDAsMC4zMS0wLjA0OSwwLjQ0Mi0wLjE0Nmw2LjI0LTQuNTMyICAgYzAuMTk3LTAuMTQ1LDAuMzEyLTAuMzY5LDAuMzEyLTAuNjA3QzIwLjI5NSwxNC44MDMsMjAuMTc3LDE0LjU4LDE5Ljk4MiwxNC40Mzh6IiBmaWxsPSIjZmZmZmZmIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L3BhdGg+Cgk8cGF0aCBkPSJNMTUuMDI2LDAuMDAyQzYuNzI2LDAuMDAyLDAsNi43MjgsMCwxNS4wMjhjMCw4LjI5Nyw2LjcyNiwxNS4wMjEsMTUuMDI2LDE1LjAyMWM4LjI5OCwwLDE1LjAyNS02LjcyNSwxNS4wMjUtMTUuMDIxICAgQzMwLjA1Miw2LjcyOCwyMy4zMjQsMC4wMDIsMTUuMDI2LDAuMDAyeiBNMTUuMDI2LDI3LjU0MmMtNi45MTIsMC0xMi41MTYtNS42MDEtMTIuNTE2LTEyLjUxNGMwLTYuOTEsNS42MDQtMTIuNTE4LDEyLjUxNi0xMi41MTggICBjNi45MTEsMCwxMi41MTQsNS42MDcsMTIuNTE0LDEyLjUxOEMyNy41NDEsMjEuOTQxLDIxLjkzNywyNy41NDIsMTUuMDI2LDI3LjU0MnoiIGZpbGw9IiNmZmZmZmYiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiIGNsYXNzPSIiPjwvcGF0aD4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI
+                    +CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8L2c+PC9zdmc+" class=" h-14 w-14"/>
+                </div>
+            <section class="w-full h-full relative bg-gradient-to-t from-black via-transparent  to-transparent">
+                <h1 class="mx-4 absolute bottom-2 text-gray-100 text-4xl mb-2">ESTE ES UN TITULO</h1>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute bottom-5  right-4" fill="none" viewBox="0 0 24 24" stroke="WHITE">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                  </svg>
+            </section>
+          </div>
+      </div>
+
+     <div class=" md:flex h-auto w-auto bg-red-600 md:mt-16 pt-7 md:pt-0">
+          <div class="w-auto md:w-1/3 mx-14 md:mx-20 md:mr-10 md:ml-20">
+            <!-- sign -->
+            <div class=" md:w-60 h-16 bg-black text-4xl md:-mt-8 mx-auto">
+              <h1 class="text-white text-center pt-2.5 font-semibold">TABLA</h1>
+            </div>
+            <!-- end sign -->
+            <div class="py-4 min-w-full">
+                <div class="-mx-10 md:-mx-10 py-4 overflow-x-auto">
+                    <div class="inline-block min-w-full max-w-full shadow md:rounded-md overflow-hidden">
                         <table class="min-w-full leading-normal">
                             <thead>
-                            <tr>
-                                <th
-                                        class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                    #
-                                </th>
-                                <th
-                                        class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                    Equipo
-                                </th>
-                                <th
-                                        class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                    J.
-                                </th>
-                                <th
-                                        class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider hidden lg:table-cell">
-                                    G.
-                                </th>
-                                <th
-                                        class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider hidden lg:table-cell">
-                                    E.
-                                </th>
-                                <th
-                                        class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider hidden lg:table-cell">
-                                    P.
-                                </th>
-                                <th
-                                        class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider hidden lg:table-cell">
-                                    GF.
-                                </th>
-                                <th
-                                        class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider hidden lg:table-cell">
-                                    GC.
-                                </th>
-                                <th
-                                        class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider hidden md:table-cell">
-                                    +/-.
-                                </th>
-                                <th
-                                        class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                    Pts.
-                                </th>
-                                <th
-                                        colspan="5" class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider hidden xl:table-cell">
-                                    Ultimos 5
-                                </th>
-
-                            </tr>
+                                <tr>
+                                    <th
+                                        class="px-5 py-5 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider ">
+                                        #
+                                    </th>
+                                    <th
+                                        class="px-5 py-5 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                        EQUIPO
+                                    </th>
+                                    <th
+                                        class="px-5 py-5 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider ">
+                                        PARTIDOS
+                                    </th>
+                                    <th
+                                        class="px-5 py-5 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider hidden xl:table-cell">
+                                        G.
+                                    </th>
+                                    <th
+                                        class="px-5 py-5 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider hidden xl:table-cell">
+                                        P.
+                                    </th>
+                                    <th
+                                        class="px-5 py-5 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider hidden xl:table-cell">
+                                        E.
+                                    </th>
+                                    <th
+                                        class="px-5 py-5 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                        PTS
+                                    </th>
+                                </tr>
                             </thead>
-                            <tbody>
-                            {% set xolos = 33 %}
-                            {% for equipo in tabla|slice(0,8) %}
-                                {% if equipo.idEquipo.id == xolos %}
-                                    <tr class="text-white bg-red-600 text-md text-white font-bold">
-                                {% else %}
-                                    <tr>
-                                {% endif %}
-                                <td class="px-5 py-5 border-b border-gray-200 text-sm">
-                                    <p class="whitespace-no-wrap">{{ loop.index }}º</p>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 text-sm">
-                                    <div class="flex items-center">
-                                        <div class="flex-shrink-0 w-10 h-10">
-                                            <img class="w-full h-full rounded-full"
-                                                 src="https://admin.xolos.com.mx/uploads/galeria/equipos/{{ equipo.idEquipo.logo }}"
-                                                 alt="" />
+<!--DataTable-->               <tbody>
+                                <tr >
+                                    <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm" id="">
+                                        <p class="text-gray-900 whitespace-no-wrap text-center">1º</p>
+                                    </td>
+                                    <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm">           
+                                          <div class="p-0 m-auto h-8 w-8 ">          
+                                              <img class=" rounded-full w-8 h-8 "
+                                                    src="https://admin.xolos.com.mx/uploads/galeria/equipos/4107958905ac342af2e9a0.png">
+                                          </div>
+                                      </td>
+                                    <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm">
+                                        <p class="text-gray-900 whitespace-no-wrap text-center ">10</p>
+                                    </td>
+                                    <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                        <p class="text-gray-900 whitespace-no-wrap text-center">
+                                            8
+                                        </p>
+                                    </td>
+                                    <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                        <p class="text-gray-900 whitespace-no-wrap text-center">
+                                            2
+                                        </p>
+                                    </td>
+                                    <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                        <p class="text-gray-900 whitespace-no-wrap text-center">
+                                            0
+                                        </p>
+                                    </td>
+                                    <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm xl:table-cell">
+                                        <p class="text-gray-900 whitespace-no-wrap text-center">
+                                            2
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr >
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm" id="">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">2º</p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm">           
+                                        <div class="p-0 m-auto h-8 w-8 ">          
+                                            <img class=" rounded-full w-8 h-8 "
+                                                  src="https://admin.xolos.com.mx/uploads/galeria/equipos/1036341087586f3ffaf3830.png">
                                         </div>
-                                        <div class="ml-3">
-                                            <p class="whitespace-no-wrap">
-                                                {{ equipo.idEquipo.nombre }}
-                                            </p>
+                                    </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">10</p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          8
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          2
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          0
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm lg:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          2
+                                      </p>
+                                  </td>
+                                </tr>
+                                <tr >
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm" id="">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">3º</p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm">           
+                                        <div class="p-0 m-auto h-8 w-8 ">          
+                                            <img class=" rounded-full w-8 h-8 "
+                                                  src="https://admin.xolos.com.mx/uploads/galeria/equipos/1028020616586f426980d98.png">
                                         </div>
-                                    </div>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 text-sm">
-                                    <p class="whitespace-no-wrap text-center">
-                                        {{ equipo.jj }}
-                                    </p>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 text-sm hidden lg:table-cell">
-                                    <p class="whitespace-no-wrap text-center">
-                                        {{ equipo.jg }}
-                                    </p>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 text-sm hidden lg:table-cell">
-                                    <p class="whitespace-no-wrap text-center">
-                                        {{ equipo.je }}
-                                    </p>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 text-sm hidden lg:table-cell">
-                                    <p class="whitespace-no-wrap text-center">
-                                        {{ equipo.jp }}
-                                    </p>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 text-sm hidden lg:table-cell">
-                                    <p class="whitespace-no-wrap text-center">
-                                        {{ equipo.gf }}
-                                    </p>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 text-sm hidden lg:table-cell">
-                                    <p class="whitespace-no-wrap text-center">
-                                        {{ equipo.gc }}
-                                    </p>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 text-sm hidden md:table-cell">
-                                    <p class="whitespace-no-wrap text-center">
-                                        {{ equipo.dif }}
-                                    </p>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 text-sm">
-                                    <p class="whitespace-no-wrap text-center">
-                                        {{ equipo.pts }}
-                                    </p>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 text-sm hidden xl:table-cell">
-                                    <p class="whitespace-no-wrap text-center">
-                                        G
-                                    </p>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 text-sm hidden xl:table-cell">
-                                    <p class="whitespace-no-wrap text-center">
-                                        G
-                                    </p>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 text-sm hidden xl:table-cell">
-                                    <p class="whitespace-no-wrap text-center">
-                                        P
-                                    </p>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 text-sm hidden xl:table-cell">
-                                    <p class="whitespace-no-wrap text-center">
-                                        E
-                                    </p>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 text-sm hidden xl:table-cell">
-                                    <p class="whitespace-no-wrap text-center">
-                                        G
-                                    </p>
-                                </td>
-                            </tr>
-                            {% endfor %}
+                                    </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">10</p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          8
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          2
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          0
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm lg:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          2
+                                      </p>
+                                  </td>
+                                </tr>
+                                <tr >
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm" id="">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">4º</p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm">           
+                                        <div class="p-0 m-auto h-8 w-8 ">          
+                                            <img class=" rounded-full w-8 h-8 "
+                                                  src="https://admin.xolos.com.mx/uploads/galeria/equipos/1624500625a57dfd56d895.png">
+                                        </div>
+                                    </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">10</p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          8
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          2
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          0
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm lg:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          2
+                                      </p>
+                                  </td>
+                                </tr>
+                                <tr class="bg-white">
+                                  <td class="px-5 py-1 border-b border-gray-200 rounded-l-full bg-red-600 text-sm " id=""> 
+                                      <p class="text-gray-900 text-center">5º</p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200  text-sm bg-red-600 ">           
+                                        <div class="p-0 m-auto h-8 w-8 ">          
+                                            <img class=" rounded-full w-8 h-8 "
+                                                  src="https://admin.xolos.com.mx/media/cache/80x80/uploads/galeria/equipos/1783218628586f4162259b9.png">
+                                        </div>
+                                    </td>
+                                  <td class="px-5 py-1 border-b border-gray-200  text-sm bg-red-600">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">10</p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200  text-sm hidden xl:table-cell bg-red-600">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          8
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200  text-sm hidden xl:table-cell bg-red-600">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          2
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200  text-sm hidden xl:table-cell bg-red-600">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          0
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200  text-sm lg:table-cell rounded-r-full bg-red-600">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          2
+                                      </p>
+                                  </td>
+                                </tr>
+                                <tr >
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm" id="">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">6º</p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm">           
+                                        <div class="p-0 m-auto h-8 w-8 ">          
+                                            <img class=" rounded-full w-8 h-8 "
+                                                  src="https://admin.xolos.com.mx/uploads/galeria/equipos/1296342343586f429b13a8d.png">
+                                        </div>
+                                    </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">10</p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          8
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          2
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          0
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm lg:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          2
+                                      </p>
+                                  </td>
+                                </tr>
+                                <tr >
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm" id="">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">7º</p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm">           
+                                        <div class="p-0 m-auto h-8 w-8 ">          
+                                            <img class=" rounded-full w-8 h-8 "
+                                                  src="https://admin.xolos.com.mx/uploads/galeria/equipos/265897114586f423dc17f2.png">
+                                        </div>
+                                    </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">10</p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          8
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          2
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          0
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm lg:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          2
+                                      </p>
+                                  </td>
+                                </tr>
+                                <tr >
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm" id="">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">8º</p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm">           
+                                        <div class="p-0 m-auto h-8 w-8 ">          
+                                            <img class=" rounded-full w-8 h-8 "
+                                                  src="https://admin.xolos.com.mx/uploads/galeria/equipos/145811524586f4092b10d7.png">
+                                        </div>
+                                    </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">10</p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          8
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          2
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          0
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm lg:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          2
+                                      </p>
+                                  </td>
+                                </tr>
+                                <tr >
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm" id="">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">9º</p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm">           
+                                        <div class="p-0 m-auto h-8 w-8 ">          
+                                            <img class=" rounded-full w-8 h-8 "
+                                                  src="https://admin.xolos.com.mx/uploads/galeria/equipos/9222263265ac343ace221a.png">
+                                        </div>
+                                    </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">10</p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          8
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          2
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          0
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm lg:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          2
+                                      </p>
+                                  </td>
+                                </tr>
+                                <tr >
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm" id="">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">10º</p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm">           
+                                        <div class="p-0 m-auto h-8 w-8 ">          
+                                            <img class=" rounded-full w-8 h-8 "
+                                                  src="https://admin.xolos.com.mx/uploads/galeria/equipos/842988335b4b1490cdda7.png">
+                                        </div>
+                                    </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">10</p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          8
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          2
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          0
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm lg:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          2
+                                      </p>
+                                  </td>
+                                </tr>
+                                <tr >
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm" id="">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">11º</p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm">           
+                                        <div class="p-0 m-auto h-8 w-8 ">          
+                                            <img class=" rounded-full w-8 h-8 "
+                                                  src="https://admin.xolos.com.mx/uploads/galeria/equipos/17600586095d0d353f3ee0d.png">
+                                        </div>
+                                    </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">10</p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          8
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          2
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          0
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm lg:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          2
+                                      </p>
+                                  </td>
+                                </tr>
+                                <tr >
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm" id="">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">12º</p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm">           
+                                        <div class="p-0 m-auto h-8 w-8 ">          
+                                            <img class=" rounded-full w-8 h-8 "
+                                                  src="https://admin.xolos.com.mx/uploads/galeria/equipos/686714653586f40bbd76db.png">
+                                        </div>
+                                    </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">10</p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          8
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          2
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm hidden xl:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          0
+                                      </p>
+                                  </td>
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm lg:table-cell">
+                                      <p class="text-gray-900 whitespace-no-wrap text-center">
+                                          2
+                                      </p>
+                                  </td>
+                                </tr>                      
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
+        <!--FINAL DE LA TABLA, COMIENZO DE CALENDARIO-->
+       <div class="w-auto md:w-2/3  bg-red-600 border-red-50 mb-10 pb-10 mx-4 md:px-10 md:pl-5 md:pr-32 lg:px-14">
+        <div class=" h-16 w-auto md:w-80 lg:w-96 bg-black text-4xl md:text-4xl  mx-auto mb-8 md:-mt-8">
+          <h1 class="text-white text-center pt-3  font-semibold">PROXIMOS PARTIDOS</h1>
+        </div>
+            <div class="swiper w-auto h-auto md:rounded-lg" style="height: 545px;">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper w-full bg-cover" style="background-image:url(/pics/img/fondo-prox-partidos.jpg)">
+                  <!-- Slides -->
+                  <div class="swiper-slide text-center relative">
+                      <h1 class="text-3xl md:text-5xl pt-5 font-bold text-gray-600">JORNADA 6</h1>
+                      <h2 class=" text-xl md:text-3xl pt-1 md:pt-3 font-bold text-gray-600">Estadio: Caliente</h2>
+                      <div class="flex justify-center py-8">
+                        <img src="/pics/img/Logo-Xolos-Red.png" alt="" class=" w-32 h-40  lg:w-52 lg:h-64 -my-7 md:-my-8 lg:-my-10">
+                        <h1 class="text-center text-xl lg:text-6xl mx-2 md:mx-4 py-10 lg:mx-0 xl:mx-12 lg:py-16 font-bold text-gray-600">VS</h1>
+                        <img src="/pics/img/ame.png" alt="" class="w-32 h-32  lg:w-52 lg:h-52">
+                      </div>
+                      <div class=" text-center mt-5 md:mt-0">
+                        <a href="" class="bg-gray-600 hover:bg-gray-300 hover:text-gray-900 hover:border-gray-900 text-white text-lg md:text-2xl px-9 md:px-10 py-3 border-2 rounded-md">BOLETOS</a>
+                        <div class="flex w-auto justify-center pt-8 md:pt-6 h-6">
+                            <i><img src="/pics/img/faceicon.png" alt="facebook" class="h-7 w-7"></i>
+                            <i><img src="/pics/img/instaicon.png" alt="instagram" class="h-7 w-7 mx-1"></i>
+                            <i><img src="/pics/img/twittericon.png" alt="twitter" class="h-7 w-7"></i>
+                        </div>
+                        <p class="pt-11 md:pt-8 text-lg font-bold text-gray-600">12/03/21</p>
+                    </div>
+                      <a href="google.com" class="text-gray-600 absolute left-1 md:left-4 lg:left-10 bottom-0 text-sm md:text-xl font-bold underline bg-gray-200 rounded-lg">CALENDARIO</a>
+                      <a href="google.com" class="text-gray-600 absolute right-1 md:right-4 lg:right-10 bottom-0 text-sm md:text-xl font-bold underline bg-gray-200 rounded-lg">MINUTO A MINUTO</a>
+                  </div>
+                  <div class="swiper-slide text-center relative">
+                    <h1 class="text-3xl md:text-5xl pt-5 font-bold text-gray-600">JORNADA 7</h1>
+                    <h2 class=" text-xl md:text-3xl pt-1 md:pt-3 font-bold text-gray-600">Estadio: Caliente</h2>
+                    <div class="flex justify-center py-8">
+                      <img src="https://admin.xolos.com.mx/uploads/galeria/equipos/1028020616586f426980d98.png" alt="" class="w-32 h-32  lg:w-52 lg:h-52 ">
+                      <h1 class="text-center text-xl lg:text-6xl mx-2 md:mx-4 py-10 lg:mx-0 xl:mx-12 lg:py-16 font-bold text-gray-600">VS</h1>
+                      <img src="/pics/img/Logo-Xolos-Red.png" alt="" class="w-32 h-40  lg:w-52 lg:h-64 -my-7 md:-my-8 lg:-my-10">
+                    </div>
+                    <div class=" text-center mt-5 md:mt-0">
+                        <a href="" class="bg-gray-600 hover:bg-gray-300 hover:text-gray-900 hover:border-gray-900 text-white text-lg md:text-2xl px-9 md:px-10 py-3 border-2 rounded-md">BOLETOS</a>
+                        <div class="flex w-auto justify-center pt-8 md:pt-6 h-6">
+                            <i><img src="/pics/img/faceicon.png" alt="facebook" class="h-7 w-7"></i>
+                            <i><img src="/pics/img/instaicon.png" alt="instagram" class="h-7 w-7 mx-1"></i>
+                            <i><img src="/pics/img/twittericon.png" alt="twitter" class="h-7 w-7"></i>
+                        </div>
+                        <p class="pt-11 md:pt-8 text-lg font-bold text-gray-600">12/03/21</p>
+                    </div>
+                    <a href="google.com" class="text-gray-600 absolute left-1 md:left-4 lg:left-10 bottom-0 text-sm md:text-xl font-bold underline bg-gray-200 rounded-lg">CALENDARIO</a>
+                    <a href="google.com" class="text-gray-600 absolute right-1 md:right-4 lg:right-10 bottom-0 text-sm md:text-xl font-bold underline bg-gray-200 rounded-lg">MINUTO A MINUTO</a>
+                  </div>
+                  <div class="swiper-slide text-center relative">
+                    <h1 class="text-3xl md:text-5xl pt-5 font-bold text-gray-600">JORNADA 8</h1>
+                    <h2 class=" text-xl md:text-3xl pt-1 md:pt-3 font-bold text-gray-600">Estadio: Caliente</h2>
+                    <div class="flex justify-center py-8">
+                      <img src="/pics/img/Logo-Xolos-Red.png" alt="" class=" w-32 h-40  lg:w-52 lg:h-64 -my-7 md:-my-8 lg:-my-10">
+                      <h1 class="text-center text-xl lg:text-6xl mx-2 md:mx-4 py-10 lg:mx-0 xl:mx-12 lg:py-16 font-bold text-gray-600">VS</h1>
+                      <img src="https://admin.xolos.com.mx/uploads/galeria/equipos/265897114586f423dc17f2.png" alt="" class="w-32 h-32  lg:w-52 lg:h-52">
+                    </div>
+                    <div class=" text-center mt-5 md:mt-0">
+                        <a href="" class="bg-gray-600 hover:bg-gray-300 hover:text-gray-900 hover:border-gray-900 text-white text-lg md:text-2xl px-9 md:px-10 py-3 border-2 rounded-md">BOLETOS</a>
+                        <div class="flex w-auto justify-center pt-8 md:pt-6 h-6">
+                            <i><img src="/pics/img/faceicon.png" alt="facebook" class="h-7 w-7"></i>
+                            <i><img src="/pics/img/instaicon.png" alt="instagram" class="h-7 w-7 mx-1"></i>
+                            <i><img src="/pics/img/twittericon.png" alt="twitter" class="h-7 w-7"></i>
+                        </div>
+                        <p class="pt-11 md:pt-8 text-lg font-bold text-gray-600">12/03/21</p>
+                    </div>
+                    <a href="google.com" class="text-gray-600 absolute left-1 md:left-4 lg:left-10 bottom-0 text-sm md:text-xl font-bold underline bg-gray-200 rounded-lg">CALENDARIO</a>
+                    <a href="google.com" class="text-gray-600 absolute right-1 md:right-4 lg:right-10 bottom-0 text-sm md:text-xl font-bold underline bg-gray-200 rounded-lg">MINUTO A MINUTO</a>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev lg:bg-gray-200 rounded-lg h-16 w-10" style="color: slategrey;"></div>
+                <div class="swiper-button-next lg:bg-gray-200 rounded-lg h-16 w-10 " style="color: slategrey;"></div>
+            </div>
+       </div>
+       <!--FINAL CALENDARIO-->
+     </div>
+
+     <div class=" w-80 md:w-96 h-16  bg-black text-4xl mx-auto mb-5 -mt-16 md:-mt-10">
+        <h1 class="text-white text-center pt-3 font-semibold">NUESTRO PLANTEL</h1>
+      </div>
+
+     <!-- SLIDER JUGADORES -->
+     <div class=" w-auto h-auto mx-0 md:mx-10 border-2">
+        <div class="glider overflow-hidden">
+            <div class="text-center grid justify-items-center">
+                <div class="h-72 w-72 lg:h-72 lg:w-72 xl:h-96 xl:w-96 rounded-full bg-center bg-cover" style="background-image: url(/pics/img/pavez.png);"></div>
+                <div class="flex max-h-48 w-80">
+                    <p class="text-8xl ml-10 text-red-600 font-bold">8</p>
+                    <p class=" p-0 m-0 text-4xl pr-10 font-bold text-black mt-3">ESTEBAN PAVEZ</p>
+                </div>
+            </div>
+            <div class="text-center grid justify-items-center">
+                <div class="h-72 w-72 lg:h-72 lg:w-72 xl:h-96 xl:w-96 rounded-full bg-center bg-cover" style="background-image: url(/pics/img/terceroi.png);"></div>
+                <div class="flex max-h-48 w-80">
+                    <p class="text-8xl ml-10 text-red-600 font-bold">10</p>
+                    <p class=" p-0 m-0 text-4xl pr-10 font-bold text-black mt-3">EDUARDO TERCERO</p>
+                </div>
+            </div>
+            <div class="text-center grid justify-items-center">
+                <div class="h-72 w-72 lg:h-72 lg:w-72 xl:h-96 xl:w-96 rounded-full bg-center bg-cover" style="background-image: url(/pics/img/junior.png);"></div>
+                <div class="flex max-h-48 w-80">
+                    <p class="text-8xl ml-10 text-red-600 font-bold">13</p>
+                    <p class=" p-0 m-0 text-4xl pr-10 font-bold text-black mt-3">JUNIOR SORNOZA</p>
+                </div>
+            </div>
+            <div class="text-center grid justify-items-center">
+                <div class="h-72 w-72 lg:h-72 lg:w-72 xl:h-96 xl:w-96 rounded-full bg-center bg-cover" style="background-image: url(/pics/img/pavez.png);"></div>
+                <div class="flex max-h-48 w-80">
+                    <p class="text-8xl ml-10 text-red-600 font-bold">10</p>
+                    <p class=" p-0 m-0 text-4xl pr-10 font-bold text-black mt-3">EDUARDO TERCERO</p>
+                </div>
+            </div>
+            <div class="text-center grid justify-items-center">
+                <div class="h-72 w-72 lg:h-72 lg:w-72 xl:h-96 xl:w-96 rounded-full bg-center bg-cover" style="background-image: url(/pics/img/terceroi.png);"></div>
+                <div class="flex max-h-48 w-80">
+                    <p class="text-8xl ml-10 text-red-600 font-bold">10</p>
+                    <p class=" p-0 m-0 text-4xl pr-10 font-bold text-black mt-3">EDUARDO TERCERO</p>
+                </div>
+            </div>
+            <div class="text-center grid justify-items-center">
+                <div class="h-72 w-72 lg:h-72 lg:w-72 xl:h-96 xl:w-96 rounded-full bg-center bg-cover" style="background-image: url(/pics/img/junior.png);"></div>
+                <div class="flex max-h-48 w-80">
+                    <p class="text-8xl ml-10 text-red-600 font-bold">10</p>
+                    <p class=" p-0 m-0 text-4xl pr-10 font-bold text-black mt-3">EDUARDO TERCERO</p>
+                </div>
+            </div>
+            </div>
+          <div role="tablist" class="dots mt-4"></div>
+     </div>
+     
+     <!-- END S.JUGADORES -->
+
+<!-- splide2 -->
+
+<!-- end splide2 -->
+
+     <div class="w-52 h-16 md:w-60 bg-red-600 text-4xl mx-auto mt-10 mb-5">
+        <h1 class="text-white text-center pt-2.5 font-semibold">GALERIA</h1>
+      </div>
+
+     <!-- GALERIA -->
+     <div class="w-auto h-auto mx-5 md:mx-10">
+     <div class=" w-auto h-auto  bg-gray-200 grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-0 pb-0 mb-0">
+         <div class="md:row-span-2 md:col-span-2 border-b-4 border-gray-200 md:border-0">
+            <img src="https://admin.xolos.com.mx/uploads/galeria/noticias/10885132126122c5bfdbaf7.jpg" alt="">
+         </div>
+         <div class="col-span-1 row-span-1 border-b-4 border-gray-200 md:border-0">
+            <img src="https://admin.xolos.com.mx/uploads/galeria/noticias/132438124861294808a21df.jpg" alt="">
+         </div>
+         <div class="col-span-1 row-span-1 border-b-4 border-gray-200 md:border-0">
+            <img src="/pics/img/xolos1.jpg" alt="" class="">
+         </div>
+     </div>
+     <div class="w-auto h-auto grid grid-cols-1 md:grid-cols-2 pt-0 mt-0 ">
+        <div class="md:col-span-1 border-b-4 border-gray-200 md:border-0">
+            <img src="https://admin.xolos.com.mx/uploads/galeria/noticias/10571358096122c152a4d83.jpg" alt="">
+        </div>
+        <div class="md:col-span-1 border-b-4 border-gray-200 md:border-0">
+            <img src="https://admin.xolos.com.mx/uploads/galeria/noticias/748330652612949e60cba3.jpg" alt="">
+        </div>
+     </div>
+    </div>
+    <!-- FIN DE GALERIA -->
+
+    <div class="w-auto h-auto m-auto md:mx-10 grid grid-cols-1 lg:grid-cols-3 pt-10">
+        <div class="col-span-1 mb-5">
+            <div class="h-16 w-80 bg-red-600 text-center py-3 mb-6 mx-auto">
+                <h1 class="text-white text-3xl font-semibold">
+                    CENTRO DE INICIACION
+                </h1>
+            </div>
+            <div class="h-80 w-80 md:h-96 md:w-96 lg:h-72 lg:w-72 xl:h-96 xl:w-96 mx-auto ">
+                <img src="/pics/img/itnento2.png" alt="" class="rounded-full h-full w-full">
+            </div>
+        </div>
+        <div class=" col-span-1 mb-5">
+            <div class="h-16 w-80 bg-red-600 text-center py-3 mb-6 mx-auto">
+                <h1 class="text-white text-3xl font-semibold">
+                    INSCRIBE A TU EQUIPO
+                </h1>
+            </div>
+            <div class="h-80 w-80 md:h-96 md:w-96 lg:h-72 lg:w-72 xl:h-96 xl:w-96 mx-auto">
+                <img src="/pics/img/CIX.png" alt="" class="rounded-full h-full w-full">
+            </div>
+        </div>
+        <div class=" col-span-1 mb-5">
+            <div class="h-16 w-80 bg-red-600 text-center py-3 mb-6 mx-auto">
+                <h1 class="text-white text-3xl font-semibold">
+                    DESCARGA LA XOLOAPP
+                </h1>
+            </div>
+            <div class="h-80 w-80 md:h-96 md:w-96 lg:h-72 lg:w-72 xl:h-96 xl:w-96 mx-auto">
+                <img src="/pics/img/XOLOAPP.png" alt="" class="rounded-full h-full w-full">
+            </div>
+        </div>
     </div>
 
+<<<<<<< Updated upstream
+=======
+    <div class="w-auto h-28 md:w-auto md:h-72 mx-5 md:mx-10 mb-3 md:mb-6 bg-cover bg-center" style="background-image: url(https://xolos.com.mx/bundles/frontend/images/xoloshop_1280X291.jpg);">
+    </div>
+
+    <div class=" w-auto h-auto md:h-72 mx-5 md:mx-8 bg-red-600 mb-5 pb-8 pt-2 px-5 xl:py-14  md:py-14 items-center justify-center text-center">
+        <h1 class="text-center text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white ">SUBSCRIBETE AL NEWSLETTER DE XOLOS</h1>
+        <h3 class="text-center text-xl md:text-2xl text-white mb-5 mt-3">Susbribete para recibir infomarcion exclusiva del equpo mas perron!</h3>
+        <div class="flex justify-center items-center">
+        <a href="" role="button" class="bg-black hover:bg-red-600 flex text-white text-lg md:text-lg px-2 md:px-6  py-5 border-2 rounded-lg">REGISTRATE CON <img src="/pics/img/facebook-circular-logo.png" alt="" class="ml-2 h-7 w-7"></a>  
+        </div>
+    </div>
+
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/js/splide.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="/js/app2.js"></script>
+    <script src="https://kit.fontawesome.com/c4db48404f.js" crossorigin="anonymous"></script>
+
+
+
+>>>>>>> Stashed changes
 {% endblock %}

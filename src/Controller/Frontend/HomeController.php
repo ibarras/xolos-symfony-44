@@ -56,7 +56,7 @@ class HomeController extends AbstractController
          */
         $jugadores = $jugadoresRepository->getPlayers(true, IcConfig::CATEGORIA_NOTICIA_PRIMER_EQUIPO);
 
-        dump($noticias);
+        dump($jugadores);
 
         return $this->render('frontend/home/index.html.twig',
             [
@@ -113,5 +113,13 @@ class HomeController extends AbstractController
         );
 
         return $this->render('frontend/home/list.html.twig', ['pagination' => $all]);
+    }
+    /**
+     * @Route("/show", name="frontend_show")
+     */
+    public function show() {
+
+        return $this->render('frontend/home/show.html.twig',);
+
     }
 }
