@@ -69,25 +69,27 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/show", name="frontend_show")
+     * @Route("/show/{post}", name="frontend_show")
      */
 
     public function showPost(IcTraduccionRepository $repository, Request $request): Response
     {
-        $traduccion = $repository->find($request->get('parameter'));
 
-        if(!$traduccion)
-            return $this->createNotFoundException('Noticia no encontrada.');
+        $traduccion = $repository->find($request->get('post'));
+
+            if (!$traduccion)
+                return $this->createNotFoundException('Noticia no encontrada.');
 
             return $this->render('frontend/home/show.html.twig',
-                    [
-                        'noticia'      => $traduccion,
-                    ]
-                );
+                [
+                    'noticia' => $traduccion,
+                ]
+            );
+
     }
 
     /**
-     * @Route("/list", name="frontend_list")
+     * @Route("/list/{category}", name="frontend_list")
      */
 
     public function listPostByCategory(IcTraduccionRepository $traduccionRepository, PaginatorInterface $paginator, Request $request): Response

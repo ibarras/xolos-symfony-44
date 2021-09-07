@@ -19,21 +19,22 @@ security:
             security: false
 #### login form ####
 
-#        main:
-#            anonymous: true
-#            pattern: ^/*
-#            form_login:
-#                login_path: /login
-#                check_path: /login
-#                default_target_path: procesos_inicio
-#                provider: my_provider
-#                csrf_token_generator: security.csrf.token_manager
-#            logout:
-#                path: app_logout
-#                target: /login
-#            guard:
-#                authenticators:
-#                    - App\Security\LoginFormAuthenticator
+        main:
+            anonymous: true
+            pattern: ^/*
+            form_login:
+                login_path: /login
+                check_path: /login
+                default_target_path: procesos_inicio
+                provider: my_provider
+                csrf_token_generator: security.csrf.token_manager
+            logout:
+                path: app_logout
+                target: /login
+            guard:
+                authenticators:
+                    - App\Security\LoginFromAuthenticator
+
 
 #### end login form  ####
 
@@ -65,14 +66,15 @@ security:
 #### end JWT Config ####
 
     access_control:
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/api/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin, roles: ROLE_ADMIN }
-        - { path: ^/api,       roles: IS_AUTHENTICATED_FULLY }
+#        - { path: ^/backend/admin/*, role: [ROLE_ADMIN, ROLE_GERENTE, ROLE_DIRECTIVO, ROLE_COORDINADOR] }
+#        - { path: ^/backend/admin/*, role: [ ROLE_USER, ROLE_COORDINADOR, ROLE_PROCESOS ] }
+
 #        - { path: ^/api/*,       roles: [ROLE_FACEBOOK, ROLE_APP, ROLE_USER , ROLE_COORDINADOR] }
 #        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
 #        - { path: ^/autorizacion/*, role: IS_AUTHENTICATED_ANONYMOUSLY }
-#        - { path: ^/admin/*, role: [ROLE_ADMIN, ROLE_GERENTE, ROLE_DIRECTIVO, ROLE_COORDINADOR] }
-#        - { path: ^/admin/*, role: [ ROLE_USER, ROLE_COORDINADOR, ROLE_PROCESOS ] }
+
 #        - { path: ^/*, role: [ROLE_USER, ROLE_COORDINADOR ] }
 
 
