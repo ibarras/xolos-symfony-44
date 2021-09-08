@@ -114,12 +114,4 @@ class HomeController extends AbstractController
 
         return $this->render('frontend/home/list.html.twig', ['pagination' => $all]);
     }
-    /**
-     * @Route("/show", name="frontend_show")
-     */
-    public function show() {
-
-        return $this->render('frontend/home/show.html.twig',);
-
-    }
 }
