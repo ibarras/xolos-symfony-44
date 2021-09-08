@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap" rel="stylesheet">
     <!-- Font awesome -->
     <script src="https://kit.fontawesome.com/490c71ac8a.js" crossorigin="anonymous"></script>
+    
     {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
     {% block stylesheets %}
@@ -36,8 +37,10 @@
             {% endblock %}
 
         {% endblock %}
+
     </main>
 
     {% include 'partials/footer.html.twig' %}
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </body>
 </html>
