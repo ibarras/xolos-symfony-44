@@ -30,7 +30,7 @@ class HomeController extends AbstractController
         /**
          * Metodo para obtener las noticias principales.
          */
-        $noticias = $traduccionRepository->getNews(1, null, IcConfig::LIMITE_NOTICIAS_PORTADA);
+        $noticias = $traduccionRepository->getNews('es', null, IcConfig::LIMITE_NOTICIAS_PORTADA);
 
         /**
          * Tabla Genera.
@@ -56,7 +56,6 @@ class HomeController extends AbstractController
          */
         $jugadores = $jugadoresRepository->getPlayers(true, IcConfig::CATEGORIA_NOTICIA_PRIMER_EQUIPO);
 
-        dump($jugadores);
 
         return $this->render('frontend/home/index.html.twig',
             [
