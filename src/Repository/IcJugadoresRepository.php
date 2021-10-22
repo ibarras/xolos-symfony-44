@@ -20,6 +20,7 @@ class IcJugadoresRepository extends ServiceEntityRepository
         $em = $this->getEntityManager();
         $query = $em->createQuery('  
 				    SELECT j FROM App\Entity\IcJugadores j
+				    JOIN j.idPosicionJugador pj
 					WHERE j.esActivo =:status 
         			AND j.idJugadorCategoria =:categoria
 					ORDER BY j.idPosicionJugador ASC
