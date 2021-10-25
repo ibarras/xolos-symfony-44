@@ -1,0 +1,38 @@
+/* start index styles */
+    @media (min-width: 768px) {
+      .img-splide {
+        clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+      }
+    }
+
+    header{
+        transition: 0.5s ease; 
+    }
+    
+
+    .splide__pagination__page{
+        height: 9px;
+        width: 50px;
+        border-radius: 0px;
+        margin-left: 6px;
+        
+    }
+    .splide__pagination__page.is-active{
+        transform: none;
+    }
+
+    /* @media (max-width: 768px) {
+      .overlay {
+        position: fixed;
+        top: 0px;
+        min-height: 100vh;
+        width: 100%;
+        overflow: auto;
+        
+      }
+    } */
+/* end index styles */
+
+
+
+    

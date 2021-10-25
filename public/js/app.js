@@ -1,44 +1,61 @@
+//slider noticias
 new Splide( '.splide', {
-    type  : 'fade',
-    autoplay: true,
-    rewind: true,
-    pauseOnHover: true,
-    drag: true,
-    arrows: false,
+  type  : 'fade',
+  autoplay: true,
+  rewind: true,
+  pauseOnHover: true,
+  drag: true,
+  arrows: false,
 
- } ).mount(Splide);
+} ).mount(Splide);
 
- //glider
- window.addEventListener('load', function(){
-   new Glider(document.querySelector('.glider'), {
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      draggable: true,
-      dots: '.dots',
-      dragVelocity: 1,
-      responsive: [
-         {
-           // screens greater than >= 775px
-           breakpoint: 768,
-           settings: {
-             // Set to `auto` and provide item width to adjust to viewport
-             slidesToShow: 2,
-             slidesToScroll: 2,
-             dragVelocity: 1,
-           }
-         },
-         {
-           // screens greater than >= 1024px
-           breakpoint: 1024,
-           settings: {
-             slidesToShow: 3,
-             slidesToScroll: 3,
-             dragVelocity: 1,
-           }
-         }
-       ]
-   })
- })
 
+//swiper de jugadores
+        var mySwiper = new Swiper(".mySwiper2", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        },
+      });
+
+
+//swiper calendario partidos
+         var mySwiper = new Swiper('.mySwiper', {
+    // Optional parameters
+    effect: 'fade',
+    fadeEffect: {
+    crossFade: true
+    },
+    loop: true,
+     autoplay: {
+         delay: 8000
+    },
+  
+    // pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
  
 
