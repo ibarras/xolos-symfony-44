@@ -11,7 +11,7 @@
     
 
     .splide__pagination__page{
-        height: 9px;
+        height: 8.5px;
         width: 50px;
         border-radius: 0px;
         margin-left: 6px;
@@ -21,18 +21,266 @@
         transform: none;
     }
 
-    /* @media (max-width: 768px) {
-      .overlay {
-        position: fixed;
-        top: 0px;
-        min-height: 100vh;
-        width: 100%;
-        overflow: auto;
-        
-      }
-    } */
 /* end index styles */
 
+/* estilos de menu */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 
-    
+#menuBlack{
+  z-index: 999;
+  /* position: ; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  box-shadow: 0 5px 25px rgb(0 0 0 / 20%);
+  padding: 0 100px;
+  transition: 0.6s;
+}
+
+#menuBlack .logo{
+  color: #fff;
+  font-size: 1.8em;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+#menuBlack .navigation{
+  position: relative;
+  line-height: 56px;
+  transition: 0.6s;
+  transition-property: line-height;
+}
+
+#menuBlack.sticky .navigation{
+  line-height: 60px;
+}
+
+#menuBlack .navigation .menu{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  user-select: none;
+}
+
+.menu-item > a{
+  color: #fff;
+  font-size: 17px;
+  text-decoration: none;
+  margin: 15px;
+  padding: 25px 0;
+}
+
+.menu-item > a:hover{
+  color: rgba(220, 38, 38, var(--tw-bg-opacity));
+  transition: 0.2s;
+}
+
+.menu-item .sub-menu{
+  position: absolute;
+  background: black;
+  top: 55px;
+  line-height: 35px;
+  list-style: none;
+  box-shadow: 0 5px 25px rgb(0 0 0 / 20%);
+  pointer-events: none;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: 0.4s;
+  transition-property: transform, opacity;
+  white-space: nowrap;
+}
+
+#menuBlack.sticky .menu-item .sub-menu{
+  top: 60px;
+}
+
+.menu-item:hover .sub-menu{
+  pointer-events: all;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.menu-item .sub-menu .sub-item{
+  position: relative;
+  padding: 7px 0;
+  cursor: pointer;
+  box-shadow: inset 0px -30px 5px -30px rgba(255, 255, 255, 0.2);
+}
+
+.menu-item .sub-menu .sub-item a{
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 15px 30px;
+}
+
+.menu-item .sub-menu .sub-item:hover{
+  background: rgba(220, 38, 38, var(--tw-bg-opacity));
+}
+
+
+.more .more-menu{
+  position: absolute;
+  background: #23252B;
+  list-style: none;
+  top: 0;
+  left: 100%;
+  white-space: nowrap;
+  border-radius: 0 8px 8px 8px;
+  overflow: hidden;
+  pointer-events: none;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: 0.3s;
+  transition-property: transform, opacity;
+}
+
+.more:hover .more-menu{
+  pointer-events: all;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.more .more-menu .more-item:hover{
+  background: rgba(220, 38, 38, var(--tw-bg-opacity));
+}
+
+.menu-btn{
+  display: none;
+}
+
+@media (max-width: 1060px){
+
+  #menuBlack{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #menuBlack .navigation .menu{
+    position: fixed;
+    display: block;
+    z-index: 41;
+    --tw-bg-opacity: 1;
+    background-color: rgba(0, 0, 0, var(--tw-bg-opacity));
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    right: -100%;
+    padding: 60px 40px 110px 40px; 
+    visibility: hidden;
+    overflow-y: auto;
+    transition: 0.7s;
+    transition-property: right, visibility;
+  }
+
+  .fixed-position {
+    position: fixed;
+ }
+
+  #menuBlack.sticky .navigation{
+    line-height: 56px;
+  }
+
+  #menuBlack .navigation .menu.active{
+    right: 0;
+    visibility: visible;
+  }
+
+  .menu-item{
+    position: relative;
+  }
+
+  .menu-item .sub-menu{
+    opacity: 1;
+    position: relative;
+    top: 0;
+    transform: translateX(1px);
+    background: rgba(220, 38, 38, var(--tw-bg-opacity));
+    border-radius: 10px;
+    overflow: hidden;
+    display: none;
+    margin-left: 20px;
+    padding-left: 10px;
+  }
+
+  #menuBlack.sticky .menu-item .sub-menu{
+    top: 0;
+  }
+
+  .menu-item:hover .sub-menu{
+    transform: translateX(0px);
+  }
+
+  .menu-item .sub-menu .sub-item{
+    box-shadow: none;
+  }
+
+
+  .more .more-menu{
+    opacity: 1;
+    position: relative;
+    left: 0;
+    transform: translateY(0);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    display: none;
+  }
+
+  .more .more-menu .more-item{
+    box-shadow: none;
+  }
+
+  .more .more-menu .more-item:hover{
+    background: none;
+  }
+
+  .more .more-menu .more-item a{
+    margin-left: 20px;
+  }
+
+  .close-btn{
+    position: absolute;
+    background: url(/pics/img/close.png)no-repeat;
+    width: 40px;
+    height: 40px;
+    background-size: 25px;
+    background-position: center;
+    top: 0;
+    right: 0;
+    margin: 25px;
+    cursor: pointer;
+  }
+
+  .menu-btn{
+    background: url(/pics/img/menu.png)no-repeat;
+    width: 40px;
+    height: 40px;
+    padding-right: 50px;
+    background-size: 30px;
+    background-position: center;
+    cursor: pointer;
+    display: block;
+  }
+
+  #menuBlack{
+    padding: 9px 9px;
+  }
+
+  #menuBlack.sticky{
+    padding: 10px 20px;
+  }
+
+}
