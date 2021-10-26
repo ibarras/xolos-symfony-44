@@ -33,6 +33,13 @@ class IcTorneo
     /**
      * @var string|null
      *
+     * @ORM\Column(name="slug", type="string", length=250, nullable=true)
+     */
+    private $slug;
+
+    /**
+     * @var string|null
+     *
      * @ORM\Column(name="tipo", type="string", length=20, nullable=true)
      */
     private $tipo;
@@ -45,6 +52,22 @@ class IcTorneo
     public function getNombre(): ?string
     {
         return $this->nombre;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param string|null $slug
+     */
+    public function setSlug(?string $slug): void
+    {
+        $this->slug = $slug;
     }
 
     public function setNombre(?string $nombre): self
