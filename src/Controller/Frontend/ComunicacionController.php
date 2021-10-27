@@ -20,13 +20,13 @@ class ComunicacionController extends AbstractController
     public function listPostByCategory(IcTraduccionRepository $traduccionRepository, PaginatorInterface $paginator, Request $request): Response
     {
         $category = $request->get('category');
-
+        
         if(empty($category))
             return $this->createNotFoundException(
                 'La Categoria que busca no existe.'
             );
 
-        $news = $traduccionRepository->getNewsByCategory($category, $locale = 'es', $limit = 10);
+        $news = $traduccionRepository->getNewsByCategory($category, $locale = 'es', $limit = 50);
 
         if(empty($news))
             return $this->createNotFoundException(
@@ -34,16 +34,13 @@ class ComunicacionController extends AbstractController
             );
 
         $all = $paginator->paginate(
-            $news, $request->query->getInt('page', 1), 10
+            $news, $request->query->getInt('page', 1), constant('App\\IcUtils\\IcConfig::LIMITE_NOTICIAS_PAGINADO')
         );
 
         return $this->render('frontend/home/list.html.twig', ['pagination' => $all]);
     }
 
-    /**
-     * @Route("/show/{post}", name="frontend_show")
-     */
-
+    
     public function showPost(IcTraduccionRepository $repository, Request $request): Response
     {
 

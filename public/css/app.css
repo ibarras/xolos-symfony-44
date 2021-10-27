@@ -284,3 +284,28 @@
   }
 
 }
+/*ESTILOS PARA EFECTO ZOOM EN NOTICIAS*/
+.card-zoom:hover .card-zoom-image{
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  }
+  /* card-zoom-image se aplica en la imagen que esta dentro de card-zoom */
+  .card-zoom-image{
+      z-index: 1;
+  }
+
+  
+  .wrap {
+  position:relative;
+  }
+
+  .wrap:before {
+  content:"";
+  position: absolute;
+  bottom:0;
+  left:0;
+  height:60%;
+  width:100%;
+  background: linear-gradient(to bottom, transparent, black);
+  z-index:2;
+  }

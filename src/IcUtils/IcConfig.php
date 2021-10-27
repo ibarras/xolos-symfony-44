@@ -23,7 +23,7 @@ const PRIMER_EQUIPO_FEMENIL				= 6;
     const CATEGORIA_NOTICIAS_EQUIPO_FEMENIL	= 56;
     const EQUIPO_LOCAL						= 33;
     const CATEGORIA_EQUIPO_FEMENIL          = 6;
-    const LIMITE_NOTICIAS_INDEX             = 10;
+    const LIMITE_NOTICIAS_PAGINADO          = 6;
     const LIMITE_NOTICIAS_PORTADA           = 4;
 
     const IC_IMAGENES_EQUIPOS               = 'https://admin.xolos.com.mx/media/cache/80x80/uploads/galeria/equipos/';

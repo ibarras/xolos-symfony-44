@@ -1,30 +1,54 @@
 
+{% extends 'base.html.twig' %}
+
+{% block content %}
 
 
-{# total items count #}
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 lg:grid-rows-4 h-auto w-auto gap-5 lg:mx-10 m-5 pt-28">
 
-<div class="count">
-    {{ pagination.getTotalItemCount }}
-</div>
-<table>
-    <tr>
-        {# sorting of properties based on query components #}
-        <th>{{ knp_pagination_sortable(pagination, 'Id', 'a.id') }}</th>
-        <th{% if pagination.isSorted('a.Title') %} class="sorted"{% endif %}>
-            {{ knp_pagination_sortable(pagination, 'Title', 'a.title') }}
-        </th>
-    </tr>
+    {% for noticia in pagination %}
 
-    {# table body #}
-    {% for article in pagination %}
-        <tr {% if loop.index is odd %}class="color"{% endif %}>
-            <td>{{ article.id }}</td>
-            <td>{{ article.titulo }}</td>
-            <td>{{ article.creado | date('Y-m-d') }}, {{ article.creado | date('H:i:s') }}</td>
-        </tr>
+    {% if (loop.index == 1) or (loop.index == 5) %}
+
+        <div class=" bg-black h-80 lg:h-auto col-span-2 row-span-2 card-zoom w-auto overflow-hidden rounded-md">
+            <a href="{{ path('frontend_news', {'post': noticia.id}) }}">
+                <div class=" wrap absolute w-full h-full bg-gradient-to-t from-black via-transparent to-transparent">
+                    <img class="card-zoom-image absolute w-full h-full duration-1000 transform bg-center bg-cover object-cover" src="https://admin.xolos.com.mx/uploads/galeria/noticias/{{noticia.imagenPrincipal}}" alt="">
+                    <span class="absolute top-0 right-0 bg-red-600 text-white h-7 w-28 text-center rounded-bl-md py-0.5" style="z-index: 29;">{{ noticia.creado | date('Y-m-d') }}</span>
+                    <h1 class="text-3xl lg:text-4xl  text-white absolute bottom-4 left-3 font-light" style="z-index: 29;">{{ noticia.titulo }}</h1>
+                </div>
+            </a>
+        </div>
+        
+    {% else  %}
+
+        <div class="bg-black  col-span-2 row-span-1 h-80 card-zoom w-auto overflow-hidden rounded-md">
+            <a href="{{ path('frontend_news', {'post': noticia.id}) }}">
+                <div class=" wrap w-full absolute h-full bg-gradient-to-t from-black via-transparent to-transparent">
+                    <img class="card-zoom-image w-full h-full duration-1000 transform object-cover" src="https://admin.xolos.com.mx/uploads/galeria/noticias/{{noticia.imagenPrincipal}}" alt="">
+                    <span class="absolute  top-0 right-0 bg-red-600 text-white h-7 w-28 text-center rounded-bl-md py-0.5" style="z-index: 29;">{{ noticia.creado | date('Y-m-d') }}</span>
+                    <h1 class="text-3xl  text-white absolute bottom-4 left-3 font-light" style="z-index: 29;">{{ noticia.titulo }}</h1>
+                </div>
+            </a>
+        </div>
+
+
+        {% endif %}
+
     {% endfor %}
-</table>
-{# display navigation #}
-<div class="navigation">
-    {{ knp_pagination_render(pagination) }}
-</div>
+
+    </div>
+
+    {# display navigation #}
+    <div class="navigation">
+            {{ knp_pagination_render(pagination) }}
+    </div>
+
+    <button type="button" onclick="javascript:window.scrollTo(0, 0)" id="js_up" class="h-12 w-12 rounded-full text-sm z-20 bg-black text-white fixed bottom-3 right-3"><i class="fas fa-chevron-up fa-2x"></i></button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
+
+
+
+{% endblock %}
