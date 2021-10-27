@@ -19,6 +19,9 @@ class DeportivoController extends AbstractController
 
         $players = $jugadoresRepository->getPlayers($category);
 
+        if(!$players)
+            throw $this->createNotFoundException('No hay jugadores en la categoria solicitada');
+
             return $this->render('frontend/comunicacion/players.html.twig', [
                 'players' => $players,
             ]);

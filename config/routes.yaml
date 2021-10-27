@@ -7,3 +7,16 @@ api_login_check:
 
 procesos_logout:
     path: /logout
+
+#
+# Definicion de Rutas Frontend
+#
+#
+
+frontend_news:
+    path:       /clubTijuana/{post}
+    controller: App\Controller\Frontend\ComunicacionController:showPost
+
+frontend_news_category:
+    path:       /clubTijuana/noticias/{category}
+    controller: App\Controller\Frontend\ComunicacionController:listPostByCategory
