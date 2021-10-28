@@ -1,0 +1,151 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+      {# Portada #}
+<div class="w-full mx-auto bg-black flex justify-center">
+    <div class="w-full mx-auto mt-20 bg-black bg-no-repea bg-top bg-cover text-center flex justify-center filter brightness-50" style="background-image: url(https://as01.epimg.net/mexico/imagenes/2020/07/15/reportajes/1594821907_102383_1594853920_noticia_normal.jpg); height: 90vh;"></div>
+      <p class="text-2xl md:text-4xl lg:text-7xl text text-gray-200 m-auto filter-none absolute top-96 left-50 font-extrabold underline"> PLANTEL TORNEO CLAUSURA 2021 </p>
+</div>
+
+<div class=" h-2 w-auto bg-red-600"></div>
+
+
+<div class="bg-black mt-6 md:mt-10 mb-0 h-16 w-9/12 md:w-3/12 flex justify-center mx-auto border-b-8 border-l-4 border-gray-300">
+    <h1 class="text-white text-4xl md:text-4xl m-auto font-semibold"> DEFENSAS</h1>
+</div>
+
+<div class="swiper mySwiper2 w-full mt-14 mb-10 px-7" style="height: 490px;">
+    <div class="swiper-wrapper ">
+
+        {% for key, jugador in jugadores %}
+
+            {% if jugadores[key].idPosicionJugador.idJugadorPosicion == 2  %}
+
+                  {{include('partials/jugadores.html.twig', {jugadores:'jugadores'})}}
+
+              {% endif %}
+
+       {% endfor %}
+
+    </div>
+</div>
+
+<div class=" h-2 w-auto mx-10 md:mx-18 xl:mx-32 bg-black flex justify-center"><img src="https://xolos.com.mx/bundles/frontend/images/logo_new.png" alt="" class="h-10 w-10 -mt-4"></div>
+<div class="h-1 w-auto mx-16 md:mx-24 xl:mx-48 bg-red-600"></div>
+
+
+<div class="bg-black mt-6 md:mt-10 mb-0 h-16 w-9/12 md:w-3/12 flex justify-center mx-auto border-b-8 border-l-4 border-gray-300">
+    <h1 class="text-white text-4xl md:text-4xl m-auto font-semibold"> MEDIOS </h1>
+</div>
+
+<div class="swiper mySwiper2 w-full mt-14 mb-10 px-7" style="height: 490px;">
+    <div class="swiper-wrapper ">
+
+        {% for key, jugador in jugadores %}
+
+            {% if jugadores[key].idPosicionJugador.idJugadorPosicion == 3  %}
+
+                  {{include('partials/jugadores.html.twig', {jugadores:'jugadores'})}}
+
+              {% endif %}
+
+       {% endfor %}
+
+    </div>
+</div>
+
+<div class=" h-2 w-auto mx-10 md:mx-18 xl:mx-32 bg-black flex justify-center"><img src="https://xolos.com.mx/bundles/frontend/images/logo_new.png" alt="" class="h-10 w-10 -mt-4"></div>
+<div class="h-1 w-auto mx-16 md:mx-24 xl:mx-48 bg-red-600"></div>
+
+
+<div class="bg-black mt-6 md:mt-10 mb-0 h-16 w-9/12 md:w-3/12 flex justify-center mx-auto border-b-8 border-l-4 border-gray-300">
+    <h1 class="text-white text-4xl md:text-4xl m-auto font-semibold"> DELANTEROS</h1>
+</div>
+
+<div class="swiper mySwiper2 w-full mt-14 mb-10 px-7" style="height: 490px;">
+    <div class="swiper-wrapper ">
+
+        {% for key, jugador in jugadores %}
+
+            {% if jugadores[key].idPosicionJugador.idJugadorPosicion == 4  %}
+
+                  {{include('partials/jugadores.html.twig', {jugadores:'jugadores'})}}
+
+              {% endif %}
+
+       {% endfor %}
+
+    </div>
+</div>
+
+<div class=" h-2 w-auto mx-10 md:mx-18 xl:mx-32 bg-black flex justify-center"><img src="https://xolos.com.mx/bundles/frontend/images/logo_new.png" alt="" class="h-10 w-10 -mt-4"></div>
+<div class="h-1 w-auto mx-16 md:mx-24 xl:mx-48 bg-red-600"></div>
+
+
+
+    <div class="relative h-16 mt-20  md:mb-2">
+        <div class="bg-black mt-6 md:mt-10 mb-0 h-16 w-9/12 md:w-3/12 flex justify-center mx-auto border-b-8 border-l-4 border-gray-300">
+            <h1 class="text-white text-4xl md:text-4xl m-auto font-semibold">PORTEROS</h1>
+        </div>
+    </div>
+
+    <div class="w-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-5 lg:mx-16 lx:mx-36 mt-10 mb-14 porteros">
+
+        {% for jugador in jugadores %}
+
+
+
+            {% if jugador.idPosicionJugador.descripcion == "Portero" %}
+
+
+            <div class=" w-full h-full object-cover mb-16 md:mb-8">
+                <div class="text-center grid justify-items-center">
+                    <div class="h-80 w-80 md:h-72 md:w-72 xl:h-80 xl:w-80 bg-center bg-cover rounded-full" style="background-image: url({{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_JUGADORES')}}{{jugador.fotografia}});"></div>
+                    <div class="flex max-h-48 w-80">
+                        <p class="text-8xl ml-10 text-red-600 font-bold">{{jugador.numero}}</p>
+                        <p class="pl-6 m-0 text-4xl pr-10 font-bold text-black mt-3">{{jugador.nombre}}</p>
+                    </div>
+                </div>
+            </div>
+
+            {% endif %}
+
+        {% endfor %}
+
+    </div>
+
+    <div class=" h-2 w-auto bg-red-600"></div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+
+        //swiper de jugadores
+        var mySwiper = new Swiper(".mySwiper2", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        breakpoints: {
+          699: {
+            slidesPerView: 2,
+
+          },
+          1020: {
+            slidesPerView: 3,
+          },
+          1435: {
+            slidesPerView: 4,
+            spaceBetween: 10,
+          },
+        },
+      });
+
+    </script>
+
+{% endblock %}
