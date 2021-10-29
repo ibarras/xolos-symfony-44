@@ -13,10 +13,16 @@ procesos_logout:
 #
 #
 
+
+
 frontend_news:
     path:       /clubTijuana/{post}
     controller: App\Controller\Frontend\ComunicacionController:showPost
 
 frontend_news_category:
-    path:       /clubTijuana/noticias/{category}
+    path:       /club-tijuana/noticias/{category}
     controller: App\Controller\Frontend\ComunicacionController:listPostByCategory
+
+frontend_players_category:
+    path:       /club-tijuana/jugadores/{category}
+    controller: App\Controller\Frontend\DeportivoController:listPlayersByCategory
