@@ -103,6 +103,22 @@ class IcCalendarioRepository extends ServiceEntityRepository
         return $query->getResult();
     }
 
-
     
+    /**
+     * Metodo para obtener las acciones de un <partido> en particular
+     * @param integer $partido
+     * @return object
+     */
+    public function getAccionesDelPartido($id_jornada, $_locale)
+    {
+        $em = $this->getEntityManager();
+        $query = $em->createQuery('
+				SELECT a FROM FrontendBundle:IcAccion a
+					WHERE a.idJornada = :id
+					AND   a.idLocale  = :locale
+					ORDER BY a.id DESC')->setParameter('id', $id_jornada)->setParameter('locale', $_locale);
+
+        return $query->getResult();
+    }
+
 }
