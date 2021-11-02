@@ -58,8 +58,18 @@ class DeportivoController extends AbstractController
                                     'schedule' => $current,
                                     'calendario' => $torneo
         ]);
+    }
 
+    public function getCoach(Request $request, IcCuerpoTecnicoRepository $repository): Response
+    {
+        $co = $repository->getCuerpoTecnico(true);
 
+        if(!$co)
+            throw $this->createNotFoundException('La informacion que busca no existe');
+
+        return $this->render('frontend/deportivo/coach.html.twig', [
+            'coach' => $co
+        ]);
     }
 
 }
