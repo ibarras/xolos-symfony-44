@@ -13,7 +13,9 @@ procesos_logout:
 #
 #
 
-
+frontend_home:
+    path: /
+    controller: App\Controller\Frontend\HomeController:index
 
 frontend_news:
     path:       /clubTijuana/{post}
@@ -26,3 +28,8 @@ frontend_news_category:
 frontend_players_category:
     path:       /club-tijuana/jugadores/{category}
     controller: App\Controller\Frontend\DeportivoController:listPlayersByCategory
+
+frontend_schedule:
+    path:       /club-tijuana/calendario/{calendario}
+    controller: App\Controller\Frontend\DeportivoController:getSchedule
+

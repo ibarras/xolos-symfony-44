@@ -51,14 +51,15 @@ class DeportivoController extends AbstractController
         $torneo     = $torneoRepository->getTipoTorneo($tipoTorneo);
         if(!$torneo)
             throw $this->createNotFoundException('Calendario no existe');
-
+            
         $current    = $calendarioRepository->getCalendarioPorTorneo($torneo->getId());
 
         return $this->render('frontend/deportivo/schedule.html.twig', [
-                                    'schedule' => $current
-
+                                    'schedule' => $current,
+                                    'calendario' => $torneo
         ]);
 
 
     }
+
 }

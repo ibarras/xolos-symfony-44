@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <div class="h-32 md:h-40 "></div>
+    <h1 class="text-center text-2xl md:text-4xl font-semibold text-gray-800 underline">{{calendario.nombre}}</h1>
+    
+<!-- Contenedor Principal -->
+    <div class="bg-red-600 mx-2 md:mx-10 lg:mx-20 xl:mx-44 w-auto h-auto pt-1 md:pt-3 pb-5 px-2 md:px-5 mt-5 md:mt-10 mb-10 rounded-md">
+
+        <!-- Encabezado Calendario -->
+
+        {% for partidos in schedule %}
+
+          <!-- Escudos, Marcador y Jornada -->
+        <div class="h-72 w-full bg-gray-200 border-2 border-gray-400 rounded-md pt-4 md:pt-0 mt-2">
+            <div class="flex justify-between px-2 md:px-10 lg:px-20">
+                <div class="h-28 w-28 md:h-36 md:w-36 lg:h-52 lg:w-52 lg:p-3">
+                    <img src="{{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_EQUIPOS')}}{{ partidos.idEquipo.logo }}" alt="" class="h-full pt-5 lg:pt-0 mx-auto">
+                </div>
+                <div class="p-5 text-center">
+                    <h1 class="text-lg md:text-3xl text-gray-600">{{partidos.descripcion}}</h1>
+                    <div class="flex justify-center mt-5 gap-6 md:gap-16">
+                        <p class="text-3xl md:text-5xl lg:text-7xl text-gray-600">{{ partidos.equipoLocalResultado }}</p>
+                        <p class="text-3xl md:text-5xl lg:text-7xl text-gray-600">-</p>
+                        <p class="text-3xl md:text-5xl lg:text-7xl text-gray-600">{{ partidos.equipoVisitanteResultado }}</p>
+                    </div>
+                </div>
+                <div class="h-28 w-28 md:h-36 md:w-36 lg:h-52 lg:w-52 lg:p-3">
+                    <img src="{{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_EQUIPOS')}}{{ partidos.idEquipoVisitante.logo }}" alt="" class="h-full pt-5 lg:pt-0">
+                </div>
+            </div>
+            <!-- Botones -->
+            <div class="flex justify-center gap-5 pt-6 lg:pt-0">
+                <button class="h-12 w-32 md:w-36 text-lg md:text-xl bg-red-600 text-white border-2 border-gray-400 rounded-xl flex justify-center pt-2">Boletos<img src="/pics/img/shop.png" alt="" class="ml-2 mt-1 h-5 w-5"></button>
+                <button class="h-12 w-32 md:w-36 text-lg md:text-xl bg-red-600 text-white border-2 border-gray-400 rounded-xl">Minuto a Minuto</button>
+            </div>
+            <!-- Estadio y Fecha -->
+            <div class="flex justify-between px-5 pt-10 lg:pt-0">
+                <p class="text-lg md:text-xl text-gray-600">ESTADIO: {{ partidos.idEquipo.estadio }}</p>
+                <p class="text-lg md:text-xl text-gray-600">{{ partidos.creado|date("d/m/Y") }}</p>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+{% endblock %}
