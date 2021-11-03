@@ -7,6 +7,7 @@ use App\Entity\IcTraduccion;
 use App\Repository\IcCalendarioRepository;
 use App\Repository\IcJugadoresRepository;
 use App\Repository\IcTorneoRepository;
+use App\Repository\IcCuerpoTecnicoRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -60,12 +61,21 @@ class DeportivoController extends AbstractController
         ]);
     }
 
-    public function getCoach(Request $request, IcCuerpoTecnicoRepository $repository): Response
+
+    public function getCoach(Request $request, IcCuerpoTecnicoRepository $cuerpoTecnicoRepository): Response
     {
-        $co = $repository->getCuerpoTecnico(true);
+        $co = $cuerpoTecnicoRepository->getCuerpoTecnico(1);
 
         if(!$co)
             throw $this->createNotFoundException('La informacion que busca no existe');
+
+        return $this->render('frontend/deportivo/coach.html.twig', [
+            'coach' => $co
+        ]);
+    }
+
+    public function getJuniorLeague(Request $request, IcJugadoresRepository $repository): Response
+    {
 
         return $this->render('frontend/deportivo/coach.html.twig', [
             'coach' => $co

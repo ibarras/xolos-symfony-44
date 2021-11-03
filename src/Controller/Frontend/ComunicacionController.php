@@ -3,6 +3,7 @@
 namespace App\Controller\Frontend;
 
 use App\Entity\IcTraduccion;
+use App\IcUtils\IcConfig;
 use App\Repository\IcTraduccionRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -41,7 +42,7 @@ class ComunicacionController extends AbstractController
     }
 
     
-    public function showPost(IcTraduccionRepository $repository, Request $request): Response
+    public function showPost(IcTraduccionRepository $repository, Request $request)
     {
 
         $traduccion = $repository->find($request->get('post'));
@@ -49,9 +50,12 @@ class ComunicacionController extends AbstractController
         if (!$traduccion)
             return $this->createNotFoundException('Noticia no encontrada.');
 
+        $relacion   = $repository->getNews($this->get('session')->get('_locale'), null, IcConfig::LIMITE_NOTICIAS_PORTADA);
+
         return $this->render('frontend/home/show.html.twig',
             [
-                'noticia' => $traduccion,
+                'noticia'  =>  $traduccion,
+                'relacion' => $relacion,
             ]
         );
 
