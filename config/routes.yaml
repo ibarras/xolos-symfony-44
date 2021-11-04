@@ -33,3 +33,7 @@ frontend_schedule:
     path:       /club-tijuana/calendario/{calendario}
     controller: App\Controller\Frontend\DeportivoController:getSchedule
 
+frontend_coach:
+    path:       /club-tijuana/cuerpo-tecnico
+    controller: App\Controller\Frontend\DeportivoController:getCoach
+

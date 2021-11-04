@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+
+<div class="mx-0 lg:mx-10 hauto w-auto p-5 bg-gray-200 mt-36 mb-20 text-center grid grid-cols-1 lg:grid-cols-2 gap-1 lg:gap-10">
+
+    {% for dato in coach %}
+
+        {% if dato.idPosicion.idJugadorPosicion == 5 %}
+
+
+        <div class="mx-auto h-auto w-auto mb-3 lg:mb-0 rounded-md">
+            <img src="https://admin.xolos.com.mx/uploads/galeria/tecnico/{{dato.fotografia}}" alt="" class="w-full h-full rounded-md mx-auto bg-center bg-cover object-cover border-2 border-red-600" style="min-height: 500px;">
+        </div>
+
+        <div class="grid grid-cols-1">
+            
+            <h1 class=" text-4xl mb-10 lg:mb-3 mt-5">{{ dato.nombre }}</h1>
+
+            <div class="flex justify-between lg:h-16 md:mt-8 divide-x-2 divide-red-600 mb-12 xl:mb-10 ">
+
+                <div class="text-center flex-1 h-full w-full">
+                    <h1 class="text-lg lg:text-xl">Fecha de nacimiento: </h1>
+                    <p class=" font-thin text-sm md:text-base">{{ dato.fechaDeNacimiento | date('Y-m-d') }}</p>
+                </div>
+        
+                <div class="text-center flex-1 h-full w-full">
+                    <h1 class="text-lg lg:text-xl">Posicion:</h1>
+                    <p class=" font-thin text-sm md:text-base">{{dato.idPosicion.descripcion}}</p>
+                </div>
+        
+                <div class="text-center flex-1 h-full w-full">
+                    <h1 class="text-lg lg:text-xl">Lugar de nacimiento: </h1>
+                    <p class=" font-thin text-sm md:text-base">{{dato.lugarDeNacimiento}}</p>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t-2 border-red-600">
+                <h1 class="text-xl mb-6">Biografia: </h1>
+                <p class="text-justify font-thin text-">{{dato.biografia}}</p>
+            </div>
+
+        </div>
+
+        {% endif %}
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}
