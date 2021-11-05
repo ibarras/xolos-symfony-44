@@ -9,11 +9,10 @@
         transition: 0.5s ease; 
     }
     
-
     .splide__pagination__page{
         height: 8.5px;
         width: 50px;
-        border-radius: 0px;
+        border-radius: 10px;
         margin-left: 6px;
         
     }

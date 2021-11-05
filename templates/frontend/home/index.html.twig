@@ -2,25 +2,38 @@
 
 {% block body %}
     <!-- Nota Principal full screen -->
-    <div class="w-full mb-4">
+    <div class=" h-screen w-auto">
+        <!-- <img src="https://xolos.com.mx/bundles/frontend/images/contacto_estadio.jpg" alt="" class="h-screen w-auto object-cover"> -->
+        <video class="h-screen w-screen object-cover filter brightness-50" muted autoplay loop playsinline data-video="0">
+            <source src="https://www.juventus.com/images/video/upload/t_video_mp4/dev/video/20210816_HERO_NUOVA_DIVISA_28MB.mp4" type="video/mp4">
+        </video>
+        <div class="w-full xl:w-6/12 lg:w-6/12 md:w-8/12 sm:w-11/12 absolute bottom-2 md:bottom-10 left-0 h-52">
+            <h1 class=" text-gray-50 mb-3 md:mb-5 text-3xl mx-5 xl:text-5xl lg:text-4xl md:text-4xl sm:text-3xl mt-5 md:mt-0 " style="text-shadow:3px 3px 10px black;">XOLOS INICIA PRETEMPORADA EN CASA</h1>
+            <div class="flex h-auto w-24 md:w-32 bg-red-600 rounded-md mx-5 justify-center">
+                <a class=" text-gray-50 my-auto text-md xl:text-xl underline p-2" href="https://tailwindui.com/components/marketing/sections/testimonials">LEER MAS</a>
+                <img src="/pics/img/arrow-right.png" alt="" class="h-4 w-4 my-auto ">
+            </div>
+        </div>
+    </div>
+    {# <div class="w-full mb-4">
         <video class="filter brightness-50" loop muted autoplay playsinline data-video="0">
             <source src="https://www.juventus.com/images/video/upload/t_video_mp4/dev/video/20210816_HERO_NUOVA_DIVISA_28MB.mp4" type="video/mp4;codecs=avc1.42E01E, mp4a.40.2">
         </video>
-    </div>
+    </div> #}
     
     <!-- Noticias -->  
 
-   <div class="relative h-36 -mb-14 md:mb-4">
-    <div class="bg-red-600 mt-6 md:mt-12 mb-0 h-16 w-11/12 md:w-6/12 flex justify-center md:absolute right-0 mx-auto md:mx-10 border-b-8 border-l-4 border-gray-300">
-        <h1 class="text-white text-4xl md:text-4xl m-auto font-semibold">NOTICIAS</h1>
-    </div>
+   <div class="h-20 mb-2 md:mb-4">
+        <div class="bg-red-600 mt-10 md:mt-12 mb-0 h-12 md:h-14 w-4/12 md:w-48 flex justify-center mx-auto rounded-md">
+            <h1 class="text-white text-2xl md:text-3xl m-auto font-semibold">NOTICIAS</h1>
+        </div>
     </div>
 
     <!-- CARROUSEL CON SPLIDE JS -->
 
 
-<div class="splide px-5 md:px-10" style="height: 430px;">
-      <div class="splide__track h-96" >
+<div class="splide px-5 md:px-10" style="height: 450px;">
+      <div class="splide__track h-96 rounded-md" >
         <ul class="splide__list h-96" >
 
                 {% for noticia in noticias %}
@@ -32,9 +45,9 @@
                 <img class="img-splide h-full w-full object-cover bg-center md:h-full inset-0 transform  hover:scale-105 transition duration-300" src="https://admin.xolos.com.mx/uploads/galeria/noticias/{{ noticia.imagenPrincipal }}" alt="Man looking at item at a store">
             </div>
               <div class=" h-full px-3 pt-2 md:pt-8 xl:pt-24 bg-gray-100 md:h-96 md:w-5/12">
-                <a href="Noticia.html" class=" mt-1 md:text-4xl leading-tight text-gray-600 ">{{noticia.titulo}}</a>
+                <a href="Noticia.html" class=" mt-1 text-xl md:text-4xl text-gray-700 ">{{noticia.titulo}}</a>
                 <p class="mt-2 text-gray-500 md:mt-5 lg:mt-10 md:text-2xl">{{noticia.intro}}</p>
-                <a href="Noticia.html" class="absolute bottom-2 right-2 md:right-6 lg:text-xl text-gray-600 hover:underline ">LEER NOTICIA COMPLETA ></a>       
+                <a href="#" class="absolute bottom-2 right-2 md:right-6 lg:text-xl text-gray-600 hover:underline ">LEER NOTICIA COMPLETA ></a>       
               </div>
             </div>
           </li>
@@ -47,9 +60,9 @@
 
     <!-- videos api YT -->
     
-    <div class="h-28 ">
-        <div class="bg-red-600 mt-5 md:mt-10 mb-0 h-16 w-11/12 md:w-6/12 flex justify-center mx-auto md:mx-10 border-b-8 border-r-4 border-gray-300">
-            <h1 class="text-gray-100 text-4xl md:text-4xl m-auto font-semibold">VIDEOS</h1>
+    <div class="h-20 md:mb-4">
+        <div class="bg-red-600 mt-10 md:mt-12 mb-0 h-12 md:h-14 w-4/12 md:w-48 flex justify-center mx-auto rounded-md">
+            <h1 class="text-white text-2xl md:text-3xl m-auto font-semibold">VIDEOS</h1>
         </div>
     </div>
 
@@ -62,17 +75,17 @@
     {#Seccion de tabla y calendario#}
 </div>
 
-      <div class=" md:flex h-auto w-auto bg-red-600 md:mt-16 pt-7 md:pt-0">
+      <div class=" md:flex h-auto w-auto bg-red-600 mt-18 md:mt-28 pt-7 md:pt-0 pb-18">
         <div class="w-auto md:w-1/2 lg:w-2/5 mx-14 md:mx-10 md:mr-10 md:ml-20">
           <!-- sign -->
-          <div class=" md:w-60 h-16 bg-black text-3xl md:-mt-8 mx-auto">
-            <h1 class="text-white text-center pt-3 font-semibold">TABLA</h1>
+          <div class=" w-40 md:w-44 h-12 md:h-14 bg-black text-2xl md:text-3xl flex justify-center md:-mt-7 mx-auto rounded-md">
+            <h1 class="text-white text-center m-auto font-semibold">TABLA</h1>
           </div>
           <!-- end sign -->
           <!-- empieza tabla -->
           <div class="py-4 min-w-full">
               <div class="-mx-10 md:-mx-10 py-4 overflow-x-auto">
-                  <div class="inline-block min-w-full max-w-full shadow md:rounded-md overflow-hidden">
+                  <div class="inline-block min-w-full max-w-full shadow rounded-md overflow-hidden">
                       <table class="min-w-full leading-normal">
                           <thead>
                               <tr>
@@ -197,10 +210,10 @@
       </div>
       <!--FINAL DE LA TABLA, COMIENZO DE CALENDARIO clases borradas lg:px-14-->
       <div class="w-auto md:w-1/2 lg:w-3/5 bg-red-600 border-red-50 mb-10 pb-10 md:mr-10 md:px-8 mx-5 lg:ml-0 md:pr-5 lg:pr-0"> 
-      <div class=" h-16 w-auto md:w-80 lg:w-96 bg-black text-3xl md:text-3xl  mx-auto mb-8 md:-mt-8">
-        <h1 class="text-white text-center pt-3  font-semibold">PROXIMOS PARTIDOS</h1>
+      <div class=" h-12 md:h-14 w-72 md:w-80 lg:w-96 bg-black text-2xl md:text-3xl flex justify-center mx-auto mb-8 md:-mt-7 rounded-md">
+        <h1 class="text-white text-center m-auto font-semibold">PROXIMOS PARTIDOS</h1>
       </div>
-          <div class="swiper mySwiper w-auto h-auto md:rounded-md" style="height: 545px;">
+          <div class="swiper mySwiper w-auto h-auto rounded-md" style="height: 545px;">
               <!-- Additional required wrapper -->
               <div class="swiper-wrapper w-full bg-cover" style="background-image:url(pics/img/fondo-prox-partidos.jpg)">
                 <!-- Slides -->
@@ -209,8 +222,8 @@
                     
                 
                 <div class="swiper-slide text-center relative">
-                  <h1 class="text-3xl md:text-4xl pt-5 font-bold text-gray-600">{{jornada.descripcion}}</h1>
-                  <h2 class=" text-xl md:text-3xl pt-1 md:pt-3 font-bold text-gray-600">Estadio: {{jornada.idEquipo.estadio}}</h2>
+                  <h1 class="text-3xl md:text-4xl pt-5 text-gray-600">{{jornada.descripcion}}</h1>
+                  <h2 class=" text-xl md:text-3xl pt-1 md:pt-3 font-thin text-gray-600">Estadio: {{jornada.idEquipo.estadio}}</h2>
                   <div class="flex justify-center py-8">
                     
                     <img src="{{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_EQUIPOS')}}{{jornada.idEquipo.logo}}" alt="" class=" w-32 h-32  lg:w-52 lg:h-52">
@@ -218,13 +231,13 @@
                     <img src="{{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_EQUIPOS')}}{{jornada.idEquipoVisitante.logo}}" alt="" class="w-32 h-32  lg:w-52 lg:h-52">
                   </div>
                   <div class=" text-center mt-5 md:mt-0">
-                      <a href="" class="bg-gray-600 hover:bg-gray-300 hover:text-gray-900 hover:border-gray-900 text-white text-lg md:text-2xl px-9 md:px-10 py-3 border-2 rounded-md">BOLETOS</a>
+                      <a href="" class="bg-gray-600 hover:bg-gray-300 hover:text-gray-900 hover:border-gray-900 text-white text-lg md:text-2xl px-9 md:px-10 py-2 border-2 rounded-md">BOLETOS</a>
                       <div class="flex w-auto justify-center pt-8 md:pt-6 h-6">
                           <i><img src="pics/img/faceicon.png" alt="facebook" class="h-7 w-7"></i>
                           <i><img src="pics/img/instaicon.png" alt="instagram" class="h-7 w-7 mx-1"></i>
                           <i><img src="pics/img/twittericon.png" alt="twitter" class="h-7 w-7"></i>
                       </div>
-                      <p class="pt-11 md:pt-8 text-lg font-bold text-gray-600">{{jornada.creado|date("d/m/Y")}}</p>
+                      <p class="pt-11 md:pt-8 text-lg text-gray-600">{{jornada.creado|date("d/m/Y")}}</p>
                   </div>
                   <a href="google.com" class="text-gray-600 absolute left-1 md:left-4 lg:left-10 bottom-0 text-sm md:text-xl font-bold underline bg-gray-200 rounded-lg">CALENDARIO</a>
                   <a href="google.com" class="text-gray-600 absolute right-1 md:right-4 lg:right-10 bottom-0 text-sm md:text-xl font-bold underline bg-gray-200 rounded-lg">MINUTO A MINUTO</a>
@@ -241,8 +254,8 @@
        <!--FINAL CALENDARIO-->
      </div>
 
-    <div class=" w-80 md:w-96 h-16  bg-black text-3xl mx-auto mb-5 -mt-16 md:-mt-10">
-        <h1 class="text-white text-center pt-3 font-semibold">NUESTRO PLANTEL</h1>
+    <div class=" w-80 md:w-96 h-12 md:h-14  bg-black text-2xl md:text-3xl mx-auto flex justify-center mb-5 -mt-16 md:-mt-7 rounded-md">
+        <h1 class="text-white text-center m-auto font-semibold">NUESTRO PLANTEL</h1>
       </div>
 
      <!-- SLIDER JUGADORES -->
@@ -268,9 +281,8 @@
       </div>
      
      <!-- END S.JUGADORES -->
-
-     <div class="w-52 h-16 md:w-60 bg-red-600 text-3xl mx-auto mt-10 lg:mt-20 mb-5">
-        <h1 class="text-white text-center pt-3 font-semibold">GALERIA</h1>
+     <div class="w-4/12 md:w-44 h-12 md:h-14 bg-red-600 mx-auto flex justify-center mt-5 lg:mt-10 lg:mt-20 mb-5 rounded-md">
+        <h1 class="text-white text-center text-2xl md:text-3xl m-auto font-semibold">GALERIA</h1>
       </div>
 
      <!-- GALERIA -->
@@ -280,20 +292,20 @@
             
         {% if loop.index == 1 %}
             
-            <div class=" md:col-span-1 row-span-1  xl:col-span-2 xl:row-span-4 h-80 xl:h-auto xl:w-auto bg-red-400">
-                <img src="https://admin.xolos.com.mx/uploads/galeria/foto_equipo/{{galeria.foto}}" alt="" class=" h-full w-full bg-center bg-cover object-cover">
+            <div class=" md:col-span-1 row-span-1  xl:col-span-2 xl:row-span-4 h-80 xl:h-auto xl:w-auto bg-red-400 rounded-md">
+                <img src="https://admin.xolos.com.mx/uploads/galeria/foto_equipo/{{galeria.foto}}" alt="" class=" h-full w-full bg-center bg-cover object-cover rounded-md">
             </div>
                 
                 {% elseif loop.index == 2 %}
 
-            <div class=" bg-red-400 md:col-span-1 md:row-span-1 xl:row-span-2 xl:col-span-2 h-80 bg-top">
-                <img src="https://admin.xolos.com.mx/uploads/galeria/foto_equipo/{{galeria.foto}}" alt="" class=" h-full w-full bg-center bg-cover object-cover">
+            <div class=" bg-red-400 md:col-span-1 md:row-span-1 xl:row-span-2 xl:col-span-2 h-80 bg-top rounded-md">
+                <img src="https://admin.xolos.com.mx/uploads/galeria/foto_equipo/{{galeria.foto}}" alt="" class=" h-full w-full bg-center bg-cover object-cover rounded-md">
             </div>
 
         {% else  %}
                 
-            <div class=" bg-red-400 md:col-span-1 md:row-span-1 xl:row-span-2 xl:col-span-1 h-80 ">
-                <img src="https://admin.xolos.com.mx/uploads/galeria/foto_equipo/{{galeria.foto}}" alt="" class=" h-full w-full bg-center bg-cover object-cover">
+            <div class=" bg-red-400 md:col-span-1 md:row-span-1 xl:row-span-2 xl:col-span-1 h-80 rounded-md">
+                <img src="https://admin.xolos.com.mx/uploads/galeria/foto_equipo/{{galeria.foto}}" alt="" class=" h-full w-full bg-center bg-cover object-cover rounded-md">
             </div>
 
         {% endif %}
@@ -306,8 +318,8 @@
    
     <div class="w-auto h-auto m-auto md:mx-10 grid grid-cols-1 lg:grid-cols-3 pt-10">
         <div class="col-span-1 mb-5">
-            <div class="h-16 w-80 bg-red-600 text-center py-3 mb-6 mx-auto">
-                <h1 class="text-white text-3xl font-semibold">
+            <div class="h-12 md:h-14 w-64 md:w-80 bg-red-600 text-center flex justify-center mb-6 mx-auto rounded-md">
+                <h1 class="text-white text-2xl md:text-3xl m-auto font-semibold">
                     CENTRO DE INICIACION
                 </h1>
             </div>
@@ -316,8 +328,8 @@
             </div>
         </div>
         <div class=" col-span-1 mb-5">
-            <div class="h-16 w-80 bg-red-600 text-center py-3 mb-6 mx-auto">
-                <h1 class="text-white text-3xl font-semibold">
+            <div class="h-12 md:h-14 w-64 md:w-80 bg-red-600 text-center flex justify-center mb-6 mx-auto rounded-md">
+                <h1 class="text-white text-2xl md:text-3xl m-auto font-semibold">
                     INSCRIBE A TU EQUIPO
                 </h1>
             </div>
@@ -326,8 +338,8 @@
             </div>
         </div>
         <div class=" col-span-1 mb-5">
-            <div class="h-16 w-80 bg-red-600 text-center py-3 mb-6 mx-auto">
-                <h1 class="text-white text-3xl font-semibold">
+            <div class="h-12 md:h-14 w-64 md:w-80 bg-red-600 text-center flex justify-center mb-6 mx-auto rounded-md">
+                <h1 class="text-white text-2xl md:text-3xl m-auto font-semibold">
                     DESCARGA LA XOLOAPP
                 </h1>
             </div>
@@ -337,17 +349,17 @@
         </div>
     </div>
 
-    <div class="w-auto h-28 md:w-auto md:h-72 mx-5 md:mx-10 mb-3 md:mb-6 bg-cover bg-center" style="background-image: url(https://xolos.com.mx/bundles/frontend/images/xoloshop_1280X291.jpg);">
+    <div class="w-auto h-28 md:w-auto md:h-72 mx-5 md:mx-10 mb-3 md:mb-6 bg-cover bg-center rounded-md" style="background-image: url(https://xolos.com.mx/bundles/frontend/images/xoloshop_1280X291.jpg);">
     </div>
 
-    <div class="mb-10 w-auto h-auto md:h-72 mx-5 md:mx-10 bg-cover bg-no-repeat bg-bottom" style="background-image: url(https://cdn.wegow.com/media/venue-media/estadio-caliente/estadio-caliente-1567153491.-1x1780.jpg);">
-        <div class="w-auto h-72 bg-gray-900 bg-opacity-40 items-center justify-center text-center mb-5 pt-2 px-5 xl:py-14 md:py-14">
-        <h1 class="text-center text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white ">SUBSCRIBETE AL NEWSLETTER DE XOLOS</h1>
-        <h3 class="text-center text-xl md:text-2xl text-white mb-5 mt-3">Susbcribete para recibir infomarcion exclusiva del equpo mas perron!</h3>
-        <div class="flex justify-center items-center">
-        <a href="" role="button" class="button bg-black hover:bg-red-600 flex text-white text-lg md:text-lg px-2 md:px-6 py-4  md:py-5 border-2 rounded-lg">REGISTRATE CON <img src="pics/img/facebook-circular-logo.png" alt="" class="ml-2 h-7 w-7 animate-bounce"></a>  
+    <div class="mb-10 w-auto h-auto md:h-72 mx-5 md:mx-10 bg-cover bg-no-repeat bg-bottom rounded-md" style="background-image: url(https://cdn.wegow.com/media/venue-media/estadio-caliente/estadio-caliente-1567153491.-1x1780.jpg);">
+        <div class="w-auto h-72 bg-gray-900 bg-opacity-40 items-center justify-center text-center mb-5 pt-2 px-5 xl:py-14 md:py-14 rounded-md">
+            <h1 class="text-center text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white ">SUBSCRIBETE AL NEWSLETTER DE XOLOS</h1>
+            <h3 class="text-center text-xl md:text-2xl text-white mb-5 mt-3">Susbcribete para recibir infomarcion exclusiva del equpo mas perron!</h3>
+            <div class="flex justify-center items-center">
+            <a href="" role="button" class="button bg-black hover:bg-red-600 flex text-white text-lg md:text-lg px-2 md:px-6 py-4  md:py-5 border-2 rounded-lg">REGISTRATE CON <img src="pics/img/facebook-circular-logo.png" alt="" class="ml-2 h-7 w-7 animate-bounce"></a>  
+            </div>
         </div>
-    </div>
     </div>
 
     <button type="button" onclick="javascript:window.scrollTo(0, 0)" id="js_up" class="h-12 w-12 rounded-full text-sm z-20 bg-black text-white fixed bottom-3 right-3"><i class="fas fa-chevron-up fa-2x"></i></button>
