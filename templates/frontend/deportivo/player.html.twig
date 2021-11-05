@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+     <div class="mx-auto h-24 w-auto mb-3 lg:mb-0 rounded-md lg:pr-14"></div>
+    
+
+<div class="mx-0 lg:mx-10 hauto w-auto p-5 lg:px-20 bg-gray-200 mt-10 text-center grid grid-cols-1 lg:grid-cols-2 gap-1 lg:gap-10">
+
+        <div class="mx-auto h-auto w-auto mb-3 lg:mb-0 rounded-full lg:pr-14">
+            <img src="{{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_JUGADORES')}}{{player.fotografia}}" alt="" class="w-full h-full rounded-xl mx-auto bg-center bg-cover object-cover border-2 border-red-600" style="min-height: 500px; max-height: 500px;">
+        </div>
+
+        <div class="grid grid-cols-1 ">
+
+            <div class="flex justify-center gap-5 mt-5 h-20 mb-14 md:mb-0 ">
+            <h1 class=" text-4xl xl:text-5xl mb-10 lg:mb-3.5 mt-5">{{player.nombre}}</h1>
+            <h1 class=" text-5xl mb-10 lg:mb-3 mt-1 pt-3 h-20 w-20 rounded-full font-light border-2 border-red-600  text-black">{{player.numero}}</h1>
+            </div>
+
+            <div class="flex justify-between lg:h-16 w-full md:mt-8 divide-x-2 divide-red-600 mb-12 md:mb-6 ">
+
+                <div class="text-center flex-1 h-full w-full">
+                    <h1 class="text-lg lg:text-xl">Fecha de nacimiento: </h1>
+                    <p class=" font-thin text-sm md:text-base">{{player.fechaDeNacimiento | date('Y-m-d') }}</p>
+                </div>
+        
+                <div class="text-center flex-1 h-full w-full">
+                    <h1 class="text-lg lg:text-xl">Posicion:</h1>
+                    <p class=" font-thin text-sm md:text-base">{{player.idPosicionJugador.descripcion}}</p>
+                </div>
+        
+                <div class="text-center flex-1 h-full w-full">
+                    <h1 class="text-lg lg:text-xl">Lugar de nacimiento: </h1>
+                    <p class=" font-thin text-sm md:text-base">{{player.lugarDeNacimiento}}</p>
+                </div>
+
+            </div>
+
+            <div class="border-t-2 h-1 border-red-600 mb-10 md:mb-0"></div>
+
+            <div class="flex justify-between lg:h-16 md:mt-6 divide-x-2 divide-red-600 mb-1 xl:mb-10 ">
+
+                <div class="text-center flex-1 h-full w-full">
+                    <h1 class="text-lg lg:text-xl">Estatura: </h1>
+                    <p class=" font-thin text-sm md:text-base">{{player.estatura}}</p>
+                </div>
+        
+                <div class="text-center flex-1 h-full w-full">
+                    <h1 class="text-lg lg:text-xl">Peso:</h1>
+                    <p class=" font-thin text-sm md:text-base">{{player.peso}}</p>
+                </div>
+        
+                <div class="text-center flex-1 h-full w-full">
+                    <h1 class="text-lg lg:text-xl">Redes Sociales: </h1>
+                    <a href=""><img src="/pics/img/twitter(3).png" alt="" class="h-7 w-7 mx-auto mt-0.5"></a>
+                </div>
+
+            </div>
+
+        </div>
+
+</div>
+
+
+    <div class="pt-8 mx-5 lg:mx-52 text-center mb-20">
+        <h1 class="text-xl mb-6">Biografia: </h1>
+        <p class="text-justify font-thin text-">{{player.biografia}}</p>
+    </div>
+
+
+{% endblock %}

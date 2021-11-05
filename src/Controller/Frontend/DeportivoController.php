@@ -31,9 +31,10 @@ class DeportivoController extends AbstractController
             ]);
     }
 
-    public function getPlayer(IcJugadoresRepository  $jugadoresRepository, $player )
+    public function getPlayer(Request $request, IcJugadoresRepository  $jugadoresRepository ): Response
     {
-        $player = $jugadoresRepository->getJugador($player);
+        $p      = $request->get('player');
+        $player = $jugadoresRepository->getJugador($p);
 
         if(!$player)
             throw $this->createNotFoundException('Jugador inexistente');

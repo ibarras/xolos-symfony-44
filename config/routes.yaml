@@ -37,3 +37,7 @@ frontend_coach:
     path:       /club-tijuana/cuerpo-tecnico
     controller: App\Controller\Frontend\DeportivoController:getCoach
 
+frontend_player:
+    path:       /club-tijuana/detalle-jugador/{player}
+    controller: App\Controller\Frontend\DeportivoController:getPlayer
+
