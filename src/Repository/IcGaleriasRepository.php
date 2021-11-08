@@ -7,6 +7,7 @@ use App\Entity\IcGaleriaFotos;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Form\Extension\Core\ChoiceList\ObjectChoiceList;
+use Doctrine\DBAL\Statement;
 
 class IcGaleriasRepository extends ServiceEntityRepository
 {
@@ -83,16 +84,14 @@ class IcGaleriasRepository extends ServiceEntityRepository
         }
 
         $statement = $connection->prepare($sql);
+
+
         if ($limite != null) {
             $statement->bindValue('limite', $limite);
         }
         $statement->bindValue('locale', $locale);
-        $statement->execute();
-        $results = $statement->fetchAll();
-        $statement->execute();
-
-
-
+        $statement->executeQuery()->fetchAllAssociative();
+        $results =   $statement->executeQuery()->fetchAllAssociative(); 
         return $results;
 
 
