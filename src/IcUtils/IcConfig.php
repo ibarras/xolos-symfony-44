@@ -36,6 +36,7 @@ const PRIMER_EQUIPO_FEMENIL				= 6;
     const CATEGORIA_NOTICIA_FUT7            = 33;
     const IC_TIPO_INFORMACION_XOLOPASS      = 1;
     const IC_TIPO_INFORMACION_MARKETPLACE   = 2;
+    const IC_LIMITE_GALERIAS_PORTADA        = 4;
 
     /**
      * Martin Ibarra Cervantes
