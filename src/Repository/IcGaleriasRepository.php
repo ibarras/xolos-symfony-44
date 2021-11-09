@@ -90,7 +90,7 @@ class IcGaleriasRepository extends ServiceEntityRepository
             $statement->bindValue('limite', $limite);
         }
         $statement->bindValue('locale', $locale);
-        $statement->executeQuery()->fetchAllAssociative();
+       // $statement->executeQuery()->fetchAllAssociative();
         $results =   $statement->executeQuery()->fetchAllAssociative(); 
         return $results;
 
