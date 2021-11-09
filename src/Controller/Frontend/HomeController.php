@@ -30,7 +30,7 @@ class HomeController extends AbstractController
         /**
          * Metodo para obtener las noticias principales.
          */
-        $noticias = $traduccionRepository->getNews('es', null, IcConfig::IC_LIMITE_GALERIAS_PORTADA);
+        $noticias = $traduccionRepository->getNews('es', null, IcConfig::LIMITE_NOTICIAS_PORTADA);
 
         /**
          * Tabla Genera.
@@ -48,7 +48,7 @@ class HomeController extends AbstractController
         /**
          * Galerias
          */
-        $galery = $galeryRepository->getGalerias(IcConfig::);
+        $galery = $galeryRepository->getGalerias(IcConfig::IC_LIMITE_GALERIAS_PORTADA);
 
 
         /**
