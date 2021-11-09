@@ -101,7 +101,7 @@
 
             <div class=" w-full h-full object-cover mb-16 md:mb-8">
                 <div class="text-center grid justify-items-center">
-                    <div class="h-80 w-80 md:h-72 md:w-72 xl:h-80 xl:w-80 bg-center bg-cover rounded-full" style="background-image: url({{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_JUGADORES')}}{{jugador.fotografia}});"></div>
+                    <a href="{{ path('frontend_player', {'player': jugador.id, 'name': jugador.nombre}) }}"><div class="h-80 w-80 md:h-72 md:w-72 xl:h-80 xl:w-80 bg-center bg-cover rounded-full" style="background-image: url({{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_JUGADORES')}}{{jugador.fotografia}});"></div></a>
                     <div class="flex max-h-48 w-80">
                         <p class="text-8xl ml-10 text-red-600 font-bold">{{jugador.numero}}</p>
                         <p class="pl-6 m-0 text-4xl pr-10 font-bold text-black mt-3">{{jugador.nombre}}</p>

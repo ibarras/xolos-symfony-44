@@ -4,11 +4,11 @@
     <!-- Nota Principal full screen -->
     <div class=" h-screen w-auto">
         <!-- <img src="https://xolos.com.mx/bundles/frontend/images/contacto_estadio.jpg" alt="" class="h-screen w-auto object-cover"> -->
-        <video class="h-screen w-screen object-cover filter brightness-50" muted autoplay loop playsinline data-video="0">
-            <source src="https://www.juventus.com/images/video/upload/t_video_mp4/dev/video/20210816_HERO_NUOVA_DIVISA_28MB.mp4" type="video/mp4">
+        <video class="h-screen w-screen object-cover filter brightness-75" muted autoplay loop playsinline data-video="0">
+            <source src="https://xolos.icserver.net/pics/dia-muertos-clubtijuana.mp4" type="video/mp4">
         </video>
-        <div class="w-full xl:w-6/12 lg:w-6/12 md:w-8/12 sm:w-11/12 absolute bottom-2 md:bottom-10 left-0 h-52">
-            <h1 class=" text-gray-50 mb-3 md:mb-5 text-3xl mx-5 xl:text-5xl lg:text-4xl md:text-4xl sm:text-3xl mt-5 md:mt-0 " style="text-shadow:3px 3px 10px black;">XOLOS INICIA PRETEMPORADA EN CASA</h1>
+        <div class="w-full xl:w-8/12 lg:w-8/12 md:w-8/12 sm:w-11/12 absolute bottom-2 md:bottom-10 left-0 h-52">
+            <h1 class=" text-gray-50 mb-3 md:mb-5 text-2xl mx-5 xl:text-5xl lg:text-4xl md:text-4xl mt-5 md:mt-0 " style="text-shadow:3px 3px 10px black;">PASION POR ESTOS COLORES QUE HAN ECHADO RAICES HASTA EL MUNDO DE LAS SOMBRAS</h1>
             <div class="flex h-auto w-24 md:w-32 bg-red-600 rounded-md mx-5 justify-center">
                 <a class=" text-gray-50 my-auto text-md xl:text-xl underline p-2" href="https://tailwindui.com/components/marketing/sections/testimonials">LEER MAS</a>
                 <img src="/pics/img/arrow-right.png" alt="" class="h-4 w-4 my-auto ">
@@ -47,7 +47,7 @@
               <div class=" h-full px-3 pt-2 md:pt-8 xl:pt-24 bg-gray-100 md:h-96 md:w-5/12">
                 <a href="Noticia.html" class=" mt-1 text-xl md:text-4xl text-gray-700 ">{{noticia.titulo}}</a>
                 <p class="mt-2 text-gray-500 md:mt-5 lg:mt-10 md:text-2xl">{{noticia.intro}}</p>
-                <a href="#" class="absolute bottom-2 right-2 md:right-6 lg:text-xl text-gray-600 hover:underline ">LEER NOTICIA COMPLETA ></a>       
+                <a href="{{ path('frontend_news', {'post': noticia.id}) }}" class="absolute bottom-2 right-2 md:right-6 lg:text-xl text-gray-600 hover:underline ">LEER NOTICIA COMPLETA ></a>       
               </div>
             </div>
           </li>
@@ -86,7 +86,7 @@
           <div class="py-4 min-w-full">
               <div class="-mx-10 md:-mx-10 py-4 overflow-x-auto">
                   <div class="inline-block min-w-full max-w-full shadow rounded-md overflow-hidden">
-                      <table class="min-w-full leading-normal">
+                      <table class="min-w-full leading-normal bg-white">
                           <thead>
                               <tr>
                                   <th
@@ -267,7 +267,7 @@
 
           <div class="swiper-slide w-full h-full object-cover ">
             <div class="text-center grid justify-items-center">
-              <div class="h-80 w-80 lg:h-72 lg:w-72 xl:h-96 xl:w-96 rounded-full bg-center bg-cover" style="background-image: url(https://admin.xolos.com.mx/uploads/galeria/foto_jugador/{{jugador.fotografia}});"></div>
+              <a href="{{ path('frontend_player', {'player': jugador.id, 'name': jugador.nombre}) }}"><div class="h-80 w-80 lg:h-72 lg:w-72 xl:h-96 xl:w-96 rounded-full bg-center bg-cover" style="background-image: url(https://admin.xolos.com.mx/uploads/galeria/foto_jugador/{{jugador.fotografia}});"></div></a>
               <div class="flex max-h-48 w-80">
                   <p class="text-8xl ml-10 mr-0 text-red-600 font-bold">{{jugador.numero}}</p>
                   <p class=" pl-6 m-0 text-4xl pr-10 font-bold text-black mt-3">{{jugador.nombre}}</p>

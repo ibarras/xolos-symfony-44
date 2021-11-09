@@ -18,26 +18,26 @@ frontend_home:
     controller: App\Controller\Frontend\HomeController:index
 
 frontend_news:
-    path:       /clubTijuana/{post}
+    path:       /noticias/xoloitzcuintles/{post}
     controller: App\Controller\Frontend\ComunicacionController:showPost
 
 frontend_news_category:
-    path:       /club-tijuana/noticias/{category}
+    path:       /noticias/{category}
     controller: App\Controller\Frontend\ComunicacionController:listPostByCategory
 
 frontend_players_category:
-    path:       /club-tijuana/jugadores/{category}
+    path:       /primer-equipo/{category}
     controller: App\Controller\Frontend\DeportivoController:listPlayersByCategory
 
 frontend_schedule:
-    path:       /club-tijuana/calendario/{calendario}
+    path:       /calendario/{calendario}
     controller: App\Controller\Frontend\DeportivoController:getSchedule
 
 frontend_coach:
-    path:       /club-tijuana/cuerpo-tecnico
+    path:       /cuerpo-tecnico
     controller: App\Controller\Frontend\DeportivoController:getCoach
 
 frontend_player:
-    path:       /club-tijuana/detalle-jugador/{player}
+    path:       /jugador/{player}/{name}
     controller: App\Controller\Frontend\DeportivoController:getPlayer
 

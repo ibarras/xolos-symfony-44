@@ -30,19 +30,19 @@
           <div class="absolute top-4 left-0 pr-9 pt-1 md:hidden"> <img src="https://xolos.com.mx/bundles/frontend/images/xoloshop-banner.png" alt="xoloshop" class=""></div>
         <div class="close-btn"></div>
         </div>
-        <li class="menu-item"><a href="#">INICIO</a></li>
+        <li class="menu-item"><a href="{{ path('frontend_home') }}">INICIO</a></li>
         <li class="menu-item"><a href="#">VIDEOS</a></li>
         <li class="menu-item">
           <a class="sub-btn" href="#">CLUB<i class="ml-1 fas fa-angle-down"></i></a>
           <ul class="sub-menu grid grid-cols-2">
-            <li class="sub-item"><a href="#">PLANTEL</a></li>
-            <li class="sub-item"><a href="#">CUERPO TECNICO</a></li>
+            <li class="sub-item"><a href="{{ path('frontend_players_category', {'category': constant('App\\IcUtils\\IcConfig::IC_JUGADOR_CATEGORIA_PRIMER')}) }}">PLANTEL</a></li>
+            <li class="sub-item"><a href="{{ path('frontend_coach')}}">CUERPO TECNICO</a></li>
             <li class="sub-item"><a href="#">FUERZAS BASICAS</a></li>
             <li class="sub-item"><a href="#">ESTADIO</a></li>
             <li class="sub-item"><a href="#">HISTORIA</a></li>
             <li class="sub-item"><a href="#">DIRECTIVA</a></li>
             <li class="sub-item"><a href="#">PALAMRES</a></li>
-            <li class="sub-item"><a href="#">PLANTEL FEMENIL</a></li>
+            <li class="sub-item"><a href="{{ path('frontend_players_category', {'category': constant('App\\IcUtils\\IcConfig::CATEGORIA_EQUIPO_FEMENIL')}) }}">PLANTEL FEMENIL</a></li>
             <li class="sub-item"><a href="#">XOLOSHOP</a></li>
             <li class="sub-item"><a href="#">CIX</a></li>
             <li class="sub-item"><a href="#">FUT 7</a></li>
@@ -51,11 +51,11 @@
         <li class="menu-item">
           <a class="sub-btn" href="#">NOTICIAS<i class="ml-1 fas fa-angle-down"></i></a>
           <ul class="sub-menu">
-            <li class="sub-item"><a href="#">PRIMER EQUIPO</a></li>
-            <li class="sub-item"><a href="#">FEMENIL</a></li>
-            <li class="sub-item"><a href="#">FUERZAS BASICAS</a></li>
-            <li class="sub-item"><a href="#">XOLOS</a></li>
-            <li class="sub-item"><a href="#">PROMOCIONES</a></li>
+            <li class="sub-item"><a href="{{ path('frontend_news_category', {'category': constant('App\\IcUtils\\IcConfig::CATEGORIA_NOTICIA_PRIMER_EQUIPO')} )}}">PRIMER EQUIPO</a></li>
+            <li class="sub-item"><a href="{{ path('frontend_news_category', {'category': constant('App\\IcUtils\\IcConfig::CATEGORIA_NOTICIAS_EQUIPO_FEMENIL')} )}}">FEMENIL</a></li>
+            <li class="sub-item"><a href="{{ path('frontend_news_category', {'category': constant('App\\IcUtils\\IcConfig::CATEGORIA_NOTICIA_FUERZAS_BASICAS')} )}}">FUERZAS BASICAS</a></li>
+            <li class="sub-item"><a href="{{ path('frontend_news_category', {'category': constant('App\\IcUtils\\IcConfig::CATEGORIA_NOTICIA_SOCIAL')} )}}">XOLOS X TI</a></li>
+            <li class="sub-item"><a href="{{ path('frontend_news_category', {'category': constant('App\\IcUtils\\IcConfig::CATEGORIA_NOTICIA_PROMOCIONES')} )}}">PROMOCIONES</a></li>
             <li class="sub-item"><a href="#">GALERIA</a></li>
           </ul>
         </li>
@@ -72,10 +72,10 @@
         <li class="menu-item">
           <a class="sub-btn" href="#">TORNEOS<i class="ml-1 fas fa-angle-down"></i></a>
           <ul class="sub-menu">
-            <li class="sub-item"><a href="#">CALENDARIO DE LIGA</a></li>
+            <li class="sub-item"><a href="{{ path('frontend_schedule', {'calendario': constant('App\\IcUtils\\IcConfig::IC_LIGA')})}}">CALENDARIO DE LIGA</a></li>
             <li class="sub-item"><a href="#">TABLA GENERAL</a></li>
             <li class="sub-item"><a href="#">CALENDARIO DE COPA</a></li>
-            <li class="sub-item"><a href="#">CALENDARIO DE LIGA FEMENIL</a></li>
+            <li class="sub-item"><a href="{{ path('frontend_schedule', {'calendario': constant('App\\IcUtils\\IcConfig::IC_FEMENIL')})}}">CALENDARIO DE LIGA FEMENIL</a></li>
           </ul>
         </li>
         <li class="menu-item">
