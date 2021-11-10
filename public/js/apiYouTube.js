@@ -23,7 +23,7 @@
                         maxres = item.snippet.thumbnails.maxres.url;
                         if(i !== 0 && i !== 3)
                         {
-                            output ='<div class="bg-xolos w-full h-80 bg-cover bg-center relative" style="background-image: url('+ maxres +'\)">' +
+                            output ='<div class="bg-xolos rounded-md w-full h-80 bg-cover bg-center relative" style="background-image: url('+ maxres +'\)">' +
                             '<div class="w-full h-full absolute flex justify-center items-center ">' +
                                 '<section class="w-full h-full  flex justify-center items-center bg-gradient-to-t from-black via-transparent  to-transparent">' +        
                                     '<button class="js-modal-btn" data-video-id= '+ videoId +' ><i class="far hover-play fa-play-circle fa-3x transform hover:scale-110 motion-reduce:transform-none" style="color: white;"></i></button>' +   
@@ -36,7 +36,7 @@
                     '</div>';
                         }
                         else {
-                            output ='<div class="bg-xolos w-full h-80 relative bg-cover bg-top xl:col-span-2 lg:col-span-2 md:col-span-2" style="background-image: url('+ maxres +'\)">' + 
+                            output ='<div class="bg-xolos rounded-md w-full h-80 relative bg-cover bg-top xl:col-span-2 lg:col-span-2 md:col-span-2" style="background-image: url('+ maxres +'\)">' + 
                                         '<div class=" w-full h-full flex justify-center bg-gradient-to-t from-black via-transparent to-transparent ">' +
                                             '<section class="w-full h-full  flex justify-center items-center bg-gradient-to-t from-black via-transparent  to-transparent">' +        
                                             '<button class="js-modal-btn" data-video-id= '+ videoId +' ><i class="far hover-play fa-play-circle fa-3x transform hover:scale-110 motion-reduce:transform-none" style="color: white;"></i></button>' +   

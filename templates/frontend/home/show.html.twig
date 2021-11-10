@@ -2,29 +2,29 @@
 
 {% block content %}
 
-    <!-- Encabezado -->
-    <div class="max-w-4xl flex flex-wrap content-center justify-center items-center h-20 md:h-16 bg-black mt-1 text-2xl md:py-0 px-1 md:text-3xl lg:text-4xl md:mt-6 md:mb-6 md:mx-10 text-center">
-        <h1 class="text-white text-center font-semibold">MANOTAS EL JUGADOR DE PARTIDO ANTE MONTEREY</h1>
-      </div>
+    
+        
       <!-- Foto -->
-    <div class=" h-screen w-auto">
-        <img src="https://admin.xolos.com.mx/uploads/galeria/noticias/4154690206129cda35b3bd.jpg" alt="" class="h-screen w-screen object-cover bg-top pb-10 md:px-10">
+    <div class=" w-full mx-auto mt-28" style="height: 92vh;">
+        <img src="https://admin.xolos.com.mx/uploads/galeria/noticias/{{noticia.imagenPrincipal}}" alt="" class="h-full w-full object-cover object-top pb-10 md:mx-auto filter brightness-50">
+        <div class="w-full xl:w-8/12 lg:w-8/12 md:w-8/12 sm:w-11/12 absolute bottom-2 md:bottom-0 left-0 h-52">
+        <!-- Encabezado -->
+        <h1 class=" text-gray-50 mb-3 md:mb-5 text-2xl mx-5 xl:text-5xl lg:text-4xl md:text-4xl mt-5 md:mt-0 uppercase" style="text-shadow:3px 3px 10px black;">{{noticia.titulo}}</h1>
+        </div>
     </div>
+
+
+    
     <!-- Contenido noticia - share -->
-    <div class=" mx-10 lg:mx-10 lg:flex">
+    <div class=" mx-5 lg:mx-10 lg:flex">
         <div class=" lg:w-2/3 mb-10 lg:mb-5">
-            <div class="xl:mx-60 flex">
-                <p class="mr-3 mt-2 text-3xl text-gray-600">Compartir en:</p>
-                <i><img src="/pics/img/facebook(3).png" alt="" class="h-10 w-10 mt-2"></i>
-                <i><img src="/pics/img/twitter(3).png" alt="" class="h-10 w-10 mx-2 mt-2"></i>
-                <i><img src="/pics/img/instagram(2).png" alt="" class="h-10 w-10 rounded-full mt-2"></i>
+            <div class="flex justify-center items-center">
+                <p class="mr-3 mt-2 text-2xl text-gray-600">Compartir en:</p>
+                <a><img src="/pics/img/facebook(3).png" alt="" class="h-7 w-7 mt-2"></a>
+                <a><img src="/pics/img/twitter(3).png" alt="" class="h-7 w-7 mx-2 mt-2"></a>
+                <a><img src="/pics/img/instagram(2).png" alt="" class="h-7 w-7 rounded-full mt-2"></a>
            </div>
-            <p class="mt-5 text-justify lg:mr-12 text-lg md:text-xl text-gray-600"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc risus augue, convallis quis feugiat sit amet, tincidunt in velit. In maximus neque eros, in egestas magna vehicula vel. Morbi feugiat dapibus leo ac tincidunt. Morbi dolor metus, molestie nec tortor sit amet, ultrices ultricies mi. Curabitur elementum, ligula in rutrum accumsan, libero quam imperdiet nisi, nec scelerisque magna lorem sit amet magna. Nulla nec finibus 
-                ante. Nulla facilisi. Nulla quis massa id nibh commodo aliquet vitae non augue. <br><br>Pellentesque rhoncus mauris in rutrum placerat. 
-                Aenean pulvinar elit est, elementum maximus felis vestibulum eget. Ut fermentum, eros ac finibus egestas, mauris lorem rhoncus dui, sed faucibus risus dolor vitae ante. Pellentesque vestibulum lorem ex, vitae eleifend justo ornare non. Nunc sem ligula, dapibus nec ex ac, pulvinar posuere tortor.
-                Vivamus sapien nisl, pellentesque in mi eu, elementum ullamcorper purus.<br><br> Suspendisse cursus lacus est, ac rutrum velit tristique vitae. Nulla ac molestie risus. Pellentesque aliquet ac eros sed mattis. Quisque at sollicitudin quam. Ut sodales molestie tortor, nec dictum magna rhoncus gravida. Donec malesuada dolor sit amet sem tincidunt efficitur non a lectus. Nunc vitae felis id leo porttitor condimentum. In ornare dolor non suscipit elementum.
-                <br><br> Suspendisse cursus lacus est, ac rutrum velit tristique vitae. Nulla ac molestie risus. Pellentesque aliquet ac eros sed mattis. Quisque at sollicitudin quam. Ut sodales molestie tortor, nec dictum magna rhoncus gravida. Donec malesuada dolor sit amet sem tincidunt efficitur non a lectus. Nunc vitae felis id leo porttitor condimentum. In ornare dolor non suscipit elementum.
-                Suspendisse cursus lacus est, ac rutrum velit tristique vitae. Nulla ac molestie risus. Pellentesque aliquet ac eros sed mattis. Quisque at sollicitudin quam. Ut sodales molestie tortor, nec dictum magna rhoncus gravida. Donec malesuada dolor sit amet sem tincidunt efficitur non a lectus. Nunc vitae felis id leo porttitor condimentum. In ornare dolor non suscipit elementum. </p>
+            <p class="mt-10 text-justify lg:mr-12 text-lg md:text-xl text-gray-600"> {{noticia.nota}}</p>
         </div>
         <div class="lg:w-1/3 h-auto w-auto mb-5">
             <div class="mb-1">
@@ -36,25 +36,29 @@
         </div>
     </div>
 
+    
+
     <!-- Noticias relacionadas -->
     <div class="h-auto w-auto bg-gray-300 relative my-16 md:my-10">
-        <div class="h-16 w-auto mx-5 md:mx-10 bg-black absolute -mt-9 px-3 md:px-4">
-            <h1 class="text-2xl md:text-4xl text-white pt-3 font-bold">NOTICIAS RELACIONADAS</h1>
+        <div class="h-14 w-auto mx-5 md:mx-10 bg-black absolute -mt-7 px-3 md:px-4 rounded-md">
+            <h1 class="text-2xl md:text-3xl text-white pt-2 font-bold">NOTICIAS RELACIONADAS</h1>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 mx-5 md:mx-10">
-            <div class=" max-w-3xl h-96 mt-10 mb-1 md:mb-10 md:mx-2 " style="background-image: url(https://admin.xolos.com.mx/uploads/galeria/noticias/10885132126122c5bfdbaf7.jpg);">
+            <div class=" max-w-3xl h-96 mt-14 mb-1 md:mb-10 md:mx-2 rounded-md" style="background-image: url(https://admin.xolos.com.mx/uploads/galeria/noticias/10885132126122c5bfdbaf7.jpg);">
                 <section class="w-full h-full relative bg-gradient-to-t from-black via-transparent  to-transparent" >
-                    <h1 class="mx-4 absolute bottom-12 text-white font-semibold text-4xl mb-2">ESTE ES UN TITULO</h1>
-                    <a class=" mx-4 absolute bottom-6 text-xolos font-semibold text-lg underline" href="https://tailwindui.com/components/marketing/sections/testimonials">VER NOTICIA</a>
+                    <h1 class="mx-4 absolute bottom-8 text-white font-semibold text-3xl mb-2">ESTE ES UN TITULO</h1>
+                    <a class=" mx-4 absolute bottom-3 text-white font-semibold text-base underline" href="https://tailwindui.com/components/marketing/sections/testimonials">VER NOTICIA</a>
                 </section>
             </div>
-            <div class=" max-w-3xl h-96 mt-10 mb-10 md:mx-2 " style="background-image: url(https://admin.xolos.com.mx/uploads/galeria/noticias/864029974610d9dfa0b9ac.jpg);">
+            <div class=" max-w-3xl h-96 mt-14 mb-10 md:mx-2 rounded-md" style="background-image: url(https://admin.xolos.com.mx/uploads/galeria/noticias/864029974610d9dfa0b9ac.jpg);">
                 <section class="w-full h-full relative bg-gradient-to-t from-black via-transparent  to-transparent" >
-                    <h1 class="mx-4 absolute bottom-12 text-white font-semibold text-4xl mb-2">ESTE ES UN TITULO</h1>
-                    <a class=" mx-4 absolute bottom-6 text-xolos font-semibold text-lg underline" href="https://tailwindui.com/components/marketing/sections/testimonials">VER NOTICIA</a>
+                    <h1 class="mx-4 absolute bottom-8 text-white font-semibold text-3xl mb-2">ESTE ES UN TITULO</h1>
+                    <a class=" mx-4 absolute bottom-3 text-white font-semibold text-base underline" href="https://tailwindui.com/components/marketing/sections/testimonials">VER NOTICIA</a>
                 </section>
             </div>
         </div>
     </div>
+
+
 
 {% endblock %}
