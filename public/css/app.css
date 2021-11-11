@@ -9,16 +9,23 @@
         transition: 0.5s ease; 
     }
     
-    .splide__pagination__page{
-        height: 8.5px;
-        width: 50px;
-        border-radius: 10px;
-        margin-left: 6px;
-        
-    }
-    .splide__pagination__page.is-active{
-        transform: none;
-    }
+  .splide__pagination__page{
+      height: 8.5px;
+      width: 50px;
+      border-radius: 10px;
+      margin-left: 6px;
+      background-color:lightgray;
+      
+  }
+
+  .splide__pagination__page.is-active{
+      transform: none;
+      background: #EB0026;
+  }
+
+  .grayligth{
+    background-color: rgb(249, 249, 249);
+  }
 
 /* end index styles */
 

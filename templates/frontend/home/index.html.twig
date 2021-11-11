@@ -8,7 +8,7 @@
             <source src="https://xolos.icserver.net/pics/dia-muertos-clubtijuana.mp4" type="video/mp4">
         </video>
         <div class="w-full xl:w-8/12 lg:w-8/12 md:w-8/12 sm:w-11/12 absolute bottom-2 md:bottom-10 left-0 h-52">
-            <h1 class=" text-gray-50 mb-3 md:mb-5 text-2xl mx-5 xl:text-5xl lg:text-4xl md:text-4xl mt-5 md:mt-0 " style="text-shadow:3px 3px 10px black;">PASION POR ESTOS COLORES QUE HAN ECHADO RAICES HASTA EL MUNDO DE LAS SOMBRAS</h1>
+            <h1 class=" text-white mb-3 md:mb-5 text-2xl mx-5 xl:text-5xl lg:text-4xl md:text-4xl mt-5 md:mt-0 " style="text-shadow:3px 3px 10px black;">PASION POR ESTOS COLORES QUE HAN ECHADO RAICES HASTA EL MUNDO DE LAS SOMBRAS</h1>
             <div class="flex h-auto w-24 md:w-32 bg-red-600 rounded-md mx-5 justify-center">
                 <a class=" text-gray-50 my-auto text-md xl:text-xl underline p-2" href="https://tailwindui.com/components/marketing/sections/testimonials">LEER MAS</a>
                 <img src="/pics/img/arrow-right.png" alt="" class="h-4 w-4 my-auto ">
@@ -41,13 +41,13 @@
 
           <li class="splide__slide h-96" >
             <div class=" h-48 w-full md:flex">
-              <div class=" h-full w-full md:h-96 md:w-7/12 bg-gray-100">
-                <img class="img-splide h-full w-full object-cover bg-center md:h-full inset-0 transform  hover:scale-105 transition duration-300" src="https://admin.xolos.com.mx/uploads/galeria/noticias/{{ noticia.imagenPrincipal }}" alt="Man looking at item at a store">
+              <div class=" h-full w-full md:h-96 md:w-7/12 grayligth">
+                <a href="{{ path('frontend_news', {'post': noticia.id}) }}"><img class="img-splide h-full w-full object-cover bg-center md:h-full inset-0 transform  hover:scale-105 transition duration-300" src="https://admin.xolos.com.mx/uploads/galeria/noticias/{{ noticia.imagenPrincipal }}" alt=""></a>
             </div>
-              <div class=" h-full px-3 pt-2 md:pt-8 xl:pt-24 bg-gray-100 md:h-96 md:w-5/12">
+              <div class=" h-full px-3 pt-2 md:pt-8 xl:pt-24 grayligth md:h-96 md:w-5/12">
                 <a href="Noticia.html" class=" mt-1 text-xl md:text-4xl text-gray-700 ">{{noticia.titulo}}</a>
-                <p class="mt-2 text-gray-500 md:mt-5 lg:mt-10 md:text-2xl">{{noticia.intro}}</p>
-                <a href="{{ path('frontend_news', {'post': noticia.id}) }}" class="absolute bottom-2 right-2 md:right-6 lg:text-xl text-gray-600 hover:underline ">LEER NOTICIA COMPLETA ></a>       
+                <p class="mt-2 text-gray-500 md:mt-5 lg:mt-10 md:text-2xl font-thin">{{noticia.intro}}</p>
+                <a href="{{ path('frontend_news', {'post': noticia.id}) }}" class="absolute bottom-2 right-2 md:right-6 lg:text-lg front-thin text-gray-500 hover:underline ">LEER NOTICIA COMPLETA ></a>       
               </div>
             </div>
           </li>
@@ -286,7 +286,7 @@
       </div>
 
      <!-- GALERIA -->
-    <div class=" mt-7 grid grid-cols-1 grid-rows-1 md:grid-cols-2 md:grid-rows-2 xl:grid-cols-4 xl:grid-rows-4 w-auto h-auto bg-gray-200 mx-5 md:mx-10 gap-1 p-0 lg:p-1">
+    <div class=" mt-7 grid grid-cols-1 grid-rows-1 md:grid-cols-2 md:grid-rows-2 xl:grid-cols-4 xl:grid-rows-4 w-auto h-auto mx-5 md:mx-10 gap-1 p-0 lg:p-1">
         
     {% for galeria in galerias %}
             
@@ -322,9 +322,9 @@
                 <h1 class="text-white text-2xl md:text-3xl m-auto font-semibold">
                     CENTRO DE INICIACION
                 </h1>
-            </div>
+            </div> 
             <div class="h-80 w-80 md:h-96 md:w-96 lg:h-72 lg:w-72 xl:h-96 xl:w-96 mx-auto ">
-                <img src="pics/img/itnento2.png" alt="" class="rounded-full h-full w-full">
+                <a href="http://www.xolosacademy.com/"><img src="pics/img/itnento2.png" alt="" class="rounded-full h-full w-full"></a>
             </div>
         </div>
         <div class=" col-span-1 mb-5">
@@ -334,7 +334,7 @@
                 </h1>
             </div>
             <div class="h-80 w-80 md:h-96 md:w-96 lg:h-72 lg:w-72 xl:h-96 xl:w-96 mx-auto">
-                <img src="pics/img/CIX.png" alt="" class="rounded-full h-full w-full">
+                <a href="http://fut7.xolos.com.mx/landingpage.asp?dtsRoot=DTS199&de=https://www.google.com.mx/"><img src="pics/img/CIX.png" alt="" class="rounded-full h-full w-full"></a>
             </div>
         </div>
         <div class=" col-span-1 mb-5">
