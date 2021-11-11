@@ -1,0 +1,15 @@
+- hay que condicionar si hay proximos partidos mostrar la informacion 
+si no los hay mostrar algo informativo del club
+
+- Lo mismo debe pasar con la tabla de Liga.
+
+- cambiarle el backgroun de gris a blanco
+- las clases que aplican para todos el layout deben estar en un archivo .CSS y evitar estar cambiando el background por ejemplo.
+- unificar las esquinas de los contenedores, si van a ser completamente cuadradas o van a tener algun tipo de redondo
+- agregar las rutas a las imagenes en las noticias , jugadores, en si en general.
+- agregar la ruta en el logo 
+- agregar el link hacia la xoloshop
+- habilitar las redes sociales.
+- habilitar el compartir en redes sociales.
+- unificar fuente 
+- link hacia centro de iniciacion / xoloshop / fut 7
