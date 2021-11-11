@@ -24,8 +24,8 @@
                         if(i !== 0 && i !== 3)
                         {
                             output ='<div class="bg-xolos rounded-md w-full h-80 bg-cover bg-center relative" style="background-image: url('+ maxres +'\)">' +
-                            '<div class="w-full h-full absolute flex justify-center items-center ">' +
-                                '<section class="w-full h-full  flex justify-center items-center bg-gradient-to-t from-black via-transparent  to-transparent">' +        
+                            '<div class="w-full h-full absolute flex justify-center rounded-b-md items-center ">' +
+                                '<section class="w-full h-full rounded-b-md flex justify-center items-center bg-gradient-to-t from-black via-transparent  to-transparent">' +        
                                     '<button class="js-modal-btn" data-video-id= '+ videoId +' ><i class="far hover-play fa-play-circle fa-3x transform hover:scale-110 motion-reduce:transform-none" style="color: white;"></i></button>' +   
                                     '<h1 class="mx-4 absolute bottom-2 left-1 text-gray-100 text-xl md:text-4xl mb-2">' + titulo + '</h1>' +
                                     '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute bottom-5 right-4 transform hover:scale-110 motion-reduce:transform-none" fill="none" viewBox="0 0 24 24" stroke="WHITE">' +
@@ -37,8 +37,8 @@
                         }
                         else {
                             output ='<div class="bg-xolos rounded-md w-full h-80 relative bg-cover bg-top xl:col-span-2 lg:col-span-2 md:col-span-2" style="background-image: url('+ maxres +'\)">' + 
-                                        '<div class=" w-full h-full flex justify-center bg-gradient-to-t from-black via-transparent to-transparent ">' +
-                                            '<section class="w-full h-full  flex justify-center items-center bg-gradient-to-t from-black via-transparent  to-transparent">' +        
+                                        '<div class=" w-full h-full flex justify-center rounded-b-md bg-gradient-to-t from-black via-transparent to-transparent ">' +
+                                            '<section class="w-full h-full rounded-b-md flex justify-center items-center bg-gradient-to-t from-black via-transparent  to-transparent">' +        
                                             '<button class="js-modal-btn" data-video-id= '+ videoId +' ><i class="far hover-play fa-play-circle fa-3x transform hover:scale-110 motion-reduce:transform-none" style="color: white;"></i></button>' +   
                                                 '<h1 class="mx-4 absolute bottom-2 left-1 text-gray-100 text-xl md:text-4xl mb-2">' + titulo + '</h1>' +
                                                 '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute bottom-5 right-4 transform hover:scale-110 motion-reduce:transform-none" fill="none" viewBox="0 0 24 24" stroke="WHITE">' +

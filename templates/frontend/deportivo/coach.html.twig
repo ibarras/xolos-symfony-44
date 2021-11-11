@@ -2,15 +2,16 @@
 
 {% block content %}
 
+<div class="mx-auto h-24 w-auto mb-3 lg:mb-0 rounded-md lg:pr-14"></div>
 
-<div class="mx-0 lg:mx-10 hauto w-auto p-5 bg-gray-200 mt-36 mb-20 text-center grid grid-cols-1 lg:grid-cols-2 gap-1 lg:gap-10">
+<div class="mx-0 lg:mx-10 hauto w-auto p-5 lg:px-20 bg-gray-200 mt-10 text-center grid grid-cols-1 lg:grid-cols-2 gap-1 lg:gap-10 mb-16">
 
     {% for dato in coach %}
 
         {% if dato.idPosicion.idJugadorPosicion == 5 %}
 
 
-        <div class="mx-auto h-auto w-auto mb-3 lg:mb-0 rounded-md">
+        <div class="mx-auto h-auto w-auto mb-3 lg:mb-0 rounded-full lg:pr-14">
             <img src="https://admin.xolos.com.mx/uploads/galeria/tecnico/{{dato.fotografia}}" alt="" class="w-full h-full rounded-md mx-auto bg-center bg-cover object-cover border-2 border-red-600" style="min-height: 500px;">
         </div>
 
@@ -39,7 +40,7 @@
 
             <div class="pt-8 border-t-2 border-red-600">
                 <h1 class="text-xl mb-6">Biografia: </h1>
-                <p class="text-justify font-thin text-">{{dato.biografia}}</p>
+                <p class="text-justify font-thin text-">{{dato.biografia | raw | nl2br}}</p>
             </div>
 
         </div>
