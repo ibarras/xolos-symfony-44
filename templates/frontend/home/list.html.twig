@@ -41,7 +41,7 @@
 
     {# display navigation #}
     <div class="navigation">
-            {{ knp_pagination_render(pagination) }}
+            {{ knp_pagination_render(pagination, '/partials/tailwindcss_pagination.html.twig') }}
     </div>
 
     <button type="button" onclick="javascript:window.scrollTo(0, 0)" id="js_up" class="h-12 w-12 rounded-full text-sm z-20 bg-black text-white fixed bottom-3 right-3"><i class="fas fa-chevron-up fa-2x"></i></button>
