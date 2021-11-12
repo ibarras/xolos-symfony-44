@@ -37,6 +37,11 @@ class HomeController extends AbstractController
          *
          */
         $liga  = $torneoRepository->getTipoTorneo('LIGA');
+        
+        if(empty($liga) || $liga == null )
+            $liga = null;
+
+
         $tabla = $torneoRepository->getTablaLiga($liga->getId());
 
 
@@ -44,6 +49,9 @@ class HomeController extends AbstractController
          * Proximos partidos
          */
         $calendario = $calendarioRepository->getNextThreeMatches($liga);
+
+        if(count($calendario) < 3)
+            $calendario = null;
 
         /**
          * Galerias
