@@ -1,0 +1,42 @@
+titulo: ACREDITACIONES
+forma_nombre: Nombre
+forma_apellido_paterno: Apellido paterno
+forma_apellido_materno: Apellido materno
+forma_email: Email
+forma_celular: Celular
+forma_nombre_medio_prensa: Nombre del medio de prensa
+forma_tipo_medio: Tipo de Medio
+forma_tipo_acreditacion: Tipo de acreditación
+forma_fotografia: La Fotografía debe pesar menos de 1MB y debe estar en formato .jpg
+forma_jefe_directo: Jefe directo
+forma_direccion: Dirección
+forma_ciudad: Ciudad
+forma_pais: País
+forma_email_jefe_directo: Email jefe directo
+forma_aplicar: Aplicar
+forma_tipo_fotografo: Fotógrafo
+forma_tipo_camarografo: Camarógrafo
+forma_tipo_reportero: Reportero
+forma_tipo_prensa: Periodico
+forma_tipo_tv: TV
+forma_tipo_radio: Radio
+forma_tipo_agencia: Agencia
+forma_tipo_revista: Revista
+forma_tipo_web: Web
+forma_tipo_otro:  Otro ( Especifique En el Campo de Abajo)
+forma_telefono: Telefono
+forma_funcion: Funcion
+forma_nombreDelMedio: Nombre del Medio
+forma_especifique: Especifique
+
+FORMA_FOTOGRAFO_MEDIOS: Fotografo
+FORMA_CAMAROGRAFO_MEDIOS: Camarografo
+
+FORMA_CANCHA: Fotografo / Camarografo / Transmision
+FORMA_PALCO_PRENSA: Palco prensa
+FORMA_XOLOITZCUINTLE: Xoloitzcuintles, (personal que labora en Club Tijuana)
+FORMA_PALCO: Escolta Palcohabientes / Escolta
+FORMA_EXPLANADA: Activación de marcas
+FORMA_TRIBUNA: Vendedores de alimentos y bebidas
+FORMA_BAR: Meseros, Personal-RnbRooms
+FORMA_TOTAL: Acceso Total

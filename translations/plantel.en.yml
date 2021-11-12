@@ -1,0 +1,19 @@
+porteros: Goalkeepers
+defensas: Defenders
+medios: Midfielders
+delanteros: Forwards
+director: Manager
+preparador: Physical Trainers
+doctor: Doctors
+auxiliar: Assistants
+
+
+posicion: Position:
+birthdate: Birth Date:
+bornplance: Birth Place:
+height: Height:
+weight: Weight:
+social: Social Network:
+
+bio: Profile
+estadistica: Estadística

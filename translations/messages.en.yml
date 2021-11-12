@@ -1,0 +1,104 @@
+patrocinadores: Sponsors
+index_noticia_mas: More...
+index_galeria_titulo: IMAGE GALLERY
+index_galeria_instagram: INSTAGRAM GALLERY
+index_proximos_partidos: NEXT GAMES
+index_proximos_partidos_toreno: TOURNAMENT
+index_revista: JOURNALS
+index_plantel: TEAM
+index_videos: VIDEOS
+index_noticias_all: NEWS
+index_tabla_general: STANDINGS
+index_noticias_recientes: RECENT NEWS
+index_noticias_relacionadas: RELATED NEWS
+
+#Compra tu jersey
+index_compra_jersey_1: BUY NOW
+index_compra_jersey_2: ONLINE
+index_compra_jersey_3: FREE SHIPPING
+index_jersey_hombres: MEN
+index_jersey_mujeres: WOMEN
+index_jersey_ninos: KIDS
+index_link_mujeres: http://xoloshop.com/en_us/apparel/women.html
+index_link_hombres: http://xoloshop.com/en_us/apparel/men.html
+index_link_ninos: http://xoloshop.com/en_us/apparel/boys.html
+xoloshop_online: The official shop of Club Tijuana is online visit us and acquire your products in an easier and faster way.
+visitar: Visit
+
+#Videos
+titulo_videos: Videos
+fecha_videos: Date post
+
+
+#Contacto
+titulo_contacto_presidencia: Presidency Contact
+contenido_contacto_presidencia: |
+                            <strong>Vice Presidency</strong>
+                            Email: vicepresidencia@xolos.com.mx
+                            Tel: (664) 622-59-33
+                            <br>
+                            <img class="img-responsive" src="/bundles/frontend/images/contacto_estadio.jpg">
+titulo_contacto_estadio: Stadium Contact
+contenido_contacto_estadio_1: |
+                            <strong>Red & Black Rooms</strong>
+                            Email: eventos@rnbroom.com.mx
+                            Tel: (664) 120 1010
+                            <br>
+contenido_contacto_estadio_2: |
+                             <strong>Special Events and Suites Estadio Caliente</strong>
+                             Leopoldo Estrada
+                             Email: leopoldo.estrada@caliente.com.mx
+                             Tel: (664) 622-59-33
+
+titulo_contacto_palcos: Boxes Contact
+contenido_contacto_palcos_1: |
+                            <strong>Vice Presidency</strong>
+                            Email: vicepresidencia@xolos.com.mx
+                            Tel: (664) 622-59-33
+contenido_contacto_palcos_2: |
+                             <strong>Special Events and Suites Caliente Stadium</strong>
+                             Leopoldo Estrada
+                             Email: leopoldo.estrada@caliente.com.mx
+                             Tel: (664) 622-59-33
+
+
+titulo_contacto_responsabilidad: Social Responsability Contact
+contenido_contacto_responsabilidad: |
+                                    <strong>Social Responsability</strong>
+                                    Marissa Alejandra Pompa Castro
+                                    Gerente de Responsabilidad Social
+                                    Correo: alejandra.pompa@xolos.com.mx
+                                    Tel: (664) 622-59-33
+                                    <br>
+                                    <img class="img-responsive" src="/bundles/frontend/images/contacto_responsabilidad.jpg">
+
+titulo_contacto_comercializacion: Marketing Contact
+contenido_contacto_comercializacion: |
+                                     <strong>Marketing</strong>
+                                     Esteban de Anda
+                                     Director de Alianzas Comerciales y Comunicación
+                                     Correo: esteban.deanda@xolos.com.mx
+                                     Tel: (664) 622-59-33
+                                     <br>
+                                     <img class="img-responsive" src="/bundles/frontend/images/contacto_comercializacion.jpg">
+
+titulo_contacto_fuerzas: Reserves Contact
+contenido_contacto_fuerzas: |
+                            <strong>Reserves</strong>
+                            Ignacio Ruvalcaba
+                            Director de Academias
+                            Tel: (664) 622-59-33
+                            <br>
+                            <img class="img-responsive" src="/bundles/frontend/images/contacto_fuerzas_basicas.jpg">
+
+titulo_contacto_xoloshop: Official Store XoloShop
+contenido_contacto_xoloshop: |
+                            <strong>Xoloshop Stadium</strong>
+                            We wait for you in #Xoloshop of the Caliente Stadium: Boulevard Agua Caliente, 12027, Hipódromo, 22000 Tijuana, BC, México.
+
+                            Tel: (664) 622-59-33
+
+                            Email: <a style="color:#cc2229;" href="mailto:tienda.oficial11@xolos.com.mx">tienda.oficial11@xolos.com.mx</a>
+
+                            Schedule: Monday to Saturday from 9:00 am to 9:00 pm
+                                      Sunday game day(local and visitor) from 4:00 pm to 9:00 pm.

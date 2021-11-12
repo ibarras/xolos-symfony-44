@@ -1,0 +1,129 @@
+patrocinadores: Patrocinadores
+index_noticia_mas: Más...
+index_galeria_titulo: GALERÍA DE IMÁGENES
+index_galeria_instagram: GALERÍA INSTAGRAM
+index_proximos_partidos: PRÓXIMOS PARTIDOS
+index_proximos_partidos_toreno: TORNEO
+index_revista: REVISTAS
+index_plantel: PLANTEL
+index_videos: VIDEOS
+index_noticias_all: NOTICIAS
+index_tabla_general: TABLA GENERAL
+index_noticias_recientes: NOTICIAS RECIENTES
+index_noticias_relacionadas: NOTICIAS RELACIONADAS
+index_fut7: FUT 7 Hipódromo and Matamoros await you!
+index_academias: ACADEMIAS
+index_cix: CENTRO DE INICIACIÓN XOLOITZCUINTLE
+#Compra tu jersey
+index_compra_jersey_1: COMPRA TU JERSEY
+index_compra_jersey_2: EN LÍNEA
+index_compra_jersey_3: ENVIÓ GRATIS
+index_jersey_hombres: HOMBRES
+index_jersey_mujeres: MUJERES
+index_jersey_ninos: NIÑOS
+index_link_mujeres: http://www.xoloshop.com.mx/mujer_qO27020528XoOmaxPriceXtOcXvOgalleryxSM
+index_link_hombres: http://www.xoloshop.com.mx/hombre_qO27020188XoOmaxPriceXtOcXvOgalleryxSM
+index_link_ninos: http://www.xoloshop.com.mx/ninos_qO27019658XoOmaxPriceXtOcXvOgalleryxSM
+xoloshop_online: La tienda oficial de Club Tijuana esta en linea visitanos y adquiere tus productos de una manera mas fácil y rapida.
+visitar: Visitar
+
+#Videos
+titulo_videos: Videos
+fecha_videos: Fecha de publicacion
+
+
+#Contacto
+titulo_contacto_presidencia: Contacto Presidencia
+contenido_contacto_presidencia: |
+                            <strong>Vicepresidencia</strong>
+                            Correo: vicepresidencia@xolos.com.mx
+                            Tel: (664) 622-59-33
+                            <br>
+                            <img class="img-responsive" src="/bundles/frontend/images/contacto_estadio.jpg">
+titulo_contacto_estadio: Contacto Estadio
+contenido_contacto_estadio_1: |
+                            <strong>Red & Black Rooms</strong>
+                            Correo: eventos@rnbrooms.com.mx
+                            Tel: (664) 120 1010
+contenido_contacto_estadio_2: |
+                             <strong>Estadio Caliente Eventos y Suites </strong>
+                             Leopoldo Estrada
+                             Correo: leopoldo.estrada@caliente.com.mx
+                             Tel: (664) 622-59-33
+
+titulo_contacto_palcos: Contacto Palcos
+contenido_contacto_palcos_1: |
+                            <strong>Vicepresidencia</strong>
+                            Correo: vicepresidencia@xolos.com.mx
+                            Tel: (664) 622-59-33
+contenido_contacto_palcos_2: |
+                             <strong>Estadio Caliente Eventos</strong>
+                             Leopoldo Estrada
+                             Correo: leopoldo.estrada@caliente.com.mx
+                             Tel: (664) 622-59-33
+
+titulo_contacto_responsabilidad: Contacto Responsabilidad Social
+contenido_contacto_responsabilidad: |
+                                    <strong>Responsabilidad Social</strong>
+                                    Marissa Alejandra Pompa Castro
+                                    Gerente de Responsabilidad Social
+                                    Tel: (664) 622-59-33
+                                    <br>
+                                    <img class="img-responsive" src="/bundles/frontend/images/contacto_responsabilidad.jpg">
+
+contenido_contacto_responsabilidad_maria: |
+                                    <strong>Responsabilidad Social</strong>
+                                    Maria Garcia
+                                    Maria.garcia@xolos.com.mx
+                                    Gerente de Responsabilidad Social
+                                    Tel: (664) 622-59-33
+                                    <br>
+
+
+titulo_contacto_comercializacion: Contacto Comercializacion
+contenido_contacto_comercializacion: |
+                                     <strong>Comercialización</strong>
+                                     Esteban de Anda
+                                     Director de Alianzas Comerciales y Comunicación
+                                     Correo: esteban.deanda@xolos.com.mx
+                                     Tel: (664) 622-59-33
+                                     <br>
+                                     <img class="img-responsive" src="/bundles/frontend/images/contacto_comercializacion.jpg">
+
+
+titulo_contacto_fuerzas: Contacto Fuerzas Basicas
+contenido_contacto_fuerzas_1: |
+                            <strong>Fuerzas Basicas</strong>
+                            Ignacio Ruvalcaba
+                            Director de Academias
+                            Tel: (664) 622-59-33
+contenido_contacto_fuerzas_2: |
+                            Roberto Cornejo
+                            Director Deportivo
+                            Correo: roberto.cornejo@xolos.com.mx
+                            Tel: (664) 622-59-33
+titulo_contacto_xoloshop: Tienda Oficial XoloShop
+contenido_contacto_xoloshop: |
+                            <strong>Xoloshop Estadio</strong>
+                            Te esperamos en #Xoloshop del Estadio Caliente: Boulevard Agua Caliente, 12027, Hipódromo, 22000 Tijuana, BC, México.
+
+                            Tel: (664) 622-59-33
+
+                            Correo Electronico: <a style="color:#cc2229;" href="mailto:tienda.oficial11@xolos.com.mx">tienda.oficial11@xolos.com.mx</a>
+
+                            Horario: De Lunes a Sábado de 9:00 am a 9:00 pm.
+                                    Domingos en día de partido(local y visita) de 4:00 pm a 9:00 pm.
+titulo_contacto_cix: Contacto Cix
+contenido_contacto_cix: |
+                            <strong>Centro de Iniciación Xoloitzcuintle</strong>
+                            Tel: (664) 686-54-80
+                            Horario de Atención: 9:00 am - 7:00 pm.
+                            <br>
+                            <img class="img-responsive" src="/bundles/frontend/images/contacto_cix.jpg">
+titulo_contacto_fut7: Contacto FUT7
+contenido_contacto_fut7: |
+                            <strong>FUT7</strong>
+                            Tel: (664) 686-54-80
+                            Horario de Atención: 9:00 am - 7:00 pm
+                            <br>
+                            <img class="img-responsive" src="/bundles/frontend/images/contacto_cix.jpg">

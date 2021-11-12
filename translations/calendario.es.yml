@@ -1,0 +1,12 @@
+titulo: CALENDARIO
+jornada: Jornada
+local: Local
+resultado: Resultado
+visitante: Visitante
+fecha: Fecha
+estadio: Estadio
+
+minuto_a_minuto: Minuto a Minuto
+alineacion: ALINEACIÓN XOLOITZCUINTLE
+no_alineacion: ALINEACIÓN AÚN NO DEFINIDA
+formato: "d/m/Y"

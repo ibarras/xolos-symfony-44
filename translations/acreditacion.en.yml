@@ -1,0 +1,37 @@
+titulo: ACCREDITATIONS REQUEST
+forma_nombre: Name
+forma_apellido_paterno: Apellido paterno
+forma_apellido_materno: Apellido materno
+forma_email: Email
+forma_celular: Cell phone number
+forma_nombre_medio_prensa: Media Name
+forma_nombreDelMedio: Media Name
+forma_tipo_medio: Type Of Media
+forma_tipo_acreditacion: Credential Type
+forma_fotografia: Image
+forma_jefe_directo: Supervisor Name
+forma_direccion: Address
+forma_ciudad: City
+forma_pais: Country
+forma_email_jefe_directo: Email jefe directo
+forma_aplicar: Apply
+forma_tipo_fotografo: Fotógrafo
+forma_tipo_camarografo: Camarógrafo
+forma_tipo_reportero: Reportero
+
+forma_tipo_otro: Specify for other
+forma_especifique:  Specify
+forma_funcion: work task
+forma_upload_fotografia: Upload photo headshot 1MB or less
+forma_telefono: Office Phone
+
+FORMA_PALCO_PRENSA: Press Box
+FORMA_FOTOGRAFO_MEDIOS: Photo
+FORMA_CAMAROGRAFO_MEDIOS: Broadcast Production
+
+forma_tipo_prensa: Newspaper
+forma_tipo_tv: TV
+forma_tipo_radio: Radio
+forma_tipo_agencia: Agency
+forma_tipo_revista: Magazine
+forma_tipo_web: Web

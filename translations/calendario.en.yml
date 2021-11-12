@@ -1,0 +1,12 @@
+titulo: CALENDAR
+jornada: Week
+local: Home
+resultado: Score
+visitante: Away
+fecha: Date
+estadio: Stadium
+
+minuto_a_minuto: Play by Play
+alineacion: STARTING TEAM
+no_alineacion: UNDEFINED STARTING TEAM
+formato: "m/d/Y"
