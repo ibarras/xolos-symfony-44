@@ -73,8 +73,9 @@
     </div>
 
     {#Seccion de tabla y calendario#}
-</div>
 
+    {% if calendario is not empty %}
+    
       <div class=" md:flex h-auto w-auto bg-red-600 mt-18 md:mt-28 pt-7 md:pt-0 pb-18">
         <div class="w-auto md:w-1/2 lg:w-2/5 mx-14 md:mx-10 md:mr-10 md:ml-20">
           <!-- sign -->
@@ -254,9 +255,15 @@
        <!--FINAL CALENDARIO-->
      </div>
 
+    {% else %}
+
+        {{include('partials/xoloshop.html.twig')}}
+
+    {% endif %}
+
     <div class=" w-80 md:w-96 h-12 md:h-14  bg-black text-2xl md:text-3xl mx-auto flex justify-center mb-5 -mt-16 md:-mt-7 rounded-md">
         <h1 class="text-white text-center m-auto font-semibold">NUESTRO PLANTEL</h1>
-      </div>
+    </div>
 
      <!-- SLIDER JUGADORES -->
      <div class="swiper mySwiper2 w-full mt-14" style="height: 490px">
