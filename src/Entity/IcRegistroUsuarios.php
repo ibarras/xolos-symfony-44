@@ -39,6 +39,20 @@ class IcRegistroUsuarios
     /**
      * @var string|null
      *
+     * @ORM\Column(name="social_name", type="string", length=255, nullable=true)
+     */
+    private $socialName;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="facebook_access_token", type="string", length=255, nullable=true)
+     */
+    private $facebookAccessToken;
+
+    /**
+     * @var string|null
+     *
      * @ORM\Column(name="password", type="string", length=200, nullable=true)
      */
     private $password;
@@ -77,6 +91,38 @@ class IcRegistroUsuarios
         $this->idRedSocial = $idRedSocial;
 
         return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getSocialName(): ?string
+    {
+        return $this->socialName;
+    }
+
+    /**
+     * @param string|null $socialName
+     */
+    public function setSocialName(?string $socialName): void
+    {
+        $this->socialName = $socialName;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getFacebookAccessToken(): ?string
+    {
+        return $this->facebookAccessToken;
+    }
+
+    /**
+     * @param string|null $facebookAccessToken
+     */
+    public function setFacebookAccessToken(?string $facebookAccessToken): void
+    {
+        $this->facebookAccessToken = $facebookAccessToken;
     }
 
     public function getPassword(): ?string

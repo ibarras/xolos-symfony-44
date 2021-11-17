@@ -32,3 +32,10 @@ services:
     App\MessageHandler\:
         resource: '../src/MessageHandler/'
         tags: ['messenger.message_handler']
+
+    my.oauth_aware.user_provider.service:
+        class: App\Security\MyEntityUserProvider
+        arguments:
+            - '@doctrine'
+            - 'App\Entity\IcRegistroUsuarios'
+            - {facebook: idRedSocial, twitter: idRedSocial, google: idRedSocial}
