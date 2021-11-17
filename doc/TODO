@@ -13,3 +13,7 @@ si no los hay mostrar algo informativo del club
 - habilitar el compartir en redes sociales.
 - unificar fuente (X)
 - link hacia centro de iniciacion / xoloshop / fut 7 (X)
+
+Bundles dependdientes para el HWI autenticacion con redes sociales
+
+composer require hwi/oauth-bundle symfony/http-client nyholm/psr7 guzzlehttp/promises php-http/httplug-bundle
