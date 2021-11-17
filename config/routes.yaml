@@ -18,7 +18,7 @@ frontend_home:
     controller: App\Controller\Frontend\HomeController:index
 
 frontend_news:
-    path:       /noticias/xoloitzcuintles/{post}
+    path:       /noticias/xoloitzcuintles/{post}/{titulo}
     controller: App\Controller\Frontend\ComunicacionController:showPost
 
 frontend_news_category:
