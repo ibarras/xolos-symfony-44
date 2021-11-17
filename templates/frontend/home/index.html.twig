@@ -42,12 +42,13 @@
           <li class="splide__slide h-96" >
             <div class=" h-48 w-full md:flex">
               <div class=" h-full w-full md:h-96 md:w-7/12 grayligth">
-                <a href="{{ path('frontend_news', {'post': noticia.id}) }}"><img class="img-splide h-full w-full object-cover bg-center md:h-full inset-0 transform  hover:scale-105 transition duration-300" src="https://admin.xolos.com.mx/uploads/galeria/noticias/{{ noticia.imagenPrincipal }}" alt=""></a>
+                <a href="{{ path('frontend_news', {'post': noticia.id, 'titulo': noticia.titulo | slug }) }}"><img class="img-splide h-full w-full object-cover bg-center md:h-full inset-0 transform  hover:scale-105 transition duration-300" src="https://admin.xolos.com.mx/uploads/galeria/noticias/{{ noticia.imagenPrincipal }}" alt=""></a>
             </div>
               <div class=" h-full px-3 pt-2 md:pt-8 xl:pt-24 grayligth md:h-96 md:w-5/12">
-                <a href="Noticia.html" class=" mt-1 text-xl md:text-4xl text-gray-700 ">{{noticia.titulo}}</a>
+                <a href="{{ path('frontend_news', {'post': noticia.id, 'titulo': noticia.titulo | slug }) }}" class=" mt-1 text-xl md:text-4xl text-gray-700 ">{{noticia.titulo}}</a>
                 <p class="mt-2 text-gray-500 md:mt-5 lg:mt-10 md:text-2xl font-thin">{{noticia.intro}}</p>
-                <a href="{{ path('frontend_news', {'post': noticia.id}) }}" class="absolute bottom-2 right-2 md:right-6 lg:text-lg front-thin text-gray-500 hover:underline ">LEER NOTICIA COMPLETA ></a>       
+                {#se aplican el filtro slug #}
+                <a href="{{ path('frontend_news', {'post': noticia.id, 'titulo': noticia.titulo | slug }) }}" class="absolute bottom-2 right-2 md:right-6 lg:text-lg front-thin text-gray-500 hover:underline ">LEER NOTICIA COMPLETA ></a>       
               </div>
             </div>
           </li>
@@ -274,7 +275,7 @@
 
           <div class="swiper-slide w-full h-full object-cover ">
             <div class="text-center grid justify-items-center">
-              <a href="{{ path('frontend_player', {'player': jugador.id, 'name': jugador.nombre}) }}"><div class="h-80 w-80 lg:h-72 lg:w-72 xl:h-96 xl:w-96 rounded-full bg-center bg-cover" style="background-image: url(https://admin.xolos.com.mx/uploads/galeria/foto_jugador/{{jugador.fotografia}});"></div></a>
+              <a href="{{ path('frontend_player', {'player': jugador.id, 'name': jugador.nombre | slug }) }}"><div class="h-80 w-80 lg:h-72 lg:w-72 xl:h-96 xl:w-96 rounded-full bg-center bg-cover" style="background-image: url(https://admin.xolos.com.mx/uploads/galeria/foto_jugador/{{jugador.fotografia}});"></div></a>
               <div class="flex max-h-48 w-80">
                   <p class="text-8xl ml-10 mr-0 text-red-600 font-bold">{{jugador.numero}}</p>
                   <p class=" pl-6 m-0 text-4xl pr-10 font-bold text-black mt-3">{{jugador.nombre}}</p>
@@ -300,19 +301,25 @@
         {% if loop.index == 1 %}
             
             <div class=" md:col-span-1 row-span-1  xl:col-span-2 xl:row-span-4 h-80 xl:h-auto xl:w-auto bg-red-400 rounded-md">
+            <a href="{{ path('frontend_galeria_detalle', { 'galeria' : galeria.id , 'slug': galeria.nombre | slug }) }} ">
                 <img src="https://admin.xolos.com.mx/uploads/galeria/foto_equipo/{{galeria.foto}}" alt="" class=" h-full w-full bg-center bg-cover object-cover rounded-md">
+            </a>
             </div>
                 
                 {% elseif loop.index == 2 %}
 
             <div class=" bg-red-400 md:col-span-1 md:row-span-1 xl:row-span-2 xl:col-span-2 h-80 bg-top rounded-md">
+            <a href="{{ path('frontend_galeria_detalle', { 'galeria' : galeria.id , 'slug': galeria.nombre | slug }) }} ">
                 <img src="https://admin.xolos.com.mx/uploads/galeria/foto_equipo/{{galeria.foto}}" alt="" class=" h-full w-full bg-center bg-cover object-cover rounded-md">
+                </a>
             </div>
 
         {% else  %}
                 
             <div class=" bg-red-400 md:col-span-1 md:row-span-1 xl:row-span-2 xl:col-span-1 h-80 rounded-md">
-                <img src="https://admin.xolos.com.mx/uploads/galeria/foto_equipo/{{galeria.foto}}" alt="" class=" h-full w-full bg-center bg-cover object-cover rounded-md">
+                <a href="{{ path('frontend_galeria_detalle', { 'galeria' : galeria.id , 'slug': galeria.nombre | slug }) }} ">
+                <img src="https://admin.xolos.com.mx/uploads/galeria/foto_equipo/{{galeria.foto}}" alt="" class=" h-full w-full b-center bg-cover object-cover rounded-md">
+                </a>
             </div>
 
         {% endif %}
@@ -364,9 +371,7 @@
             <h1 class="text-center text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white ">SUBSCRIBETE AL NEWSLETTER DE XOLOS</h1>
             <h3 class="text-center text-xl md:text-2xl text-white mb-5 mt-3">Susbcribete para recibir infomarcion exclusiva del equpo mas perron!</h3>
             <div class="flex justify-center items-center">
-                <a href="{{ path('hwi_oauth_service_redirect', {'service': 'facebook' }) }}" role="button" class="button bg-black hover:bg-red-600 flex text-white text-lg md:text-lg px-2 md:px-6 py-4  md:py-5 border-2 rounded-lg">REGISTRATE CON <img src="pics/img/facebook-circular-logo.png" alt="" class="ml-2 h-7 w-7 animate-bounce"></a>
-                <a href="{{ path('hwi_oauth_service_redirect', {'service': 'twitter' }) }}" role="button" class="button bg-black hover:bg-red-600 flex text-white text-lg md:text-lg px-2 md:px-6 py-4  md:py-5 border-2 rounded-lg">REGISTRATE CON <img src="https://www.pngkey.com/png/full/129-1298249_donate-twitter-logo-png-white-circle.png" alt="" class="ml-2 h-7 w-7 animate-bounce"></a>
-                <a href="{{ path('hwi_oauth_service_redirect', {'service': 'google' }) }}" role="button" class="button bg-black hover:bg-red-600 flex text-white text-lg md:text-lg px-2 md:px-6 py-4  md:py-5 border-2 rounded-lg">REGISTRATE CON <img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-icon-png-transparent-background-osteopathy-16.png" alt="" class="ml-2 h-7 w-7 animate-bounce"></a>
+            <a href="" role="button" class="button bg-black hover:bg-red-600 flex text-white text-lg md:text-lg px-2 md:px-6 py-4  md:py-5 border-2 rounded-lg">REGISTRATE CON <img src="pics/img/facebook-circular-logo.png" alt="" class="ml-2 h-7 w-7 animate-bounce"></a>  
             </div>
         </div>
     </div>
