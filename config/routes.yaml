@@ -65,3 +65,16 @@ hwi_oauth_connect:
 hwi_oauth_login:
     resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
     prefix:   /login
+
+#
+#Definicion de Rutas para las Galerias
+#
+#
+
+frontend_galerias:
+    path:     /galerias
+    controller: App\Controller\Frontend\MediaController:index 
+
+frontend_galeria_detalle:
+    path:     /galerias/{galeria}/{slug}
+    controller: App\Controller\Frontend\MediaController:show 
