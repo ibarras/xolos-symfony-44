@@ -1,12 +1,25 @@
 {% extends 'base.html.twig' %}
 
+{% block sharedata %}
+    <meta property="og:title" content="{{noticia.titulo}}" />
+    <meta property="og:image" content="{{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_NOTICIA')}}{{noticia.imagenPrincipal}}" />
+    <meta property="og:description" content="{{ noticia.intro }}" /> 
+    <!-- Twitter Cards -->
+    {# <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Xolos" />
+    <meta name="twitter:creator" content="@Xolos" />
+    <meta name="twitter:title" content="{{ noticia.titulo }}" />
+    <meta name="twitter:description" content="{{ noticia.intro }}" />
+    <meta name="twitter:image:src" content="{{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_NOTICIA')}}{{noticia.imagenPrincipal}}" />
+    <meta name="twitter:domain" content="xolos.com.mx" /> #}
+{% endblock %}
+
 {% block content %}
 
-    
         
       <!-- Foto -->
     <div class=" w-full mx-auto mt-28" style="height: 92vh;">
-        <img src="https://admin.xolos.com.mx/uploads/galeria/noticias/{{noticia.imagenPrincipal}}" alt="" class="h-full w-full object-cover object-top pb-10 md:mx-auto filter brightness-75">
+        <img src="{{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_NOTICIA')}}{{noticia.imagenPrincipal}}" alt="" class="h-full w-full object-cover object-top pb-10 md:mx-auto filter brightness-75">
         <div class="w-full xl:w-8/12 lg:w-8/12 md:w-8/12 sm:w-11/12 absolute bottom-2 md:bottom-0 left-0 h-52">
         <!-- Encabezado -->
         <h1 class=" text-gray-50 mb-3 md:mb-5 text-3xl mx-5 xl:text-5xl lg:text-4xl md:text-4xl mt-5 md:mt-0 uppercase" style="text-shadow:3px 3px 10px black;">{{noticia.titulo}}</h1>
@@ -20,7 +33,10 @@
         <div class=" lg:w-2/3 mb-10 lg:mb-5">
             <div class="flex justify-center items-center">
                 <p class="mr-3 mt-2 text-xl text-gray-600 font-base">Compartir en:</p>
-                <a><img src="/pics/img/facebook(3).png" alt="" class="h-7 w-7 mt-2"></a>
+
+                <!-- Your share button code -->
+                <iframe src="https://www.facebook.com/plugins/share_button.php?href=http:{{ app.request.uri }}&layout=button&size=large&width=103&height=28&appId" width="103" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+
                 <a><img src="/pics/img/twitter(3).png" alt="" class="h-7 w-7 mx-2 mt-2"></a>
                 <a><img src="/pics/img/instagram(2).png" alt="" class="h-7 w-7 rounded-full mt-2"></a>
            </div>
@@ -40,7 +56,7 @@
     
 
     <!-- Noticias relacionadas -->
-    <div class="h-auto w-auto bg-gray-300 relative my-16 md:my-10">
+    <div class="h-auto w-auto bg-gray-100 relative my-16 md:my-10">
         <div class="h-14 w-auto mx-5 md:mx-10 bg-black absolute -mt-7 px-3 md:px-4 rounded-md">
             <h1 class="text-2xl md:text-3xl text-white pt-2 font-bold">NOTICIAS RELACIONADAS</h1>
         </div>
@@ -59,7 +75,5 @@
             </div>
         </div>
     </div>
-
-
 
 {% endblock %}

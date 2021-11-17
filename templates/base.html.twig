@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="rgba(220, 38, 38)"/>
+    <!-- SEO -->
+    <link rel="canonical" href="{{ app.request.uri }}"/>
+    <!-- OpenGraph Metadata -->
+    <meta property="og:url" content="{{ app.request.uri }}"/>
+    <meta property="og:site_name" content="Sitio Oficial del Club Tijuana Xoloitzcuintles de Caliente" />
+    <meta property="og:locale" content="es_LA" />
+    <meta property="og:locale:alternate" content="en_US"/>
+    <meta property="og:type" content="article"/>
+    {% block sharedata %}{% endblock %}
     <title>{% block title %}Club Tijuana Xoloitzcuintles de Caliente{% endblock %}</title>
     {# Tailwindcss via CDN #}
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
@@ -30,11 +39,23 @@
 
 </head>
 <body class="bg-white" style="font-family: 'Oswald', sans-serif;">
+
+   <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
     {% include 'partials/header.html.twig' %}
 
     <main>
+    
         {% block body %}
-
+        
             {% block content %}
 
             {% endblock %}
