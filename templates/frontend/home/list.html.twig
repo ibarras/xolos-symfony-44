@@ -11,7 +11,7 @@
     {% if (loop.index == 1) or (loop.index == 5) %}
 
         <div class=" bg-black h-80 lg:h-auto col-span-2 row-span-2 card-zoom w-auto overflow-hidden rounded-md">
-            <a href="{{ path('frontend_news', {'post': noticia.id}) }}">
+            <a href="{{ path('frontend_news', {'post': noticia.id, 'titulo': noticia.titulo}) }}">
                 <div class=" wrap absolute w-full h-full bg-gradient-to-t from-black via-transparent to-transparent">
                     <img class="card-zoom-image absolute w-full h-full duration-1000 transform bg-center bg-cover object-cover" src="https://admin.xolos.com.mx/uploads/galeria/noticias/{{noticia.imagenPrincipal}}" alt="">
                     <span class="absolute top-0 right-0 bg-red-600 text-white h-7 w-28 text-center rounded-bl-md py-0.5" style="z-index: 29;">{{ noticia.creado | date('Y-m-d') }}</span>
@@ -23,7 +23,7 @@
     {% else  %}
 
         <div class="bg-black  col-span-2 row-span-1 h-80 card-zoom w-auto overflow-hidden rounded-md">
-            <a href="{{ path('frontend_news', {'post': noticia.id}) }}">
+            <a href="{{ path('frontend_news', {'post': noticia.id, 'titulo': noticia.titulo}) }}">
                 <div class=" wrap w-full absolute h-full bg-gradient-to-t from-black via-transparent to-transparent">
                     <img class="card-zoom-image w-full h-full duration-1000 transform object-cover" src="https://admin.xolos.com.mx/uploads/galeria/noticias/{{noticia.imagenPrincipal}}" alt="">
                     <span class="absolute  top-0 right-0 bg-red-600 text-white h-7 w-28 text-center rounded-bl-md py-0.5" style="z-index: 29;">{{ noticia.creado | date('Y-m-d') }}</span>
