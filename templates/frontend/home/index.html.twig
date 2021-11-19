@@ -76,7 +76,7 @@
     {#Seccion de tabla y calendario#}
 
     {% if calendario  %}
-    
+
       <div class=" md:flex h-auto w-auto bg-red-600 mt-18 md:mt-28 pt-7 md:pt-0 pb-18">
         <div class="w-auto md:w-1/2 lg:w-2/5 mx-14 md:mx-10 md:mr-10 md:ml-20">
           <!-- sign -->
@@ -122,17 +122,17 @@
                               </tr>
                           </thead>
     <!--DataTable-->               <tbody>
-                              
+
                               {% for posiciones in tabla|slice(0,12) %}
 
                                     {% if posiciones.idEquipo.id == 33 %}
 
                                 <tr class="bg-white">
-                                <td class="px-5 py-1 border-b border-gray-200 rounded-l-full bg-red-600 text-sm " id=""> 
+                                <td class="px-5 py-1 border-b border-gray-200 rounded-l-full bg-red-600 text-sm " id="">
                                     <p class="text-gray-900 text-center">{{loop.index}}</p>
                                 </td>
-                                <td class="px-5 py-1 border-b border-gray-200  text-sm bg-red-600 ">           
-                                      <div class="p-0 m-auto h-8 w-8 ">          
+                                <td class="px-5 py-1 border-b border-gray-200  text-sm bg-red-600 ">
+                                      <div class="p-0 m-auto h-8 w-8 ">
                                           <img class=" rounded-full w-8 h-8 "
                                                 src="{{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_EQUIPOS')}}{{posiciones.idEquipo.logo}}">
                                       </div>
@@ -161,15 +161,15 @@
                                     </p>
                                 </td>
                               </tr>
-                                    
+
                                     {% else  %}
 
                                 <tr >
                                   <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm">
                                       <p class="text-gray-900 whitespace-no-wrap text-center">{{loop.index}}</p>
                                   </td>
-                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm">           
-                                        <div class="p-0 m-auto h-8 w-8 ">          
+                                  <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm">
+                                        <div class="p-0 m-auto h-8 w-8 ">
                                             <img class=" rounded-full w-8 h-8 "
                                                   src="{{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_EQUIPOS')}}{{posiciones.idEquipo.logo}}">
                                         </div>
@@ -203,7 +203,7 @@
 
                                 {% endfor %}
 
-                              </tr>                      
+                              </tr>
                           </tbody>
                       </table>
                   </div>
@@ -211,7 +211,7 @@
           </div>
       </div>
       <!--FINAL DE LA TABLA, COMIENZO DE CALENDARIO clases borradas lg:px-14-->
-      <div class="w-auto md:w-1/2 lg:w-3/5 bg-red-600 border-red-50 mb-10 pb-10 md:mr-10 md:px-8 mx-5 lg:ml-0 md:pr-5 lg:pr-0"> 
+      <div class="w-auto md:w-1/2 lg:w-3/5 bg-red-600 border-red-50 mb-10 pb-10 md:mr-10 md:px-8 mx-5 lg:ml-0 md:pr-5 lg:pr-0">
       <div class=" h-12 md:h-14 w-72 md:w-80 lg:w-96 bg-black text-2xl md:text-3xl flex justify-center mx-auto mb-8 md:-mt-7 rounded-md">
         <h1 class="text-white text-center m-auto font-semibold">PROXIMOS PARTIDOS</h1>
       </div>
@@ -221,13 +221,13 @@
                 <!-- Slides -->
 
                 {% for jornada in calendario %}
-                    
-                
+
+
                 <div class="swiper-slide text-center relative">
                   <h1 class="text-3xl md:text-4xl pt-5 text-gray-600">{{jornada.descripcion}}</h1>
                   <h2 class=" text-xl md:text-3xl pt-1 md:pt-3 font-thin text-gray-600">Estadio: {{jornada.idEquipo.estadio}}</h2>
                   <div class="flex justify-center py-8">
-                    
+
                     <img src="{{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_EQUIPOS')}}{{jornada.idEquipo.logo}}" alt="" class=" w-32 h-32  lg:w-52 lg:h-52">
                     <h1 class="text-center text-xl lg:text-6xl mx-2 md:mx-4 py-10 lg:mx-0 xl:mx-12 lg:pt-24 font-bold text-gray-600">VS</h1>
                     <img src="{{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_EQUIPOS')}}{{jornada.idEquipoVisitante.logo}}" alt="" class="w-32 h-32  lg:w-52 lg:h-52">
@@ -244,7 +244,7 @@
                   <a href="google.com" class="text-gray-600 absolute left-1 md:left-4 lg:left-10 bottom-0 text-sm md:text-xl font-bold underline bg-gray-200 rounded-lg">CALENDARIO</a>
                   <a href="google.com" class="text-gray-600 absolute right-1 md:right-4 lg:right-10 bottom-0 text-sm md:text-xl font-bold underline bg-gray-200 rounded-lg">MINUTO A MINUTO</a>
                 </div>
-              
+
               {% endfor %}
 
               </div>
@@ -252,7 +252,7 @@
               <div class="swiper-button-prev  rounded-lg h-16 w-10" style="color: gray;"></div>
               <div class="swiper-button-next  rounded-lg h-16 w-10 " style="color: gray;"></div>
           </div>
-        </div> 
+        </div>
        <!--FINAL CALENDARIO-->
      </div>
 

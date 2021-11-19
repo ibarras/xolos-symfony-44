@@ -1,36 +1,289 @@
+<div class=" w-72 md:w-96 h-12 md:h-14 bg-black text-xl md:text-2xl flex justify-center mb-7 md:mb-0 md:-mb-7 mt-18 md:mt-20 md: relative mx-auto rounded-md">
+  <h1 class="text-white text-center m-auto font-semibold">TIENDA OFICIAL XOLOS DE TIJUANA</h1>
+</div>
 
-
-
-        <div class=" w-72 md:w-96 h-12 md:h-14 bg-black text-xl md:text-2xl flex justify-center mb-7 md:mb-0 md:-mb-7 mt-18 md:mt-20 md: relative mx-auto rounded-md">
-            <h1 class="text-white text-center m-auto font-semibold">TIENDA OFICIAL XOLOS DE TIJUANA</h1>
-        </div>
-        
-        <div class=" md:flex h-auto w-auto bg-red-600  mb-24 md:mb-18 p-5 md:pb-10 md:pt-14 grid grid-col-1 md:grid-cols-3 gap-10">
-
-
-        <div class="md:w-1/3 md:col-span-1 bg-white rounded-md bg-cover bg-center h-auto">
-            <a href=""><img src="/pics/img/xolos1.jpeg" alt="xolos-femenil" class="rounded-md"></a>
-            <section class="h-24 w-auto bg-white text-center rounded-md">
-                <h1 class="font-thin text-xl mt-2">JERSEY CHARLY ROSA AP20-21</h1>
-                <button class="p-2 rounded-md bg-black hover:bg-red-600 text-base text-white mt-2">COMPRAR AHORA</button>
-            </section>
-        </div>
-        
-        <div class="md:w-1/3 md:col-span-1 bg-white rounded-md bg-cover bg-center h-auto"> 
-            <a href=""><img src="/pics/img/xolos-2.jpeg" alt="xolos-local" class="rounded-md"></a>
-            <section class="h-24 w-auto bg-white text-center rounded-md">
-                <h1 class="font-thin text-xl mt-5">JERSEY CHARLY LOCAL AP20-21</h1>
-                <button class="p-2 rounded-md bg-black hover:bg-red-600 text-base text-white mt-2">COMPRAR AHORA</button>
-            </section>
-        </div>
-
-        <div class="md:w-1/3 md:col-span-1 bg-white rounded-md bg-cover bg-center h-auto"> 
-            <a href=""><img src="/pics/img/xolos-3.jpeg" alt="xolos-visitante" class="rounded-md"></a>
-            <section class="h-24 w-auto bg-white text-center rounded-md">
-                <h1 class="font-thin text-xl mt-2">JERSEY CHARLY VISITANTE AP20-21</h1>
-                <button class="p-2 rounded-md bg-black hover:bg-red-600 text-base text-white mt-2">COMPRAR AHORA</button>
-            </section>
-        </div>
-        
-     </div>
-
+<div class=" md:flex h-auto w-auto bg-red-600  mb-24 md:mb-18 p-5 md:pb-10 md:pt-14 grid grid-col-1 md:grid-cols-3 gap-10">
+    <div id='collection-component-1637199037064'></div>
+    <script type="text/javascript">
+        /*<![CDATA[*/
+        (function () {
+            var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+            if (window.ShopifyBuy) {
+                if (window.ShopifyBuy.UI) {
+                    ShopifyBuyInit();
+                } else {
+                    loadScript();
+                }
+            } else {
+                loadScript();
+            }
+            function loadScript() {
+                var script = document.createElement('script');
+                script.async = true;
+                script.src = scriptURL;
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+                script.onload = ShopifyBuyInit;
+            }
+            function ShopifyBuyInit() {
+                var client = ShopifyBuy.buildClient({
+                    domain: 'xolos.myshopify.com',
+                    storefrontAccessToken: '4b67ac5d895672598f5b0413734d122c',
+                });
+                ShopifyBuy.UI.onReady(client).then(function (ui) {
+                    ui.createComponent('collection', {
+                        id: '262433538131',
+                        node: document.getElementById('collection-component-1637199037064'),
+                        moneyFormat: '%24%20%7B%7Bamount%7D%7D',
+                        options: {
+                            "product": {
+                                "styles": {
+                                    "product": {
+                                        "background-color": "#FFF",
+                                        "padding-bottom": "10px",
+                                        "border-radius": "8px",
+                                        "@media (min-width: 601px)": {
+                                            "max-width": "calc(33.33333% - 30px)",
+                                            "margin-left": "30px",
+                                            "margin-bottom": "20px",
+                                            "width": "calc(33.33333% - 30px)"
+                                        },
+                                        "img": {
+                                            "height": "calc(100% - 15px)",
+                                            "position": "absolute",
+                                            "left": "0",
+                                            "right": "0",
+                                            "top": "0"
+                                        },
+                                        "imgWrapper": {
+                                            "padding-top": "calc(75% + 15px)",
+                                            "position": "relative",
+                                            "height": "0",
+                                            "background-color": "#eceef0"
+                                        }
+                                    },
+                                    "title": {
+                                        "font-family": "Karla, sans-serif",
+                                        "font-weight": "normal",
+                                        "margin-top": "15px"
+                                    },
+                                    "button": {
+                                        "font-family": "Karla, sans-serif",
+                                        "font-weight": "bold",
+                                        "font-size": "16px",
+                                        "padding-top": "16px",
+                                        "padding-bottom": "16px",
+                                        ":hover": {
+                                            "background-color": "#d20018"
+                                        },
+                                        "background-color": "#e9001b",
+                                        ":focus": {
+                                            "background-color": "#d20018"
+                                        },
+                                        "border-radius": "10px"
+                                    },
+                                    "quantityInput": {
+                                        "font-size": "16px",
+                                        "padding-top": "16px",
+                                        "padding-bottom": "16px"
+                                    }
+                                },
+                                "buttonDestination": "modal",
+                                "contents": {
+                                    "options": false
+                                },
+                                "text": {
+                                    "button": "Ver producto"
+                                },
+                                "googleFonts": [
+                                    "Karla"
+                                ]
+                            },
+                            "productSet": {
+                                "styles": {
+                                    "products": {
+                                        "@media (min-width: 601px)": {
+                                            "margin-left": "-30px"
+                                        }
+                                    }
+                                }
+                            },
+                            "modalProduct": {
+                                "contents": {
+                                    "img": false,
+                                    "imgWithCarousel": true,
+                                    "button": false,
+                                    "buttonWithQuantity": true
+                                },
+                                "styles": {
+                                    "product": {
+                                        "@media (min-width: 601px)": {
+                                            "max-width": "100%",
+                                            "margin-left": "0px",
+                                            "margin-bottom": "0px"
+                                        }
+                                    },
+                                    "button": {
+                                        "font-family": "Karla, sans-serif",
+                                        "font-weight": "bold",
+                                        "font-size": "16px",
+                                        "padding-top": "16px",
+                                        "padding-bottom": "16px",
+                                        ":hover": {
+                                            "background-color": "#d20018"
+                                        },
+                                        "background-color": "#e9001b",
+                                        ":focus": {
+                                            "background-color": "#d20018"
+                                        },
+                                        "border-radius": "10px"
+                                    },
+                                    "quantityInput": {
+                                        "font-size": "16px",
+                                        "padding-top": "16px",
+                                        "padding-bottom": "16px"
+                                    },
+                                    "title": {
+                                        "font-family": "Karla, sans-serif",
+                                        "font-weight": "normal",
+                                        "font-size": "26px",
+                                        "color": "#4c4c4c"
+                                    }
+                                },
+                                "googleFonts": [
+                                    "Karla"
+                                ]
+                            },
+                            "option": {},
+                            "cart": {
+                                "styles": {
+                                    "button": {
+                                        "font-family": "Karla, sans-serif",
+                                        "font-weight": "bold",
+                                        "font-size": "16px",
+                                        "padding-top": "16px",
+                                        "padding-bottom": "16px",
+                                        ":hover": {
+                                            "background-color": "#d20018"
+                                        },
+                                        "background-color": "#e9001b",
+                                        ":focus": {
+                                            "background-color": "#d20018"
+                                        },
+                                        "border-radius": "10px"
+                                    },
+                                    "title": {
+                                        "color": "#4c4c4c"
+                                    },
+                                    "header": {
+                                        "color": "#4c4c4c"
+                                    },
+                                    "lineItems": {
+                                        "color": "#4c4c4c"
+                                    },
+                                    "subtotalText": {
+                                        "color": "#4c4c4c"
+                                    },
+                                    "subtotal": {
+                                        "color": "#4c4c4c"
+                                    },
+                                    "notice": {
+                                        "color": "#4c4c4c"
+                                    },
+                                    "currency": {
+                                        "color": "#4c4c4c"
+                                    },
+                                    "close": {
+                                        "color": "#4c4c4c",
+                                        ":hover": {
+                                            "color": "#4c4c4c"
+                                        }
+                                    },
+                                    "empty": {
+                                        "color": "#4c4c4c"
+                                    },
+                                    "noteDescription": {
+                                        "color": "#4c4c4c"
+                                    },
+                                    "discountText": {
+                                        "color": "#4c4c4c"
+                                    },
+                                    "discountIcon": {
+                                        "fill": "#4c4c4c"
+                                    },
+                                    "discountAmount": {
+                                        "color": "#4c4c4c"
+                                    }
+                                },
+                                "text": {
+                                    "button": "Comprar"
+                                },
+                                "googleFonts": [
+                                    "Karla"
+                                ]
+                            },
+                            "toggle": {
+                                "styles": {
+                                    "toggle": {
+                                        "font-family": "Karla, sans-serif",
+                                        "font-weight": "bold",
+                                        "background-color": "#e9001b",
+                                        ":hover": {
+                                            "background-color": "#d20018"
+                                        },
+                                        ":focus": {
+                                            "background-color": "#d20018"
+                                        }
+                                    },
+                                    "count": {
+                                        "font-size": "16px"
+                                    }
+                                },
+                                "googleFonts": [
+                                    "Karla"
+                                ]
+                            },
+                            "lineItem": {
+                                "styles": {
+                                    "variantTitle": {
+                                        "color": "#4c4c4c"
+                                    },
+                                    "title": {
+                                        "color": "#4c4c4c"
+                                    },
+                                    "price": {
+                                        "color": "#4c4c4c"
+                                    },
+                                    "fullPrice": {
+                                        "color": "#4c4c4c"
+                                    },
+                                    "discount": {
+                                        "color": "#4c4c4c"
+                                    },
+                                    "discountIcon": {
+                                        "fill": "#4c4c4c"
+                                    },
+                                    "quantity": {
+                                        "color": "#4c4c4c"
+                                    },
+                                    "quantityIncrement": {
+                                        "color": "#4c4c4c",
+                                        "border-color": "#4c4c4c"
+                                    },
+                                    "quantityDecrement": {
+                                        "color": "#4c4c4c",
+                                        "border-color": "#4c4c4c"
+                                    },
+                                    "quantityInput": {
+                                        "color": "#4c4c4c",
+                                        "border-color": "#4c4c4c"
+                                    }
+                                }
+                            }
+                        },
+                    });
+                });
+            }
+        })();
+        /*]]>*/
+    </script>
+</div>
