@@ -2,30 +2,27 @@
 
 {% block content %}
 
-<div class="w-full mx-auto bg-black flex justify-center">
-    <div class="w-full mx-auto mt-20 bg-black bg-no-repea bg-top bg-cover text-center flex justify-center filter brightness-50" style="background-image: url(https://admin.xolos.com.mx/uploads/galeria/noticias/19773665095c390bf50dbfc.jpg); height: 90vh;"></div>
-      <p class="text-4xl md:text-5xl lg:text-7xl text text-white m-auto filter-none absolute top-80 md:top-96 left-50 font-extrabold underline text-center"> {{calendario.nombre}}</p>
-</div>
+    {{include('partials/proximoPartido.html.twig')}}
     
 <!-- Contenedor Principal -->
-    <div class="bg-red-600 mx-2 md:mx-10 lg:mx-20 xl:mx-44 w-auto h-auto pt-1 md:pt-1 pb-5 px-2 md:px-5 mt-5 md:mt-10 mb-10 rounded-md">
+    <div class="bg-white mx-2 md:mx-10 lg:mx-20 xl:mx-44 w-auto h-auto pt-1 md:pt-1 pb-5 px-2 md:px-5 mt-5 md:mt-10 mb-10 rounded-md">
 
         <!-- Encabezado Calendario -->
 
         {% for partidos in schedule %}
 
           <!-- Escudos, Marcador y Jornada -->
-        <div class="h-72 w-full bg-white rounded-md pt-4 md:pt-0 mt-2 md:mt-5">
+        <div class="h-72 w-full bg-white pt-4 md:pt-0 mt-2 md:mt-5 border-t-2 border-black">
             <div class="flex justify-between px-2 md:px-10 lg:px-20">
                 <div class="h-28 w-28 md:h-36 md:w-36 lg:h-52 lg:w-52 lg:p-3">
                     <img src="{{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_EQUIPOS')}}{{ partidos.idEquipo.logo }}" alt="" class="h-full pt-5 lg:pt-0 mx-auto">
                 </div>
                 <div class="p-5 text-center">
-                    <h1 class="text-lg md:text-3xl text-gray-600">{{partidos.descripcion}}</h1>
+                    <h1 class="text-lg md:text-3xl text-black font-thin">{{partidos.descripcion}}</h1>
                     <div class="flex justify-center mt-5 gap-6 md:gap-16">
-                        <p class="text-3xl md:text-5xl lg:text-7xl text-gray-600">{{ partidos.equipoLocalResultado }}</p>
-                        <p class="text-3xl md:text-5xl lg:text-7xl text-gray-600">-</p>
-                        <p class="text-3xl md:text-5xl lg:text-7xl text-gray-600">{{ partidos.equipoVisitanteResultado }}</p>
+                        <p class="text-3xl md:text-5xl lg:text-7xl text-black font-thin">{{ partidos.equipoLocalResultado }}</p>
+                        <p class="text-3xl md:text-5xl lg:text-7xl text-black">-</p>
+                        <p class="text-3xl md:text-5xl lg:text-7xl text-black font-thin">{{ partidos.equipoVisitanteResultado }}</p>
                     </div>
                 </div>
                 <div class="h-28 w-28 md:h-36 md:w-36 lg:h-52 lg:w-52 lg:p-3">
@@ -34,13 +31,16 @@
             </div>
             <!-- Botones -->
             <div class="flex justify-center gap-5 pt-6 lg:pt-0">
-                <button class="h-10 w-28 md:w-32 text-base md:text-lg bg-red-600 text-white rounded-xl flex justify-center pt-2 md:pt-1.5">Boletos<img src="/pics/img/shop.png" alt="" class="ml-2 mt-1.5 h-4 w-4"></button>
-                <button class="h-10 w-28 md:w-32 text-base md:text-lg bg-red-600 text-white rounded-xl">Minuto a Minuto</button>
+                <button class="h-9 w-24 md:w-32 text-sm md:text-lg bg-black text-white flex justify-center pt-2 md:pt-1 font-thin rounded-md" style="box-shadow: 0 4px 6px -6px black;">Boletos<img src="/pics/img/shop.png" alt="" class="ml-2 mt-1 md:mt-1.5 h-4 w-4"></button>
+                <button class="h-9 w-24 md:w-32 text-sm md:text-lg bg-black text-white font-thin rounded-md" style="box-shadow: 0 7px 8px -6px black;">Minuto a Minuto</button>
             </div>
             <!-- Estadio y Fecha -->
             <div class="flex justify-between px-5 pt-10 lg:pt-0">
-                <p class="text-lg md:text-xl text-gray-600">ESTADIO: {{ partidos.idEquipo.estadio }}</p>
-                <p class="text-lg md:text-xl text-gray-600">{{ partidos.creado|date("d/m/Y") }}</p>
+                
+                    <p class="text-lg md:text-xl text-black font-thin flex gap-3 mt-2">Estadio: {{ partidos.idEquipo.estadio }}</p>
+ 
+                    <p class="text-base md:text-xl text-black font-thin mt-2">{{ partidos.creado|date("d/m/Y") }}</p>
+  
             </div>
         </div>
 

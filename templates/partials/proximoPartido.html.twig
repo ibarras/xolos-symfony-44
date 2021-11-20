@@ -1,0 +1,37 @@
+
+{% set activos = schedule|filter(partido => partido.esActivo == true) %}
+{% if activos %}
+    {% for partido in activos %}
+        {% if(loop.first == true) %}
+<div class="w-full mx-auto bg-black flex justify-center">
+    <div class="w-full mx-auto mt-20 bg-black bg-top bg-cover text-center flex justify-center filter brightness-50" style="background-image: url(https://admin.xolos.com.mx/uploads/galeria/noticias/19773665095c390bf50dbfc.jpg); height: 90vh;"></div>
+    <div class="absolute top-60 md:top-60">
+        <p class="text-3xl md:text-4xl text-white m-auto text-center" style="text-shadow:3px 3px 10px black;">PROXIMO ENCUENTRO</p>
+        <p class="text-xl text text-white m-auto mt-3 font-thin text-center" style="text-shadow:3px 3px 10px black;">{{ partido.creado|date("d/m/Y") }}</p>
+        <div class="flex justify-center items-center gap-8 md:gap-16 mt-8">
+
+            <div class="text-center lg:flex flex-row-reverse justify-center items-center align-middle gap-5">
+                <img src="{{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_EQUIPOS')}}{{ partido.idEquipo.logo }}" alt="" class=" h-28 md:h-44">
+                <p class="text-white text-xl md:text-4xl font-thin" style="text-shadow:3px 3px 10px black;">{{ partido.idEquipo.nombre }}</p>
+                
+            </div>
+
+            <h1 class="text-3xl md:text-4xl text-white" style="text-shadow:3px 3px 10px black;">VS</h1>
+
+            <div class="text-center lg:flex justify-center items-center align-middle gap-5">
+                <img src="{{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_EQUIPOS')}}{{ partido.idEquipoVisitante.logo }}" alt="" class="h-28 md:h-44">
+                <p class="text-white text-xl md:text-4xl font-thin" style="text-shadow:3px 3px 10px black;">{{ partido.idEquipoVisitante.nombre }}</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+        {% endif %}
+    {% endfor %}
+{% else %}
+    <div class="w-full mx-auto bg-black flex justify-center">
+        <div class="w-full mx-auto mt-20 bg-black bg-no-repea bg-top bg-cover text-center flex justify-center filter brightness-50" style="background-image: url(https://admin.xolos.com.mx/uploads/galeria/noticias/19773665095c390bf50dbfc.jpg); height: 90vh;"></div>
+        <p class="text-4xl md:text-5xl lg:text-7xl text text-white m-auto filter-none absolute top-80 md:top-96 left-50 font-extrabold underline text-center">{{calendario.nombre}}</p>
+    </div>
+{% endif %}
+
