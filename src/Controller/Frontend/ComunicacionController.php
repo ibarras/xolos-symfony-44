@@ -61,5 +61,10 @@ class ComunicacionController extends AbstractController
 
     }
 
+    public function historia(){
+
+        return $this->render('frontend/comunicacion/historia.html.twig');
+
+    }
 
 }

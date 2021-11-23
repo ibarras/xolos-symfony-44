@@ -83,4 +83,11 @@ class DeportivoController extends AbstractController
         ]);
     }
 
+
+    public function palmares(){
+
+        return $this->render('frontend/deportivo/palmares.html.twig');
+
+    }
+
 }

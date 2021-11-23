@@ -41,6 +41,14 @@ frontend_coach:
 frontend_player:
     path:       /jugador/{player}/{name}
     controller: App\Controller\Frontend\DeportivoController:getPlayer
+
+frontend_palmares:
+    path:       /club-palmares
+    controller: App\Controller\Frontend\DeportivoController:palmares
+
+frontend_historia:
+    path:       /historia
+    controller: App\Controller\Frontend\ComunicacionController:historia
 #
 # HWIOAuthBundle Routes
 #
