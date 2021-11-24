@@ -15,30 +15,30 @@
     {% block sharedata %}{% endblock %}
     <title>{% block title %}Club Tijuana Xoloitzcuintles de Caliente{% endblock %}</title>
     {# Tailwindcss via CDN #}
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/themes/splide-default.min.css">
-    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="icon" href="https://s3.amazonaws.com/lmxwebsite/docs/archdgtl/AfldDrct/logos/10751/10751.png">
-    <link rel="stylesheet" href="/css/modal-video.min.css">
-    <link rel="stylesheet" href="/css/app.css">
-    <!-- Font awesome -->
-    <script src="https://kit.fontawesome.com/490c71ac8a.js" crossorigin="anonymous"></script>
+{#    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">#}
 
-    {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
+
     {% block stylesheets %}
-        {#{{ encore_entry_link_tags('app') }}#}
+        {{ encore_entry_link_tags('app') }}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/themes/splide-default.min.css">
+        <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap" rel="stylesheet">
+        <link rel="icon" href="https://s3.amazonaws.com/lmxwebsite/docs/archdgtl/AfldDrct/logos/10751/10751.png">
+        <link rel="stylesheet" href="/css/modal-video.min.css">
+        <link rel="stylesheet" href="/css/app.css">
+        <!-- Font awesome -->
+        <script src="https://kit.fontawesome.com/490c71ac8a.js" crossorigin="anonymous"></script>
+
     {% endblock %}
 
     {% block javascripts %}
-        {#{{ encore_entry_script_tags('app') }}#}
+        {{ encore_entry_script_tags('app') }}
     {% endblock %}
 
 </head>
-<body class="bg-white" style="font-family: 'Oswald', sans-serif;">
+<body>
 
    <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>
