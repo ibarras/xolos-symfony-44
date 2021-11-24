@@ -49,6 +49,19 @@ frontend_palmares:
 frontend_historia:
     path:       /historia
     controller: App\Controller\Frontend\ComunicacionController:historia
+
+frontend_estadio:
+    path:       /estadio
+    controller: App\Controller\Frontend\ComunicacionController:estadio
+
+frontend_eventos:
+    path:       /estadio-eventos
+    controller: App\Controller\Frontend\ComunicacionController:eventos
+
+frontend_reglamento:
+    path:       /reglamento
+    controller: App\Controller\Frontend\ComunicacionController:reglamento
+
 #
 # HWIOAuthBundle Routes
 #

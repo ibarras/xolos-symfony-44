@@ -38,7 +38,7 @@
             <li class="sub-item"><a href="{{ path('frontend_players_category', {'category': constant('App\\IcUtils\\IcConfig::IC_JUGADOR_CATEGORIA_PRIMER')}) }}">PLANTEL</a></li>
             <li class="sub-item"><a href="{{ path('frontend_coach')}}">CUERPO TECNICO</a></li>
             <li class="sub-item"><a href="#">FUERZAS BASICAS</a></li>
-            <li class="sub-item"><a href="#">ESTADIO</a></li>
+            <li class="sub-item"><a href="{{ path('frontend_estadio')}}">ESTADIO</a></li>
             <li class="sub-item"><a href="{{ path('frontend_historia')}}">HISTORIA</a></li>
             <li class="sub-item"><a href="#">DIRECTIVA</a></li>
             <li class="sub-item"><a href="{{ path('frontend_palmares')}}">PALAMRES</a></li>
@@ -62,7 +62,7 @@
         <li class="menu-item">
           <a class="sub-btn" href="#">ESTADIO<i class="ml-1 fas fa-angle-down"></i></a>
           <ul class="sub-menu">
-            <li class="sub-item"><a href="#">EVENTOS</a></li>
+            <li class="sub-item"><a href="{{ path('frontend_eventos')}}">EVENTOS</a></li>
             <li class="sub-item"><a href="#">PALCOS</a></li>
             <li class="sub-item"><a href="#">RESTAURANTE</a></li>
             <li class="sub-item"><a href="#">XOLOSHOP</a></li>
@@ -89,7 +89,7 @@
         <li class="menu-item">
           <a class="sub-btn" href="#">MEDIOS<i class="ml-1 fas fa-angle-down"></i></a>
           <ul class="sub-menu">
-            <li class="sub-item"><a href="#">REGLAMENTO</a></li>
+            <li class="sub-item"><a href="{{ path('frontend_reglamento')}}">REGLAMENTO</a></li>
             <li class="sub-item"><a href="#">SOLICITUD DE ACREDITACIONES</a></li>
             
           </ul>

@@ -67,4 +67,22 @@ class ComunicacionController extends AbstractController
 
     }
 
+    public function estadio(){
+
+        return $this->render('frontend/comunicacion/estadio.html.twig');
+
+    }
+
+    public function eventos(){
+
+        return $this->render('frontend/comunicacion/eventos.html.twig');
+
+    }
+
+    public function reglamento(){
+
+        return $this->render('frontend/comunicacion/reglamento.html.twig');
+
+    }
+
 }
