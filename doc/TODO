@@ -17,3 +17,25 @@ si no los hay mostrar algo informativo del club
 Bundles dependdientes para el HWI autenticacion con redes sociales
 
 composer require hwi/oauth-bundle symfony/http-client nyholm/psr7 guzzlehttp/promises php-http/httplug-bundle
+
+Dependencias y configuraciones para la instalacion de tailwindcss
+#instalación de WebpackEncoreBundle
+1.- composer req encore
+#instalacion de dependencias npm(node)
+2.- npm i
+#instalación de tailwindcss, postcsss, y autoprefixer
+3.- npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+#Se incializa el archivo de configuración de tailwind
+4.- npx tailwindcss init -p
+#Instalación de postes-loader y se habilita enablePostCssLoader() en webpack.config.js
+5.- npm install postcss-loader@^6.0.0 -D
+#agregar NODE_ENV=production instrucción build en el archivo package.json
+6.- "build": "NODE_ENV=production encore production --progress"
+#instalación de cross-env(manejo de variables de entorno multiplataforma)
+7.- npm i cross-env -D
+#agregar cros-env en la instrucción build en el archivo package.json
+8.- "build": "cross-env NODE_ENV=production encore production --progress"
+9.- Comandos para manejo de estilos
+    inciar live server: npm run dev-server
+    generar css en modo desarrollo: npm run dev
+    generar css para produccion(minificados y purgados): npm run build
