@@ -85,4 +85,10 @@ class ComunicacionController extends AbstractController
 
     }
 
+    public function directiva(){
+
+        return $this->render('frontend/comunicacion/directiva.html.twig');
+
+    }
+
 }
