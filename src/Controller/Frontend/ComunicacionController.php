@@ -91,4 +91,10 @@ class ComunicacionController extends AbstractController
 
     }
 
+    public function palcos(){
+
+        return $this->render('frontend/comunicacion/palcos.html.twig');
+
+    }
+
 }

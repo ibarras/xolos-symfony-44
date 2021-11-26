@@ -66,6 +66,10 @@ frontend_reglamento:
 frontend_directiva:
     path:       /directiva
     controller: App\Controller\Frontend\ComunicacionController:directiva
+
+frontend_palcos:
+    path:       /palcos
+    controller: App\Controller\Frontend\ComunicacionController:palcos
 #
 # HWIOAuthBundle Routes
 #

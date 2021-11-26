@@ -1,0 +1,112 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+<style>
+                .embed-container {
+                position: relative;
+                padding-bottom: 52.99%;
+                height: 0;
+                overflow: hidden;
+            }
+            .embed-container iframe {
+                position: absolute;
+                top:0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+            </style>
+
+<div class="w-full mx-auto bg-black flex justify-center">
+        <div class="w-full mx-auto mt-20 bg-black bg-no-repea bg-center bg-cover text-center flex justify-center filter brightness-50" style="background-image: url(http://farm9.staticflickr.com/8631/16223576440_2b9e457571_b.jpg); height: 90vh;"></div>
+          <p class="text-4xl md:text-5xl lg:text-7xl text text-white m-auto filter-none absolute top-80 md:top-96 left-50 font-extrabold text-center" style="text-shadow:3px 3px 10px black;"> PALCOS </p>
+    </div>
+
+    <div class="text-justify mx-5 md:mx-56 my-10 h-auto">
+
+        <h1 class=" text-center text-3xl lg:text-4xl mt-12 mb-10 text-gray-700">NUESTROS JEUGOS DE LOCAL, COMO EN CASA</h1>
+
+    <p class="text-justify text-base md:text-xl font-thin lg:mt-14 mb-5 text-gray-700  my-10">
+        La construcción del Estadio Caliente está por llegar a su fin y tú puedes formar parte de ella.
+        <br>
+        <br>
+        Vivir con estilo los juegos del equipo de casa y desde una zona exclusiva ahora será posible desde 33 Suites, la nueva área de palcos que está en construcción en el Estadio Caliente y desde donde podrás presenciar –mejor que desde ninguna otra parte los partidos del Club Tijuana Xoloitzcuintles de Caliente.
+        <br>
+        <br>
+        La primera etapa del estadio fue inaugurada en noviembre del 2007. Se espera que con la construcción de la Zona 2 quede concluida la construcción, lo que será un acontecimiento histórico para la ciudad y del que tú puedes formar parte.
+        <br>
+        <br>
+        Serán sólo 33 suites donde podrás vivir con el mayor confort el deporte más apasionante de la región y al que se da cita cada dos semanas, la sociedad más influyente de nuestra ciudad.
+        33 Suites tendrá para ti cuatro tipos de palcos, todos con la mejor vista a la cancha del Caliente y aquí te detallamos las características de cada uno de estos exclusivos espacios:
+    </p>
+
+        <div class="embed-container mt-10 ">
+            <iframe src="https://www.youtube.com/embed/xKDLmSVfM1I" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+    </div>
+
+    <div class="mx-5 md:mx-56 text-gray-700 grid grid-cols-1 lg:grid-cols-2 gap-1 lg:gap-8 my-16">
+        
+        <div class=" col-span-1">
+            <h1 class="text-xl md:text-2xl">Zona Dos</h1>
+            <p class="text-base md:text-xl font-thin"> confort y exclusividad</p>
+            <br>
+            <h1 class="text-xl md:text-2xl">Junior Suite</h1>
+            <p class="text-base md:text-xl font-thin">Opción A
+            Cuatro palcos con capacidad para 20 personas
+            19.2 metros cuadrados en el área interior
+            Opción B
+            Doce palcos con capacidad para 25 personas, con 19.5 metros cuadrados en el área interior
+            </p>
+            <br>
+            <h1 class="text-xl md:text-2xl">VIP Suite</h1> 
+            <p class="text-base md:text-xl font-thin">Opción A
+            Cuatro palcos con capacidad para 29 personas cada uno, co 21.5 metros cuadrados en el área interior
+            Opción B
+            Ocho palcos con capacidad para 37 personas, con 25.5 metros cuadrados en el área interior
+            </p>
+            <br>
+        </div>
+
+        <div class=" col-span-1">
+            <h1 class="text-xl md:text-2xl">Master Suite</h1>
+            <p class="text-base md:text-xl font-thin">Cuatro palcos con capacidad para 81 personas cada uno y 51.3 metros cuadrados en el área interior</p>
+            <br>
+            <h1 class="text-xl md:text-2xl">Platinum suite</h1>
+            <p class="text-base md:text-xl font-thin">Un único palco con capacidad para 108 personas, con un área interior de 68 metros cuadrados</p>
+            <br>
+            <h1 class="text-xl md:text-2xl">Modo de entrega/Acabados</h1>
+            <p class="text-base md:text-xl font-thin">Pisos: Concreto pulido
+            Muros: Aplanado con yeso
+            Puerta de acceso: aluminio y accesorios
+            Puerta de acceso exterior: vidrio con aluminio y accesorios
+            Puertas tipo acordeón: vidrio con aluminio y accesorios
+            Puertas de baño: aluminio y accesorios
+            Barra: estructura para recibir cubierta
+            Salidas eléctricas
+            Salida hidráulica
+            Saludas voz y datos
+            1 Lavamanos
+            2 muebles sanitario
+            </p>
+            <br>
+        </div>
+    </div>
+
+    <div class=" mx-5 md:mx-20 w-auto h-auto mb-10 grid justify-center">
+        <img src="https://xolos.com.mx/bundles/frontend/images/estadio/33_suites.jpg" alt="">
+    </div>    
+
+    <div class=" grid justify-center text-gray-700 mb-10">
+        <h1 class="text-xl md:text-2xl mx-auto mb-5">CONTACTO</h1>
+        <p class="text-base md:text-xl font-thin">
+            Telefono: 664-622-59-33 <br>
+            Correo Electronico: leopoldo.estrada@caliente.com.mx <br>
+            Dirección: Boulevard Agua Caliente, 12027, Hipódromo, 22000 <br>
+            Tijuana, BC, México.
+        </p>
+    </div>
+
+ {% endblock %}
