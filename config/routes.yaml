@@ -70,6 +70,30 @@ frontend_directiva:
 frontend_palcos:
     path:       /palcos
     controller: App\Controller\Frontend\ComunicacionController:palcos
+
+frontend_xoloshopEstadio:
+    path:       /contacto-xoloshop
+    controller: App\Controller\Frontend\ComunicacionController:xoloshopEstadio
+
+frontend_contactoPresidencia:
+    path:       /contacto-estadio-presidencia
+    controller: App\Controller\Frontend\ComunicacionController:contactoPresidencia
+
+frontend_contactoEstadio:
+    path:       /contacto-estadio
+    controller: App\Controller\Frontend\ComunicacionController:contactoEstadio
+
+frontend_contactoResponsabilidadSocial:
+    path:       /contacto-responsabilidad-social
+    controller: App\Controller\Frontend\ComunicacionController:contactoResponsabilidadSocial
+
+frontend_contactoComercializacion:
+    path:       /contacto-comercializacion
+    controller: App\Controller\Frontend\ComunicacionController:contactoComercializacion
+
+frontend_contactoFuerzasBasicas:
+    path:       /contacto-fuerzas-basicas
+    controller: App\Controller\Frontend\ComunicacionController:contactoFuerzasBasicas
 #
 # HWIOAuthBundle Routes
 #
