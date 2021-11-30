@@ -71,6 +71,10 @@ frontend_palcos:
     path:       /palcos
     controller: App\Controller\Frontend\ComunicacionController:palcos
 
+frontend_estadioContacto:
+    path:       /estadio-contacto
+    controller: App\Controller\Frontend\ComunicacionController:estadioContacto
+
 frontend_xoloshopEstadio:
     path:       /contacto-xoloshop
     controller: App\Controller\Frontend\ComunicacionController:xoloshopEstadio

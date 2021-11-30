@@ -97,6 +97,12 @@ class ComunicacionController extends AbstractController
 
     }
 
+    public function estadioContacto(){
+
+        return $this->render('frontend/comunicacion/estadioContacto.html.twig');
+
+    }
+
     public function xoloshopEstadio(){
 
         return $this->render('frontend/comunicacion/xoloshopEstadio.html.twig');
