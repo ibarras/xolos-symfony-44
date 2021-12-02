@@ -64,10 +64,13 @@
 
     </main>
 
+    <button type="button" onclick="javascript:window.scrollTo(0, 0)" id="js_up" class="h-12 w-12 rounded-full text-sm z-20 bg-black text-white fixed bottom-3 right-3"><i class="fas fa-chevron-up fa-2x"></i></button>
+    
     {% include 'partials/footer.html.twig' %}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="js/jquery-modal-video.min.js"></script>
     <script src="js/apiYouTube.js"></script>
+    <script src="js/app.js"></script>
     <script src="https://kit.fontawesome.com/c4db48404f.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/490c71ac8a.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
@@ -97,5 +100,52 @@
             menu.classList.remove("active");
         });
     </script>
+
+<script>
+    //configuracion boton de scroll hacia arriba 
+  (window).scroll(function(){
+    if($(this).scrollTop() > 300){ 
+        $("#js_up").slideDown(300); 
+    }else{ // si no
+        $("#js_up").slideUp(300); 
+    }
+    });
+
+    $("#js_up i").on('click', function (e) { 
+    e.preventDefault(); 
+    $("body,html").animate({ 
+        scrollTop: 0 
+    },700); 
+    return false; 
+    });
+</script>
+
+<script>
+                   //configuracion del hide y show scroll del navbar 
+                   // aplicado solo en tamanos de pantalla +1060px
+                   
+                  if($(window).width() >= 1060){
+
+                    $(function(){
+                      var lastScrollTop = 0, delta = 15;
+                      $(window).scroll(function(event){
+                      var st = $(this).scrollTop();
+                    
+                    if(Math.abs(lastScrollTop - st) <= delta)
+                          return;
+                    if ((st > lastScrollTop) && (lastScrollTop>0)) {
+                      //downscroll code
+                    $("header").css("top","-112px");
+                  
+                    } else {
+                      //upscroll code
+                    $("header").css("top","0px");
+                    }
+                      lastScrollTop = st; 
+                      });
+                    });
+                  }
+</script>
+
 </body>
 </html>
