@@ -12,7 +12,7 @@
         {% for partidos in schedule %}
 
           <!-- Escudos, Marcador y Jornada -->
-        <div class="h-72 w-full bg-white pt-4 md:pt-0 mt-2 md:mt-5 border-t-2 border-black">
+        <div class="h-72 w-full bg-white pt-4 md:pt-0 mt-2 md:mt-5 border-b-2 border-black">
             <div class="flex justify-between px-2 md:px-10 lg:px-20">
                 <div class="h-28 w-28 md:h-36 md:w-36 lg:h-52 lg:w-52 lg:p-3">
                     <img src="{{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_EQUIPOS')}}{{ partidos.idEquipo.logo }}" alt="" class="h-full pt-5 lg:pt-0 mx-auto">
@@ -30,10 +30,17 @@
                 </div>
             </div>
             <!-- Botones -->
+            {% if partidos.idEquipo.id == 33 %}
+            
             <div class="flex justify-center gap-5 pt-6 lg:pt-0">
-                <button class="h-9 w-24 md:w-32 text-sm md:text-lg bg-black text-white flex justify-center pt-2 md:pt-1 font-thin rounded-md" style="box-shadow: 0 4px 6px -6px black;">Boletos<img src="/pics/img/shop.png" alt="" class="ml-2 mt-1 md:mt-1.5 h-4 w-4"></button>
+                <button class="h-9 w-24 md:w-32 text-sm md:text-lg bg-black text-white flex justify-center pt-2 md:pt-1 font-thin rounded-md" style="box-shadow: 0 7px 8px -6px black;">Boletos<img src="/pics/img/shop.png" alt="" class="ml-2 mt-1 md:mt-1.5 h-4 w-4"></button>
                 <button class="h-9 w-24 md:w-32 text-sm md:text-lg bg-black text-white font-thin rounded-md" style="box-shadow: 0 7px 8px -6px black;">Minuto a Minuto</button>
             </div>
+            {% else %}
+            <div class="flex justify-center gap-5 pt-6 lg:pt-0">
+                <button class="h-9 w-24 md:w-32 text-sm md:text-lg bg-black text-white font-thin rounded-md" style="box-shadow: 0 7px 8px -6px black;">Minuto a Minuto</button>
+            </div>
+            {% endif %}
             <!-- Estadio y Fecha -->
             <div class="flex justify-between px-5 pt-10 lg:pt-0">
                 

@@ -57,5 +57,3 @@ new Splide( '.splide', {
       prevEl: '.swiper-button-prev',
     },
   });
- 
-
