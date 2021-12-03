@@ -97,4 +97,46 @@ class ComunicacionController extends AbstractController
 
     }
 
+    public function estadioContacto(){
+
+        return $this->render('frontend/comunicacion/estadioContacto.html.twig');
+
+    }
+
+    public function xoloshopEstadio(){
+
+        return $this->render('frontend/comunicacion/xoloshopEstadio.html.twig');
+
+    }
+
+    public function contactoPresidencia(){
+
+        return $this->render('frontend/comunicacion/contactoPresidencia.html.twig');
+
+    }
+
+    public function contactoEstadio(){
+
+        return $this->render('frontend/comunicacion/contactoEstadio.html.twig');
+
+    }
+
+    public function contactoResponsabilidadSocial(){
+
+        return $this->render('frontend/comunicacion/contactoResponsabilidadSocial.html.twig');
+
+    }
+
+    public function contactoComercializacion(){
+
+        return $this->render('frontend/comunicacion/contactoComercializacion.html.twig');
+
+    }
+
+    public function contactoFuerzasBasicas(){
+
+        return $this->render('frontend/comunicacion/contactoFuerzasBasicas.html.twig');
+
+    }
+
 }
