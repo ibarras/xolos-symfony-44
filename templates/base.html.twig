@@ -19,7 +19,7 @@
 
 
     {% block stylesheets %}
-        {# {{ encore_entry_link_tags('app') }} #}
+        {{ encore_entry_link_tags('app') }}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/themes/splide-default.min.css">
         <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,11 +36,11 @@
     {% endblock %}
 
     {% block javascripts %}
-        {# {{ encore_entry_script_tags('app') }} #}
+        {{ encore_entry_script_tags('app') }}
     {% endblock %}
 
 </head>
-<body>
+<body class="" id="bodyq">
 
    <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>
@@ -66,7 +66,7 @@
 
     </main>
 
-    <button type="button" onclick="javascript:window.scrollTo(0, 0)" id="js_up" class="h-12 w-12 rounded-full text-sm z-20 bg-black text-white fixed bottom-3 right-3"><i class="fas fa-chevron-up fa-2x"></i></button>
+    <button type="button" onclick="javascript:window.scrollTo(0, 0)" id="js_up" class="h-12 w-12 rounded-full text-sm z-20 bg-black text-white fixed bottom-3 right-3"><i class="fas fa-chevron-up fa-2x p-2"></i></button>
     
     {% include 'partials/footer.html.twig' %}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -147,6 +147,20 @@
                       });
                     });
                   }
+</script>
+
+<script>
+        //funcion para prevenir el scroll del body cuando el menu responsive esta abierto
+        //no soportado en IOS 15 necesita adaptacion especial.
+        function removeOverflow() {
+            let element = document.getElementById("bodyq");
+            element.classList.remove("bodyOverflow");
+            }
+    
+            function addOverflow() {
+            let element = document.getElementById("bodyq");
+            element.classList.add("bodyOverflow");
+            }
 </script>
 
 </body>

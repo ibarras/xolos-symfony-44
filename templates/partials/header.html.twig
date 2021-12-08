@@ -27,8 +27,8 @@
     <div class="navigation">
       <ul class="menu">
         <div class="flex border-b-2 pb-4 border-red-600">
-          <div class="absolute top-4 left-0 pr-9 pt-1 md:hidden"> <img src="https://xolos.com.mx/bundles/frontend/images/xoloshop-banner.png" alt="xoloshop" class=""></div>
-        <div class="close-btn"></div>
+          <div class="absolute top-4 left-0 pr-9 pt-1 lg:hidden grid justify-center max-wi"> <img src="https://xolos.com.mx/bundles/frontend/images/xoloshop-banner.png" alt="xoloshop" class=""></div>
+        <button onclick="removeOverflow()"><div class="close-btn"></div></button>
         </div>
         <li class="menu-item"><a href="{{ path('frontend_home') }}">INICIO</a></li>
         <li class="menu-item"><a href="#">VIDEOS</a></li>
@@ -106,7 +106,7 @@
         </li>
       </ul>
     </div>
-    <button id="menu-button"><div class="menu-btn"></div></button>
+      <button onclick="addOverflow()"><div class="menu-btn"></div></button>
   </div>
 </header>
 
