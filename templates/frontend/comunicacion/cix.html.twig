@@ -1,0 +1,120 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+<style>
+            .embed-container {
+                position: relative;
+                padding-bottom: 56.25%;
+                height: 0;
+                overflow: hidden;
+            }
+            .embed-container iframe {
+                position: absolute;
+                top:0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            @media (min-width: 768px) {
+
+                .embed-container {
+                padding-bottom: 33.33%;
+                } 
+
+                }
+</style>
+
+<div class="w-full mx-auto flex justify-center">
+    <div class="w-full mx-auto mt-20  bg-no-repea bg-center bg-cover text-center flex justify-center filter brightness-75" style="background-image: url(); height: 90vh;"></div>
+    <p class="text-4xl md:text-5xl lg:text-7xl text text-white m-auto filter-none absolute z-10 top-72 md:top-72 left-50 font-extrabold text-center" style="text-shadow:3px 3px 10px black;"><img src="pics/img/cix-logo.png" alt="" class="mx-auto col-span-1 h-80 w-80"> </p>
+    <div class=" w-full h-28 bg-red-600 absolute top-96 md:top-96 z-0" style="background-image: url(pics/img/Fondo_Fut7_Cix.jpg);"></div>
+</div>
+
+<h1 class=" text-center text-4xl mt-10 mb-10 text-gray-700">¡FORMATE CON NOSOTROS!</h1>
+
+    <div class="text-justify mx-5 xl:mx-20 h-auto">
+        <div class="text-center text-4xl text-gray-700 mb-16 grid grid-cols-1 items-center">
+            <div class="bg-cover w-full rounded-md bg-center col-span-1 mt-5 lg:mt-0" style="background-image: url(pics/img/equipocix.jpg); height: 550px;"></div>
+        </div>
+    </div>
+
+    <div class=" mx-5 md:mx-10 lg:mx-20 grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-10">
+
+    <div class =" col-span-1 bg bg-gray-100 h-72 rounded-md">
+        <h1 class="text-center py-2 bg-black text-white font-thin text-xl rounded-t-md">CIX-HIPODROMO</h1>
+        <div class=" p-5"> 
+            <p class="">Ubicacion:</p>
+            <p class=" font-thin "> Blvd. Agua Caliente No. 12027, C.P. 22320, Hipodromo Agua Caliente</p>
+            <p class=" mt-3">Horarios de entrenamientos:</p>
+            <p class=" font-thin "> 4:00pm a 5:30pm/5:30pm a 7:00pm</p>
+            <p class=" mt-3">Horarios de oficina:</p>
+            <p class=" font-thin "> 10am-1pm/3 a 7pm</p>
+        </div>
+    </div>    
+
+    <div class =" col-span-1 bg-gray-100 h-72 rounded-md">
+        <h1 class="text-center py-2 bg-black text-white font-thin text-xl rounded-t-md">CIX-ROSARITO</h1>
+        <div class=" p-5"> 
+            <p class="">Ubicacion:</p>
+            <p class=" font-thin "> Unidad Deportiva Emiliano Zapata, Francisco Villa 22710, Rosarito B.C.</p>
+            <p class=" mt-3">Horarios de entrenamientos:</p>
+            <p class=" font-thin "> 3:30pm a 5:00pm/5:00pm a 6:30pm</p>
+            <p class=" mt-3">Horarios de oficina:</p>
+            <p class=" font-thin "> 10am-1pm/3 a 7pm</p>
+        </div>
+    </div>
+
+    <div class =" col-span-1 bg-gray-100 h-72 rounded-md">
+        <h1 class="text-center py-2 bg-black text-white font-thin text-xl rounded-t-md">CIX-PLAYAS</h1>
+        <div class=" p-5"> 
+            <p class="">Ubicacion:</p>
+            <p class=" font-thin "> Paseo Tijuana Sur y Parque Azteca S/N, Playas de Tijuana.</p>
+            <p class=" mt-3">Horarios de entrenamientos:</p>
+            <p class=" font-thin "> 3:30pm a 5:00pm/5:00pm a 6:30pm</p>
+            <p class=" mt-3">Horarios de oficina:</p>
+            <p class=" font-thin "> 10am-1pm/3 a 7pm</p>
+        </div>    
+    </div>
+
+    <div class =" col-span-1 bg-gray-100 h-72 rounded-md">
+        <h1 class="text-center py-2 bg-black text-white font-thin text-xl rounded-t-md">CIX-UNIDAD DEPORTIVA TIJUANA</h1>
+        <div class=" p-5"> 
+            <p class="">Ubicacion:</p>
+            <p class=" font-thin "> Vía Rápida Poniente S/N entre Av. Ermita Sur y Merida, La Mesa, 22104, Tijuana</p>
+            <p class=" mt-3">Horarios de entrenamientos:</p>
+            <p class=" font-thin "> 3:30pm a 5:00pm/5:00pm a 6:30pm</p>
+            <p class=" mt-3">Horarios de oficina:</p>
+            <p class=" font-thin "> 10am-1pm/3 a 7pm</p>
+        </div>    
+    </div>
+
+    </div>
+
+    <div class="mx-7 lg:mx-20 grid grid-cols-1 md:grid-cols-2 my-10">
+
+    <div class=" col-span-1 grid justify-start md:justify-center mb-10 md:mb-0">
+    <h1 class="text-xl mb-2 text-gray-700">SIGUENOS EN NUESTRAS REDES SOCIALES:</h1>
+        <a href="https://www.facebook.com/CIX-Centro-de-Iniciaci%C3%B3n-Xoloitzcuintles-400864603679120" class=" flex font-thin text-gray-700"><img src="pics/img/facebook(3).png" alt="" class="h-6 w-6 mr-2">CIX Centro de Iniciacion Xoloitzcuintles</a>
+        <a href="https://www.instagram.com/cix.xolos/" class=" flex font-thin mt-1 text-gray-700"><img src="pics/img/instagram(2).png" alt="" class="h-6 w-6 mr-2 rounded-full ">cix.xolos</a>
+    </div>
+
+    <div class=" col-span-1 grid justify-start md:justify-center">
+        <h1 class=" text-xl text-gray-700 ">INFORMACION DE CONTACTO:</h1>
+        <p class="font-thin text-gray-700">Mail: cix@xolos.com.mx <br>
+        (664)252-9688
+        
+        </p>
+    </div>
+
+    </div>
+
+
+            <div class=" grid justify-center mx-5 md:mx-20 my-5 md:mb-20 embed-container">
+                <iframe src="https://www.google.com/maps/d/embed?mid=1JOvtjxpmZ6LAbst_77Ppl-rrUqM&ehbc=2E312F" style="border:0;" allowfullscreen="" loading="lazy" class=" rounded-md"></iframe>
+            </div>
+
+
+
+{% endblock %}

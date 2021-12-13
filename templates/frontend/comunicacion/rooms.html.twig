@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+<style>
+
+.promos{
+height: 1200px;
+}
+
+@media (min-width: 768px) {
+    .promos {
+        height: 790px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .promos {
+        height: 500px;
+    }
+}
+
+</style>
+
+<div class="w-full mx-auto flex justify-center">
+    <div class="w-full mx-auto mt-20 bg-black bg-no-repea bg-center bg-cover text-center flex justify-center filter brightness-75" style="background-image: url(pics/img/rooms.jpg); height: 90vh;"></div>
+    <div class="absolute h-44 w-auto top-80 md:top-72 left-50 grid grid-cols-2 gap-5 lg:gap-20">
+    <img src="pics/img/redroom.png" alt="" class=" h-40 w-40 md:h-56 md:w-56 col-span-1">
+    <img src="pics/img/blackroom.jpg" alt="" class="h-40 w-40 md:h-56 md:w-56 col-span-1">
+    </div>
+</div>
+
+<div class=" mx-5 xl:mx-20 grid grid-cols-1 md:grid-cols-2 16 rounded-l-md py-16">
+
+    <div class=" col-span-1 w-full h-full bg-cover bg-center " style="background-image: url(https://xolos.com.mx/bundles/frontend/images/black_room_alimentos.jpg); height: 350px;">
+    </div>
+
+    <div class="w-full col-span-1 h-80 md:h-full bg-black text-center grid content-center">
+        <h1 class=" text-white text-3xl font-thin mb-4">HORARIOS:</h1>
+        <h2 class=" text-white text-xl">BLACK ROOM</h2>
+        <p class=" text-white text-xl font-thin">Jueves de 1 p.m. a 2 a.m. <br> Viernes & Sábado de 1 p.m. a 12 a.m.</p>
+    </div>
+
+    <div class=" md:order-last col-span-1 w-full h-full bg-cover bg-top transform rotate-180" style="background-image: url(pics/img/postreroom.jpg); height: 350px;">
+    </div>
+
+    <div class="w-full col-span-1 h-80 md:h-full bg-red-600 text-center grid content-center">
+        <h1 class=" text-white text-3xl font-thin mb-4">HORARIOS:</h1>
+        <h2 class=" text-white text-xl">RED ROOM</h2>
+        <p class=" text-white text-xl font-thin">Jueves a Sábado de 1 p.m. a 11 p.m. <br> Domingo de 1 p.m. a 6 p.m.</p>
+    </div>
+</div>
+
+
+<div class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-10 gap-1 mx-5 lg:mx-20 promos">
+    <div class=" col-span-1 w-full h-full bg-contain bg-no-repeat bg-center " style="background-image: url(pics/img/cerveza.jpeg)">
+    </div>
+    <div class=" col-span-1 w-full h-full bg-contain bg-no-repeat xl:bg-cover bg-center " style="background-image: url(pics/img/ladies.jpeg);">
+    </div>
+    <div class=" col-span-1 w-full h-full bg-contain bg-no-repeat  bg-center " style="background-image: url(pics/img/wings.jpeg);">
+    </div>
+</div>
+
+{% endblock %}

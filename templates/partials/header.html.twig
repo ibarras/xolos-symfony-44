@@ -44,8 +44,8 @@
             <li class="sub-item"><a href="{{ path('frontend_palmares')}}">PALAMRES</a></li>
             <li class="sub-item"><a href="{{ path('frontend_players_category', {'category': constant('App\\IcUtils\\IcConfig::CATEGORIA_EQUIPO_FEMENIL')}) }}">PLANTEL FEMENIL</a></li>
             <li class="sub-item"><a href="#">XOLOSHOP</a></li>
-            <li class="sub-item"><a href="#">CIX</a></li>
-            <li class="sub-item"><a href="#">FUT 7</a></li>
+            <li class="sub-item"><a href="{{ path('frontend_cix')}}">CIX</a></li>
+            <li class="sub-item"><a href="{{ path('frontend_fut7')}}">FUT 7</a></li>
           </ul>
         </li>
         <li class="menu-item">
@@ -64,7 +64,7 @@
           <ul class="sub-menu">
             <li class="sub-item"><a href="{{ path('frontend_eventos')}}">EVENTOS</a></li>
             <li class="sub-item"><a href="{{ path('frontend_palcos')}}">PALCOS</a></li>
-            <li class="sub-item"><a href="#">RESTAURANTE</a></li>
+            <li class="sub-item"><a href="{{ path('frontend_rooms')}}">RESTAURANTE</a></li>
             <li class="sub-item"><a href="{{ path('frontend_xoloshopEstadio')}}">XOLOSHOP</a></li>
             <li class="sub-item"><a href="{{ path('frontend_estadioContacto')}}">CONTACTO</a></li>
           </ul>

@@ -145,4 +145,22 @@ class ComunicacionController extends AbstractController
 
     }
 
+    public function cix(){
+
+        return $this->render('frontend/comunicacion/cix.html.twig');
+
+    }
+
+    public function fut7(){
+
+        return $this->render('frontend/comunicacion/fut7.html.twig');
+
+    }
+
+    public function rooms(){
+
+        return $this->render('frontend/comunicacion/rooms.html.twig');
+
+    }
+
 }
