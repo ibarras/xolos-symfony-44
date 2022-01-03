@@ -139,4 +139,10 @@ class ComunicacionController extends AbstractController
 
     }
 
+    public function xolopass(){
+
+        return $this->render('frontend/comunicacion/xolopass.html.twig');
+
+    }
+
 }

@@ -98,6 +98,10 @@ frontend_contactoComercializacion:
 frontend_contactoFuerzasBasicas:
     path:       /contacto-fuerzas-basicas
     controller: App\Controller\Frontend\ComunicacionController:contactoFuerzasBasicas
+
+frontend_xolopass:
+    path:   /xolopass.html
+    controller: App\Controller\Frontend\ComunicacionController:xolopass
 #
 # HWIOAuthBundle Routes
 #
