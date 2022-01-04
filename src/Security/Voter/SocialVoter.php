@@ -28,7 +28,7 @@ class SocialVoter extends Voter
     protected function voteOnAttribute($attribute, $subject, TokenInterface $token): bool
     {
         $user = $token->getUser();
-        
+        // un comentario aqui para mostrar los cambios 
         if (!$user instanceof IcRegistroUsuarios) {
             // the user must be logged in; if not, deny access
             return false;
