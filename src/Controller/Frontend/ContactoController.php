@@ -15,9 +15,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 class ContactoController{
 
-    /**
-     * @Route('/contacto', name='contacto')
-     */
+
     public function index(){
 
         $article = new IcContacto();
