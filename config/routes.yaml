@@ -139,3 +139,20 @@ frontend_galerias:
 frontend_galeria_detalle:
     path:     /galerias/{galeria}/{slug}
     controller: App\Controller\Frontend\MediaController:show 
+
+#
+# Cix , Fut7
+#
+#
+  
+frontend_cix:
+    path:       /cix
+    controller: App\Controller\Frontend\ComunicacionController:cix
+  
+frontend_fut7:
+    path:       /fut7
+    controller: App\Controller\Frontend\ComunicacionController:fut7
+  
+frontend_rooms:
+    path:       /blackroom
+    controller: App\Controller\Frontend\ComunicacionController:rooms
