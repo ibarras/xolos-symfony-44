@@ -2,9 +2,9 @@
 
 {% block body %}
     <!-- Nota Principal full screen -->
-    <div class=" h-screen w-auto">
+    <div class=" h-screen w-auto grid place-content-end bg-top bg-black">
         <!-- <img src="https://xolos.com.mx/bundles/frontend/images/contacto_estadio.jpg" alt="" class="h-screen w-auto object-cover"> -->
-        <video class="h-screen w-screen object-cover filter brightness-75" muted autoplay loop playsinline data-video="0">
+        <video class="h-screen w-screen object-cover object-center bg-top filter brightness-75" muted autoplay loop playsinline data-video="0" style="height: 87vh;">
             <source src="https://api.xolos.com.mx/pics/dia-muertos-clubtijuana.mp4" type="video/mp4">
         </video>
         <div class="w-full xl:w-8/12 lg:w-8/12 md:w-8/12 sm:w-11/12 absolute bottom-2 md:bottom-10 left-0 h-52">
@@ -378,9 +378,7 @@
     <button type="button" onclick="javascript:window.scrollTo(0, 0)" id="js_up" class="h-12 w-12 rounded-full text-sm z-20 bg-black text-white fixed bottom-3 right-3"><i class="fas fa-chevron-up fa-2x"></i></button>
 
  <!-- Scripts -->
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/js/splide.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="js/app.js"></script>
+    
 {% endblock %}
