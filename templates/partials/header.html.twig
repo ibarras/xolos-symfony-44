@@ -13,11 +13,11 @@
         </div>
         <div class="flex content-center justify-center items-center ml-8 h-14">
             <ul class="flex  content-betwen text-white">
-                <li class="m-1"><i class="fab fa-facebook "></i></li>
-                <li class="m-1"><i class="fab fa-twitter "></i></li>
-                <li class="m-1"><i class="fab fa-instagram "></i></li>
-                <li class="m-1"><i class="fab fa-tiktok "></i></li>
-                <li class="m-1"><i class="fab fa-youtube "></i></li>
+                <li class="m-1"><a href="https://www.facebook.com/xoloitzcuintles" target="_blank"><i class="fab fa-facebook "></i></a></li>
+                <li class="m-1"><a href="https://twitter.com/Xolos" target="_blank"><i class="fab fa-twitter "></i></a></li>
+                <li class="m-1"><a href="https://www.instagram.com/xolos/" target="_blank"><i class="fab fa-instagram "></i></a></li>
+                <li class="m-1"><a href="https://www.tiktok.com/@xolos" target="_blank"><i class="fab fa-tiktok "></i></a></li>
+                <li class="m-1"><a href="https://www.youtube.com/user/XoloTV" target="_blank"><i class="fab fa-youtube "></i></a></li>
             </ul>
         </div>
     </div>
@@ -27,11 +27,10 @@
     <div class="navigation">
       <ul class="menu">
         <div class="flex border-b-2 pb-4 border-red-600">
-          <div class="absolute top-4 left-0 pr-9 pt-1 lg:hidden grid justify-center max-wi"> <img src="https://xolos.com.mx/bundles/frontend/images/xoloshop-banner.png" alt="xoloshop" class=""></div>
+          <div class="absolute top-4 left-0 md:ml-52 pr-9 pt-1 lg:hidden grid justify-center max-wi"> <img src="https://xolos.com.mx/bundles/frontend/images/xoloshop-banner.png" alt="xoloshop" class=""></div>
         <button onclick="removeOverflow()"><div class="close-btn"></div></button>
         </div>
         <li class="menu-item"><a href="{{ path('frontend_home') }}">INICIO</a></li>
-        <li class="menu-item"><a href="#">VIDEOS</a></li>
         <li class="menu-item">
           <a class="sub-btn" href="#">CLUB<i class="ml-1 fas fa-angle-down"></i></a>
           <ul class="sub-menu grid grid-cols-2">
@@ -41,7 +40,7 @@
             <li class="sub-item"><a href="{{ path('frontend_estadio')}}">ESTADIO</a></li>
             <li class="sub-item"><a href="{{ path('frontend_historia')}}">HISTORIA</a></li>
             <li class="sub-item"><a href="{{ path('frontend_directiva')}}">DIRECTIVA</a></li>
-            <li class="sub-item"><a href="{{ path('frontend_palmares')}}">PALAMRES</a></li>
+            <li class="sub-item"><a href="{{ path('frontend_palmares')}}">PALMARÉS</a></li>
             <li class="sub-item"><a href="{{ path('frontend_players_category', {'category': constant('App\\IcUtils\\IcConfig::CATEGORIA_EQUIPO_FEMENIL')}) }}">PLANTEL FEMENIL</a></li>
             <li class="sub-item"><a href="#">XOLOSHOP</a></li>
             <li class="sub-item"><a href="{{ path('frontend_cix')}}">CIX</a></li>

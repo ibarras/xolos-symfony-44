@@ -33,6 +33,14 @@ class HomeController extends AbstractController
         $noticias = $traduccionRepository->getNews('es', null, IcConfig::LIMITE_NOTICIAS_PORTADA);
 
         /**
+         * Noticia principla fullscreen
+         */
+        $noticiaGlobal = $traduccionRepository->findOneBy([
+                'esGlobal' => true,
+                'idLocale' => 1
+        ]);
+
+        /**
          * Tabla Genera.
          *
          */
@@ -72,6 +80,7 @@ class HomeController extends AbstractController
                 'tabla'         => $tabla,
                 'calendario'    => $calendario,
                 'jugadores'     => $jugadores,
+                'noticiaGlobal' => $noticiaGlobal
             ]);
     }
 

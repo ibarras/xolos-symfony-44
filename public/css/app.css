@@ -221,8 +221,9 @@
     border-radius: 10px;
     overflow: hidden;
     display: none;
-    margin-left: 20px;
-    padding-left: 10px;
+    margin-left: 25px;
+    margin-right: 25px;
+
   }
 
   #menuBlack.sticky .menu-item .sub-menu{
@@ -235,6 +236,7 @@
 
   .menu-item .sub-menu .sub-item{
     box-shadow: none;
+    padding-left: 15px;
   }
 
 
@@ -326,3 +328,16 @@
         height: 490px;
         }
     }
+
+/* tamano maximo del banner xoloshop dentro del menu responsivo */
+.max-wi{
+    max-width: 410px;
+}
+
+/* clase para funcion de overflow al abrir el menu en responsive, no soportada en IOS */
+@media (max-width: 1024px) {
+    .bodyOverflow{
+        overflow: hidden;
+        height: 100%;
+    }
+}

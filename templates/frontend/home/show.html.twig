@@ -5,13 +5,13 @@
     <meta property="og:image" content="{{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_NOTICIA')}}{{noticia.imagenPrincipal}}" />
     <meta property="og:description" content="{{ noticia.intro }}" /> 
     <!-- Twitter Cards -->
-    {# <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@Xolos" />
     <meta name="twitter:creator" content="@Xolos" />
     <meta name="twitter:title" content="{{ noticia.titulo }}" />
     <meta name="twitter:description" content="{{ noticia.intro }}" />
     <meta name="twitter:image:src" content="{{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_NOTICIA')}}{{noticia.imagenPrincipal}}" />
-    <meta name="twitter:domain" content="xolos.com.mx" /> #}
+    <meta name="twitter:domain" content="xolos.com.mx" />
 {% endblock %}
 
 {% block content %}
@@ -31,14 +31,13 @@
     <!-- Contenido noticia - share -->
     <div class=" mx-5 lg:mx-10 lg:flex">
         <div class=" lg:w-2/3 mb-10 lg:mb-5">
-            <div class="flex justify-center items-center">
-                <p class="mr-3 mt-2 text-xl text-gray-600 font-base">Compartir en:</p>
+            <div class="flex justify-center items-center gap-3">
+                <p class="mr-3 text-xl text-gray-600 font-base">Compartir en:</p>
 
                 <!-- Your share button code -->
                 <iframe src="https://www.facebook.com/plugins/share_button.php?href={{ app.request.uri }}&layout=button&size=large&width=103&height=28&appId" width="103" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-
-                <a><img src="/pics/img/twitter(3).png" alt="" class="h-7 w-7 mx-2 mt-2"></a>
-                <a><img src="/pics/img/instagram(2).png" alt="" class="h-7 w-7 rounded-full mt-2"></a>
+                <!-- Your share button twitter -->
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-via="Xolos" data-dnt="true" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
            </div>
            <p class="mt-10 text-justify lg:mr-12 text-xl md:text-xl font-base text-gray-600 mb-1"> {{noticia.intro | raw | nl2br}}</p>
             <p class="mt-10 text-justify lg:mr-12 text-base md:text-xl font-thin text-gray-600"> {{noticia.nota | raw | nl2br}}</p>

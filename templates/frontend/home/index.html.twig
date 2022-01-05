@@ -2,26 +2,20 @@
 
 {% block body %}
     <!-- Nota Principal full screen -->
-    <div class=" h-screen w-auto grid place-content-end bg-top bg-black">
-        <!-- <img src="https://xolos.com.mx/bundles/frontend/images/contacto_estadio.jpg" alt="" class="h-screen w-auto object-cover"> -->
-        <video class="h-screen w-screen object-cover object-center bg-top filter brightness-75" muted autoplay loop playsinline data-video="0" style="height: 87vh;">
+    <div class=" w-full mx-auto mt-28" style="height: 92vh;">
+        <img src="{{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_NOTICIA')}}{{ noticiaGlobal.imagenPrincipal }}" alt="{{ noticiaGlobal.pieDeFoto }}" class="h-full w-full bg-top object-cover object-top filter brightness-75">
+        {#<video class="h-screen w-screen object-cover object-center bg-top filter brightness-75" muted autoplay loop playsinline data-video="0" style="height: 87vh;">
             <source src="https://api.xolos.com.mx/pics/dia-muertos-clubtijuana.mp4" type="video/mp4">
-        </video>
+        </video>#}
         <div class="w-full xl:w-8/12 lg:w-8/12 md:w-8/12 sm:w-11/12 absolute bottom-2 md:bottom-10 left-0 h-52">
-            <h1 class=" text-white mb-3 md:mb-5 text-2xl mx-5 xl:text-5xl lg:text-4xl md:text-4xl mt-5 md:mt-0 " style="text-shadow:3px 3px 10px black;">PASION POR ESTOS COLORES QUE HAN ECHADO RAICES HASTA EL MUNDO DE LAS SOMBRAS</h1>
+            <h1 class=" text-white mb-3 md:mb-5 text-2xl mx-5 xl:text-5xl lg:text-4xl md:text-4xl mt-5 md:mt-0 " style="text-shadow:3px 3px 10px black;">{{ noticiaGlobal.titulo }}</h1>
             <button class="btn-nota-principal">
-                <a class="text-btn-nota-principal" href="https://tailwindui.com/components/marketing/sections/testimonials">LEER MAS</a>
-                <img src="/pics/img/arrow-right.png" alt="" class="h-4 w-4 my-auto ">
+                <a class="text-btn-nota-principal" href="{{ path('frontend_news', {'post': noticiaGlobal.id, 'titulo': noticiaGlobal.titulo | slug }) }}">LEER MÁS<i class="ml-2 fa fa-chevron-right"></i></a>
             </button>
         </div>
     </div>
-    {# <div class="w-full mb-4">
-        <video class="filter brightness-50" loop muted autoplay playsinline data-video="0">
-            <source src="https://www.juventus.com/images/video/upload/t_video_mp4/dev/video/20210816_HERO_NUOVA_DIVISA_28MB.mp4" type="video/mp4;codecs=avc1.42E01E, mp4a.40.2">
-        </video>
-    </div> #}
-    
-    <!-- Noticias -->  
+
+    <!-- Noticias -->
 
    <div class="h-20 mb-2 md:mb-4">
         <div class="bg-red-600 mt-10 md:mt-12 mb-0 h-12 md:h-14 w-4/12 md:w-48 flex justify-center mx-auto rounded-md">
@@ -37,7 +31,7 @@
         <ul class="splide__list h-96" >
 
                 {% for noticia in noticias %}
-                    
+
 
           <li class="splide__slide h-96 z-50" >
             <div class=" h-48 w-full md:flex">
@@ -48,7 +42,7 @@
                 <a href="{{ path('frontend_news', {'post': noticia.id, 'titulo': noticia.titulo | slug }) }}" class=" mt-1 text-xl md:text-4xl text-gray-700 ">{{noticia.titulo}}</a>
                 <p class="mt-2 text-gray-500 md:mt-5 lg:mt-10 md:text-2xl font-thin">{{noticia.intro}}</p>
                 {#se aplican el filtro slug #}
-                <a href="{{ path('frontend_news', {'post': noticia.id, 'titulo': noticia.titulo | slug }) }}" class="absolute bottom-2 right-2 md:right-6 lg:text-lg front-thin text-gray-500 hover:underline ">LEER NOTICIA COMPLETA ></a>       
+                <a href="{{ path('frontend_news', {'post': noticia.id, 'titulo': noticia.titulo | slug }) }}" class="absolute bottom-2 right-2 md:right-6 lg:text-lg front-thin text-gray-500 hover:underline ">LEER NOTICIA COMPLETA ></a>
               </div>
             </div>
           </li>
@@ -60,7 +54,7 @@
     </div>
 
     <!-- videos api YT -->
-    
+
     <div class="h-20 md:mb-4">
         <div class="bg-red-600 mt-10 md:mt-12 mb-0 h-12 md:h-14 w-4/12 md:w-48 flex justify-center mx-auto rounded-md">
             <h1 class="text-white text-2xl md:text-3xl m-auto font-semibold">VIDEOS</h1>
@@ -70,7 +64,7 @@
     <div class=" grid xl:grid-cols-3 xl:grid-rows-2 lg:grid-cols-3 lg:grid-rows-2 gap-1 w-full px-5 md:px-10 mb-8 " id="results">
 
     {# los videos se pintan aqui usando la libreria del modal y el script apiYouTube #}
-    
+
     </div>
 
     {#Seccion de tabla y calendario#}
@@ -271,7 +265,7 @@
         <div class="swiper-wrapper">
 
             {% for jugador in jugadores %}
-                                
+
 
           <div class="swiper-slide w-full h-full object-cover ">
             <div class="text-center grid justify-items-center">
@@ -287,7 +281,7 @@
 
         </div>
       </div>
-     
+
      <!-- END S.JUGADORES -->
      <div class="w-4/12 md:w-44 h-12 md:h-14 bg-red-600 mx-auto flex justify-center mt-5 lg:mt-10 lg:mt-20 mb-5 rounded-md">
         <h1 class="text-white text-center text-2xl md:text-3xl m-auto font-semibold">GALERIA</h1>
@@ -295,17 +289,17 @@
 
      <!-- GALERIA -->
     <div class=" mt-7 grid grid-cols-1 grid-rows-1 md:grid-cols-2 md:grid-rows-2 xl:grid-cols-4 xl:grid-rows-4 w-auto h-auto mx-5 md:mx-10 gap-1 p-0 lg:p-1">
-        
+
     {% for galeria in galerias %}
-            
+
         {% if loop.index == 1 %}
-            
+
             <div class=" md:col-span-1 row-span-1  xl:col-span-2 xl:row-span-4 h-80 xl:h-auto xl:w-auto bg-red-400 rounded-md">
             <a href="{{ path('frontend_galeria_detalle', { 'galeria' : galeria.id , 'slug': galeria.nombre | slug }) }} ">
                 <img src="https://admin.xolos.com.mx/uploads/galeria/foto_equipo/{{galeria.foto}}" alt="" class=" h-full w-full bg-center bg-cover object-cover rounded-md">
             </a>
             </div>
-                
+
                 {% elseif loop.index == 2 %}
 
             <div class=" bg-red-400 md:col-span-1 md:row-span-1 xl:row-span-2 xl:col-span-2 h-80 bg-top rounded-md">
@@ -315,7 +309,7 @@
             </div>
 
         {% else  %}
-                
+
             <div class=" bg-red-400 md:col-span-1 md:row-span-1 xl:row-span-2 xl:col-span-1 h-80 rounded-md">
                 <a href="{{ path('frontend_galeria_detalle', { 'galeria' : galeria.id , 'slug': galeria.nombre | slug }) }} ">
                 <img src="https://admin.xolos.com.mx/uploads/galeria/foto_equipo/{{galeria.foto}}" alt="" class=" h-full w-full b-center bg-cover object-cover rounded-md">
@@ -329,14 +323,14 @@
 
     </div>
     <!-- FIN DE GALERIA -->
-   
+
     <div class="w-auto h-auto m-auto md:mx-10 grid grid-cols-1 lg:grid-cols-3 pt-10">
         <div class="col-span-1 mb-5">
             <div class="h-12 md:h-14 w-64 md:w-80 bg-red-600 text-center flex justify-center mb-6 mx-auto rounded-md">
                 <h1 class="text-white text-2xl md:text-3xl m-auto font-semibold">
                     CENTRO DE INICIACION
                 </h1>
-            </div> 
+            </div>
             <div class="h-80 w-80 md:h-96 md:w-96 lg:h-72 lg:w-72 xl:h-96 xl:w-96 mx-auto ">
                 <a href="http://www.xolosacademy.com/"><img src="pics/img/itnento2.png" alt="" class="rounded-full h-full w-full"></a>
             </div>
@@ -365,7 +359,7 @@
 
     <div class="mb-10 w-auto h-auto md:h-80 mx-5 md:mx-10 bg-cover bg-no-repeat bg-bottom rounded-md" style="background-image: url(https://cdn.wegow.com/media/venue-media/estadio-caliente/estadio-caliente-1567153491.-1x1780.jpg);">
         <div class="w-auto h-80 bg-gray-900 bg-opacity-40 items-center justify-center text-center mb-5 pt-7 px-5 xl:py-14 md:py-14 rounded-md">
-            <h1 class="text-center text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white lg:mt-3">SUBSCRIBETE AL NEWSLETTER DE XOLOS</h1>
+            <h1 class="text-center text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white lg:mt-3">SUSCRIBETE AL NEWSLETTER DE XOLOS</h1>
             <h3 class="text-center text-xl md:text-2xl text-white mb-5 mt-3 lg:mt-5">¡Susbcribete para recibir infomarcion exclusiva del equipo mas perron!</h3>
             <div class="flex justify-center items-center gap-5">
                 <a href="https://api.xolos.com.mx/connect/facebook" role="button" class="button w-14 bg-black hover:border-red-600 flex text-white text-lg md:text-lg py-3 border-2 rounded-full"><img src="pics/img/facebook-circular-logo.png" alt="" class="h-7 w-7 mx-auto"></a>
@@ -380,5 +374,5 @@
  <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/js/splide.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    
+
 {% endblock %}
