@@ -5,11 +5,11 @@
     <div class="grid grid-cols-3 mb-0 pb-0 h-14">
         <div class="flex -mb-12 w-auto lg:w-96">
             <a class="z-40 top-0 flex-1 xl:ml-28" href="{{ path('frontend_home') }}">
-                <img class="h-28 ml-0 md:ml-3 lg:ml-7 xl:ml-10" src="https://xolos.com.mx/bundles/frontend/images/logo_new.png" alt="logo">
+                <img class="h-28 ml-0 md:ml-3 lg:ml-7 xl:ml-10" src="{{ asset('images/logo_new.png') }}" alt="logo">
             </a>
         </div>
         <div class="hidden lg:block h-12 " style="width: 410px;">
-            <a href="https://xoloshop.com/"><img src="https://xolos.com.mx/bundles/frontend/images/xoloshop-banner.png" alt="xoloshop" class=""></a>
+            <a href="https://xoloshop.com/"><img src="{{ asset('images/xoloshop-banner.png') }}" alt="xoloshop" class=""></a>
         </div>
         <div class="flex content-center justify-center items-center ml-8 h-14">
             <ul class="flex  content-betwen text-white">
@@ -32,7 +32,7 @@
         </div>
         <li class="menu-item"><a href="{{ path('frontend_home') }}">INICIO</a></li>
         <li class="menu-item">
-          <a class="sub-btn" href="#">CLUB<i class="ml-1 fas fa-angle-down"></i></a>
+          <a class="sub-btn">CLUB<i class="ml-1 fas fa-angle-down"></i></a>
           <ul class="sub-menu grid grid-cols-2">
             <li class="sub-item"><a href="{{ path('frontend_players_category', {'category': constant('App\\IcUtils\\IcConfig::IC_JUGADOR_CATEGORIA_PRIMER')}) }}">PLANTEL</a></li>
             <li class="sub-item"><a href="{{ path('frontend_coach')}}">CUERPO TECNICO</a></li>
@@ -48,7 +48,7 @@
           </ul>
         </li>
         <li class="menu-item">
-          <a class="sub-btn" href="#">NOTICIAS<i class="ml-1 fas fa-angle-down"></i></a>
+          <a class="sub-btn">NOTICIAS<i class="ml-1 fas fa-angle-down"></i></a>
           <ul class="sub-menu">
             <li class="sub-item"><a href="{{ path('frontend_news_category', {'category': constant('App\\IcUtils\\IcConfig::CATEGORIA_NOTICIA_PRIMER_EQUIPO')} )}}">PRIMER EQUIPO</a></li>
             <li class="sub-item"><a href="{{ path('frontend_news_category', {'category': constant('App\\IcUtils\\IcConfig::CATEGORIA_NOTICIAS_EQUIPO_FEMENIL')} )}}">FEMENIL</a></li>
@@ -59,7 +59,7 @@
           </ul>
         </li>
         <li class="menu-item">
-          <a class="sub-btn" href="#">ESTADIO<i class="ml-1 fas fa-angle-down"></i></a>
+          <a class="sub-btn">ESTADIO<i class="ml-1 fas fa-angle-down"></i></a>
           <ul class="sub-menu">
             <li class="sub-item"><a href="{{ path('frontend_eventos')}}">EVENTOS</a></li>
             <li class="sub-item"><a href="{{ path('frontend_palcos')}}">PALCOS</a></li>
@@ -69,7 +69,7 @@
           </ul>
         </li>
         <li class="menu-item">
-          <a class="sub-btn" href="#">TORNEOS<i class="ml-1 fas fa-angle-down"></i></a>
+          <a class="sub-btn">TORNEOS<i class="ml-1 fas fa-angle-down"></i></a>
           <ul class="sub-menu">
             <li class="sub-item"><a href="{{ path('frontend_schedule', {'calendario': constant('App\\IcUtils\\IcConfig::IC_LIGA')})}}">CALENDARIO DE LIGA</a></li>
             <li class="sub-item"><a href="#">TABLA GENERAL</a></li>
@@ -78,7 +78,7 @@
           </ul>
         </li>
         <li class="menu-item">
-          <a class="sub-btn" href="#">BOLETOS<i class="ml-1 fas fa-angle-down"></i></a>
+          <a class="sub-btn">BOLETOS<i class="ml-1 fas fa-angle-down"></i></a>
           <ul class="sub-menu">
             <li class="sub-item"><a href="https://xolos.xtixs.com/" target="_blank">BOLETOS</a></li>
             <li class="sub-item"><a href="#">MARKET PLACE</a></li>
@@ -86,7 +86,7 @@
           </ul>
         </li>
         <li class="menu-item">
-          <a class="sub-btn" href="#">MEDIOS<i class="ml-1 fas fa-angle-down"></i></a>
+          <a class="sub-btn">MEDIOS<i class="ml-1 fas fa-angle-down"></i></a>
           <ul class="sub-menu">
             <li class="sub-item"><a href="{{ path('frontend_reglamento')}}">REGLAMENTO</a></li>
             <li class="sub-item"><a href="#">SOLICITUD DE ACREDITACIONES</a></li>
@@ -94,7 +94,7 @@
           </ul>
         </li>
         <li class=" menu-item">
-          <a class="sub-btn" href="#">CONTACTO<i class="ml-1 fas fa-angle-down"></i></a>
+          <a class="sub-btn">CONTACTO<i class="ml-1 fas fa-angle-down"></i></a>
           <ul class="sub-menu">
             <li class="sub-item"><a href="{{ path('frontend_contactoPresidencia')}}">PRESIDENCIA</a></li>
             <li class="sub-item"><a href="{{ path('frontend_contactoEstadio')}}">ESTADIO</a></li>

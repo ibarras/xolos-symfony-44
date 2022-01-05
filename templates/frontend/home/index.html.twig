@@ -228,11 +228,6 @@
                   </div>
                   <div class=" text-center mt-5 md:mt-0">
                       <a href="" class="bg-gray-600 hover:bg-gray-300 hover:text-gray-900 hover:border-gray-900 text-white text-lg md:text-2xl px-9 md:px-10 py-2 border-2 rounded-md">BOLETOS</a>
-                      <div class="flex w-auto justify-center pt-8 md:pt-6 h-6">
-                          <i><img src="pics/img/faceicon.png" alt="facebook" class="h-7 w-7"></i>
-                          <i><img src="pics/img/instaicon.png" alt="instagram" class="h-7 w-7 mx-1"></i>
-                          <i><img src="pics/img/twittericon.png" alt="twitter" class="h-7 w-7"></i>
-                      </div>
                       <p class="pt-11 md:pt-8 text-lg text-gray-600">{{jornada.creado|date("d/m/Y")}}</p>
                   </div>
                   <a href="google.com" class="text-gray-600 absolute left-1 md:left-4 lg:left-10 bottom-0 text-sm md:text-xl font-bold underline bg-gray-200 rounded-lg">CALENDARIO</a>
@@ -348,11 +343,11 @@
         <div class=" col-span-1 mb-5">
             <div class="h-12 md:h-14 w-64 md:w-80 bg-red-600 text-center flex justify-center mb-6 mx-auto rounded-md">
                 <h1 class="text-white text-2xl md:text-3xl m-auto font-semibold">
-                    DESCARGA LA XOLOAPP
+                    BLACK ROOM
                 </h1>
             </div>
             <div class="h-80 w-80 md:h-96 md:w-96 lg:h-72 lg:w-72 xl:h-96 xl:w-96 mx-auto">
-                <img src="pics/img/XOLOAPP.png" alt="" class="rounded-full h-full w-full">
+                <a href=""><img src="pics/img/blackroom.jpg" alt="" class="rounded-full h-full w-full"></a>
             </div>
         </div>
     </div>
@@ -362,9 +357,9 @@
             <h1 class="text-center text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white lg:mt-3">SUSCRIBETE AL NEWSLETTER DE XOLOS</h1>
             <h3 class="text-center text-xl md:text-2xl text-white mb-5 mt-3 lg:mt-5">¡Susbcribete para recibir infomarcion exclusiva del equipo mas perron!</h3>
             <div class="flex justify-center items-center gap-5">
-                <a href="https://api.xolos.com.mx/connect/facebook" role="button" class="button w-14 bg-black hover:border-red-600 flex text-white text-lg md:text-lg py-3 border-2 rounded-full"><img src="pics/img/facebook-circular-logo.png" alt="" class="h-7 w-7 mx-auto"></a>
-                <a href="https://api.xolos.com.mx/connect/twitter" role="button" class="button w-14 bg-black hover:border-red-600 flex text-white text-lg md:text-lg py-3 border-2 rounded-full"><img src="pics/img/gorjeo(3).png" alt="" class=" h-7 w-7 mx-auto"></a>
-                <a href="https://api.xolos.com.mx/connect/google" role="button" class="button w-14 bg-black hover:border-red-600 flex text-white text-lg md:text-lg py-3 border-2 rounded-full"><img src="pics/img/google(1).png" alt="" class=" h-7 w-7 mx-auto"></a>
+                <a href="{{ path('hwi_oauth_service_redirect', {'service': 'facebook' }) }}" role="button" class="button w-14 bg-black hover:border-red-600 flex text-white text-lg md:text-lg py-3 border-2 rounded-full"><img src="pics/img/facebook-circular-logo.png" alt="" class="h-7 w-7 mx-auto"></a>
+                <a href="{{ path('hwi_oauth_service_redirect', {'service': 'twitter' }) }}" role="button" class="button w-14 bg-black hover:border-red-600 flex text-white text-lg md:text-lg py-3 border-2 rounded-full"><img src="pics/img/gorjeo(3).png" alt="" class=" h-7 w-7 mx-auto"></a>
+                <a href="{{ path('hwi_oauth_service_redirect', {'service': 'google' }) }}" role="button" class="button w-14 bg-black hover:border-red-600 flex text-white text-lg md:text-lg py-3 border-2 rounded-full"><img src="pics/img/google(1).png" alt="" class=" h-7 w-7 mx-auto"></a>
             </div>
         </div>
     </div>
