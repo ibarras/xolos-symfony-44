@@ -19,7 +19,7 @@
         
       <!-- Foto -->
     <div class=" w-full mx-auto mt-28" style="height: 92vh;">
-        <img src="{{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_NOTICIA')}}{{noticia.imagenPrincipal}}" alt="" class="h-full w-full object-cover object-top pb-10 md:mx-auto filter brightness-75">
+        <img src="{{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_NOTICIA')}}{{noticia.imagenPrincipal}}" alt="{{noticia.pieDeFoto}}" class="h-full w-full object-cover object-top pb-10 md:mx-auto filter brightness-75">
         <div class="w-full xl:w-8/12 lg:w-8/12 md:w-8/12 sm:w-11/12 absolute bottom-2 md:bottom-0 left-0 h-52">
         <!-- Encabezado -->
         <h1 class=" text-gray-50 mb-3 md:mb-5 text-3xl mx-5 xl:text-5xl lg:text-4xl md:text-4xl mt-5 md:mt-0 uppercase" style="text-shadow:3px 3px 10px black;">{{noticia.titulo}}</h1>

@@ -13,7 +13,7 @@
         <div class=" bg-black h-80 lg:h-auto col-span-2 row-span-2 card-zoom w-auto overflow-hidden rounded-md">
             <a href="{{ path('frontend_news', {'post': noticia.id, 'titulo': noticia.titulo}) }}">
                 <div class=" wrap absolute w-full h-full bg-gradient-to-t from-black via-transparent to-transparent">
-                    <img class="card-zoom-image absolute w-full h-full duration-1000 transform bg-center bg-cover object-cover" src="https://admin.xolos.com.mx/uploads/galeria/noticias/{{noticia.imagenPrincipal}}" alt="">
+                    <img class="card-zoom-image absolute w-full h-full duration-1000 transform bg-center bg-cover object-cover" src="https://admin.xolos.com.mx/uploads/galeria/noticias/{{noticia.imagenPrincipal}}" alt="{{ noticia.pieDeFoto }}">
                     <span class="absolute top-0 right-0 bg-red-600 text-white h-7 w-28 text-center rounded-bl-md py-0.5" style="z-index: 29;">{{ noticia.creado | date('Y-m-d') }}</span>
                     <h1 class="text-3xl lg:text-4xl  text-white absolute bottom-4 left-3 font-light" style="z-index: 29;">{{ noticia.titulo }}</h1>
                 </div>
