@@ -50,8 +50,9 @@ class ComunicacionController extends AbstractController
         if (!$traduccion)
             return $this->createNotFoundException('Noticia no encontrada.');
 
-        $relacion   = $repository->getNews($this->get('session')->get('_locale'), null, IcConfig::LIMITE_NOTICIAS_PORTADA);
-
+        //Cambio de funcion a getNewsByCategory para que las notas relacionadas sean por categoria
+        $relacion = $repository->getNewsByCategory($traduccion->getIdCategoria(), $locale = 'es', IcConfig::LIMITE_NOTICIAS_PORTADA);
+        dump($relacion);
         return $this->render('frontend/home/show.html.twig',
             [
                 'noticia'  =>  $traduccion,

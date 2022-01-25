@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-
+{% block title %}{{noticia.titulo}}{% endblock %}
 {% block sharedata %}
     <meta property="og:title" content="{{noticia.titulo}}" />
     <meta property="og:image" content="{{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_NOTICIA')}}{{noticia.imagenPrincipal}}" />
@@ -43,8 +43,10 @@
             <p class="mt-10 text-justify lg:mr-12 text-base md:text-xl font-thin text-gray-600"> {{noticia.nota | raw | nl2br}}</p>
         </div>
         <div class="lg:w-1/3 h-auto w-auto mb-5">
-            <div class="mb-1">
-                <img src="https://xolos.com.mx/bundles/frontend/images/patrocinadores/ayuntamiento_banner_445x230.jpg" alt="" class="w-full">
+            <div class="mb-1 grid justify-center items-center">
+                <a href="https://www.tijuana.gob.mx/index.aspx" target="_blank">
+                    <img src="{{ asset('images/patrocinadores/ayuntamiento_banner_445x230.jpg') }}" alt="ayuntamiento" class="w-auto">
+                </a>
             </div>
             <div class=" ">
                 <img src="https://xolos.com.mx/bundles/frontend/images/CalienteURL_Positivo.jpg" alt="">
@@ -55,23 +57,22 @@
     
 
     <!-- Noticias relacionadas -->
-    <div class="h-auto w-auto bg-gray-100 relative my-16 md:my-10">
-        <div class="h-14 w-auto mx-5 md:mx-10 bg-black absolute -mt-7 px-3 md:px-4 rounded-md">
-            <h1 class="text-2xl md:text-3xl text-white pt-2 font-bold">NOTICIAS RELACIONADAS</h1>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 mx-5 md:mx-10">
-            <div class=" max-w-3xl h-96 mt-14 mb-1 md:mb-10 md:mx-2 rounded-md" style="background-image: url(https://admin.xolos.com.mx/uploads/galeria/noticias/10885132126122c5bfdbaf7.jpg);">
-                <section class="w-full h-full relative bg-gradient-to-t from-black via-transparent  to-transparent" >
-                    <h1 class="mx-4 absolute bottom-8 text-white font-semibold text-3xl mb-2">ESTE ES UN TITULO</h1>
-                    <a class=" mx-4 absolute bottom-3 text-white font-semibold text-base underline" href="https://tailwindui.com/components/marketing/sections/testimonials">VER NOTICIA</a>
-                </section>
+    <div class="bg-black w-fit mt-5 mb-0 h-14 p-3 mx-5 md:mx-10 justify-start rounded-md">
+        <h1 class="text-white text-2xl md:text-3xl m-auto font-semibold">NOTICIAS RELACIONADAS</h1>
+    </div>
+    <div class="h-auto w-auto relative my-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 mx-5 md:mx-10 gap-3">
+            {% for nota in relacion %}
+            <div class="bg-black col-span-1 h-80 card-zoom w-auto overflow-hidden rounded-md">
+                <a href="{{ path('frontend_news', {'post': nota.id, 'titulo': nota.titulo}) }}">
+                    <div class=" wrap w-full absolute h-full bg-gradient-to-t from-black via-transparent to-transparent">
+                        <img class="card-zoom-image w-full h-full duration-1000 transform object-cover" src="{{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_NOTICIA')}}{{nota.imagenPrincipal}}" alt="{{ nota.pieDeFoto }}">
+                        <span class="absolute  top-0 right-0 bg-red-600 text-white h-7 w-28 text-center rounded-bl-md py-0.5" style="z-index: 10;">{{ nota.creado | date('Y-m-d') }}</span>
+                        <h1 class="text-3xl  text-white absolute bottom-4 left-3 mr-3 font-light" style="z-index: 29;">{{ nota.titulo }}</h1>
+                    </div>
+                </a>
             </div>
-            <div class=" max-w-3xl h-96 mt-14 mb-10 md:mx-2 rounded-md" style="background-image: url(https://admin.xolos.com.mx/uploads/galeria/noticias/864029974610d9dfa0b9ac.jpg);">
-                <section class="w-full h-full relative bg-gradient-to-t from-black via-transparent  to-transparent" >
-                    <h1 class="mx-4 absolute bottom-8 text-white font-semibold text-3xl mb-2">ESTE ES UN TITULO</h1>
-                    <a class=" mx-4 absolute bottom-3 text-white font-semibold text-base underline" href="https://tailwindui.com/components/marketing/sections/testimonials">VER NOTICIA</a>
-                </section>
-            </div>
+            {% endfor %}
         </div>
     </div>
 
