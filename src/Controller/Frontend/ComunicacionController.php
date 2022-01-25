@@ -52,7 +52,6 @@ class ComunicacionController extends AbstractController
 
         //Cambio de funcion a getNewsByCategory para que las notas relacionadas sean por categoria
         $relacion = $repository->getNewsByCategory($traduccion->getIdCategoria(), $locale = 'es', IcConfig::LIMITE_NOTICIAS_PORTADA);
-        dump($relacion);
         return $this->render('frontend/home/show.html.twig',
             [
                 'noticia'  =>  $traduccion,
