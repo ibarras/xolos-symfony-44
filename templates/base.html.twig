@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="rgba(220, 38, 38)"/>
+    <meta name="keywords" content="club tijuana, sitio oficial, xolos, xoloitzcuintles, tijuana, club, plantel, noticias, calendario, liga, xolos femenil, perro amor" />
+    <meta name="robots" content="index, follow" />
+    <meta name="copyright" content="xolos.com.mx" />
     <!-- SEO -->
+    <title>{% block title %}Club Tijuana Xoloitzcuintles de Caliente{% endblock %}</title>
     <link rel="canonical" href="{{ app.request.uri }}"/>
     <!-- OpenGraph Metadata -->
     <meta property="og:url" content="{{ app.request.uri }}"/>
@@ -12,14 +16,15 @@
     <meta property="og:locale" content="es_LA" />
     <meta property="og:locale:alternate" content="en_US"/>
     <meta property="og:type" content="article"/>
-    {% block sharedata %}{% endblock %}
-    <title>{% block title %}Club Tijuana Xoloitzcuintles de Caliente{% endblock %}</title>
+    {% block sharedata %}
+    <meta name="description" content="Sitio Oficial del Club Tijuana Xoloitzcuintles de Caliente." />
+    {% endblock %}
 
 
     {% block stylesheets %}
 {#        {{ encore_entry_link_tags('app') }}#}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/themes/splide-default.min.css">
-        <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap" rel="stylesheet">
@@ -70,7 +75,7 @@
     <script src="js/apiYouTube.js"></script>
     <script src="js/app.js"></script>
     <script src="https://kit.fontawesome.com/490c71ac8a.js" crossorigin="anonymous"></script>
-    <script type="text/javascript">
+    <script>
         //jquery for toggle dropdown menus
         $(document).ready(function(){
             //toggle sub-menus

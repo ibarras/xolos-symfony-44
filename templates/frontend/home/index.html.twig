@@ -68,8 +68,8 @@
     </div>
 
     <div class="mb-10 flex justify-center items-center w-auto h-auto">
-        <a href="http://lafabricadeltaco.com/" alt="la fabrica del taco" target="_blank">
-            <img src="{{ asset('images/patrocinadores/lfdt.jpg') }}" />
+        <a href="http://lafabricadeltaco.com/" target="_blank">
+            <img src="{{ asset('images/patrocinadores/lfdt.jpg') }}" alt="la fabrica del taco" />
         </a>
     </div>
     {#Seccion de tabla y calendario#}
@@ -200,7 +200,6 @@
 
                                 {% endfor %}
 
-                              </tr>
                           </tbody>
                       </table>
                   </div>
@@ -214,7 +213,7 @@
       </div>
           <div class="swiper mySwiper w-auto h-auto rounded-md" style="height: 545px;">
               <!-- Additional required wrapper -->
-              <div class="swiper-wrapper w-full bg-cover" style="background-image:url(pics/img/fondo-prox-partidos.jpg)">
+              <div class="swiper-wrapper w-full bg-cover" style="background-image:url({{ asset('pics/img/fondo-prox-partidos.jpg') }})">
                 <!-- Slides -->
 
                 {% for jornada in calendario %}
@@ -233,8 +232,8 @@
                       <a href="" class="bg-gray-600 hover:bg-gray-300 hover:text-gray-900 hover:border-gray-900 text-white text-lg md:text-2xl px-9 md:px-10 py-2 border-2 rounded-md">BOLETOS</a>
                       <p class="pt-11 md:pt-8 text-lg text-gray-600">{{jornada.creado|date("d/m/Y")}}</p>
                   </div>
-                  <a href="google.com" class="text-gray-600 absolute left-1 md:left-4 lg:left-10 bottom-0 text-sm md:text-xl font-bold underline bg-gray-200 rounded-lg">CALENDARIO</a>
-                  <a href="google.com" class="text-gray-600 absolute right-1 md:right-4 lg:right-10 bottom-0 text-sm md:text-xl font-bold underline bg-gray-200 rounded-lg">MINUTO A MINUTO</a>
+                  <a href="#" class="text-gray-600 absolute left-1 md:left-4 lg:left-10 bottom-0 text-sm md:text-xl font-bold underline bg-gray-200 rounded-lg">CALENDARIO</a>
+                  <a href="#" class="text-gray-600 absolute right-1 md:right-4 lg:right-10 bottom-0 text-sm md:text-xl font-bold underline bg-gray-200 rounded-lg">MINUTO A MINUTO</a>
                 </div>
 
               {% endfor %}
@@ -329,7 +328,7 @@
                 </h1>
             </div>
             <div class="h-80 w-80 md:h-96 md:w-96 lg:h-72 lg:w-72 xl:h-96 xl:w-96 mx-auto ">
-                <a href="http://www.xolosacademy.com/"><img src="pics/img/itnento2.png" alt="Centro de iniciacion Xoloitzcluintle" class="rounded-full h-full w-full"></a>
+                <a href="http://www.xolosacademy.com/"><img src="{{ asset('pics/img/itnento2.png') }}" alt="Centro de iniciacion Xoloitzcluintle" class="rounded-full h-full w-full"></a>
             </div>
         </div>
         <div class=" col-span-1 mb-5">
@@ -339,7 +338,7 @@
                 </h1>
             </div>
             <div class="h-80 w-80 md:h-96 md:w-96 lg:h-72 lg:w-72 xl:h-96 xl:w-96 mx-auto">
-                <a href="http://fut7.xolos.com.mx/landingpage.asp?dtsRoot=DTS199&de=https://www.google.com.mx/"><img src="pics/img/CIX.png" alt="Fut 7 torneo de futbol" class="rounded-full h-full w-full"></a>
+                <a href="http://fut7.xolos.com.mx/landingpage.asp?dtsRoot=DTS199&de=https://www.google.com.mx/"><img src="{{ asset('pics/img/CIX.png') }}" alt="Fut 7 torneo de futbol" class="rounded-full h-full w-full"></a>
             </div>
         </div>
         <div class=" col-span-1 mb-5">
@@ -349,7 +348,7 @@
                 </h1>
             </div>
             <div class="h-80 w-80 md:h-96 md:w-96 lg:h-72 lg:w-72 xl:h-96 xl:w-96 mx-auto">
-                <a href=""><img src="pics/img/blackroom.jpg" alt="Restaurant Black Room" class="rounded-full h-full w-full"></a>
+                <a href=""><img src="{{ asset('pics/img/blackroom.jpg') }}" alt="Restaurant Black Room" class="rounded-full h-full w-full"></a>
             </div>
         </div>
     </div>
@@ -359,9 +358,9 @@
             <h1 class="text-center text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white lg:mt-3">SUSCRIBETE AL NEWSLETTER DE XOLOS</h1>
             <h3 class="text-center text-xl md:text-2xl text-white mb-5 mt-3 lg:mt-5">¡Susbcribete para recibir infomarcion exclusiva del equipo mas perron!</h3>
             <div class="flex justify-center items-center gap-5">
-                <a href="{{ path('hwi_oauth_service_redirect', {'service': 'facebook' }) }}" role="button" class="button w-14 bg-black hover:border-red-600 flex text-white text-lg md:text-lg py-3 border-2 rounded-full"><img src="pics/img/facebook-circular-logo.png" alt="" class="h-7 w-7 mx-auto"></a>
-                <a href="{{ path('hwi_oauth_service_redirect', {'service': 'twitter' }) }}" role="button" class="button w-14 bg-black hover:border-red-600 flex text-white text-lg md:text-lg py-3 border-2 rounded-full"><img src="pics/img/gorjeo(3).png" alt="" class=" h-7 w-7 mx-auto"></a>
-                <a href="{{ path('hwi_oauth_service_redirect', {'service': 'google' }) }}" role="button" class="button w-14 bg-black hover:border-red-600 flex text-white text-lg md:text-lg py-3 border-2 rounded-full"><img src="pics/img/google(1).png" alt="" class=" h-7 w-7 mx-auto"></a>
+                <a href="{{ path('hwi_oauth_service_redirect', {'service': 'facebook' }) }}" role="button" class="button w-14 bg-black hover:border-red-600 flex text-white text-lg md:text-lg py-3 border-2 rounded-full"><img src="{{ asset('pics/img/facebook-circular-logo.png') }}" alt="icono facebook" class="h-7 w-7 mx-auto"></a>
+                <a href="{{ path('hwi_oauth_service_redirect', {'service': 'twitter' }) }}" role="button" class="button w-14 bg-black hover:border-red-600 flex text-white text-lg md:text-lg py-3 border-2 rounded-full"><img src="{{ asset('pics/img/gorjeo(3).png') }}" alt="icono twitter" class=" h-7 w-7 mx-auto"></a>
+                <a href="{{ path('hwi_oauth_service_redirect', {'service': 'google' }) }}" role="button" class="button w-14 bg-black hover:border-red-600 flex text-white text-lg md:text-lg py-3 border-2 rounded-full"><img src="{{ asset('pics/img/google(1).png') }}" alt="icono google" class=" h-7 w-7 mx-auto"></a>
             </div>
         </div>
     </div>

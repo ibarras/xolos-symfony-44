@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 {% block title %}{{noticia.titulo}}{% endblock %}
 {% block sharedata %}
+    <meta name="description" content="{{ noticia.intro }}" />
     <meta property="og:title" content="{{noticia.titulo}}" />
     <meta property="og:image" content="{{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_NOTICIA')}}{{noticia.imagenPrincipal}}" />
     <meta property="og:description" content="{{ noticia.intro }}" /> 
@@ -64,10 +65,10 @@
         <div class="grid grid-cols-1 md:grid-cols-2 mx-5 md:mx-10 gap-3">
             {% for nota in relacion %}
             <div class="bg-black col-span-1 h-80 card-zoom w-auto overflow-hidden rounded-md">
-                <a href="{{ path('frontend_news', {'post': nota.id, 'titulo': nota.titulo}) }}">
+                <a href="{{ path('frontend_news', {'post': nota.id, 'titulo': nota.titulo | slug }) }}">
                     <div class=" wrap w-full absolute h-full bg-gradient-to-t from-black via-transparent to-transparent">
                         <img class="card-zoom-image w-full h-full duration-1000 transform object-cover" src="{{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_NOTICIA')}}{{nota.imagenPrincipal}}" alt="{{ nota.pieDeFoto }}">
-                        <span class="absolute  top-0 right-0 bg-red-600 text-white h-7 w-28 text-center rounded-bl-md py-0.5" style="z-index: 10;">{{ nota.creado | date('Y-m-d') }}</span>
+                        <span class="absolute  top-0 right-0 bg-red-600 text-white h-7 w-28 text-center rounded-bl-md py-0.5" style="z-index: 10;">{{ nota.creado | date('d-m-Y') }}</span>
                         <h1 class="text-3xl  text-white absolute bottom-4 left-3 mr-3 font-light" style="z-index: 29;">{{ nota.titulo }}</h1>
                     </div>
                 </a>
