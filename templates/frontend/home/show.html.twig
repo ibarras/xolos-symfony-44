@@ -13,6 +13,7 @@
     <meta name="twitter:description" content="{{ noticia.intro }}" />
     <meta name="twitter:image:src" content="{{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_NOTICIA')}}{{noticia.imagenPrincipal}}" />
     <meta name="twitter:domain" content="xolos.com.mx" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"{{ app.request.uri }}"},"headline":"{{noticia.titulo}}","description":"{{ noticia.intro }}","image":"{{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_NOTICIA')}}{{noticia.imagenPrincipal}}","author":{"@type":"Organization","name":"Club Tijuana Xoloitzcuintles de Caliente","url":"https://xolos.com.mx"},"articleSection":"{{ noticia.idCategoria.nombre }}","publisher":{"@type":"Organization","name":"Club Tijuana Xoloitzcuintles de Caliente","logo":{"@type":"ImageObject","url":"https://xolos.com.mx/images/logo_new.png"}},"datePublished":"{{ noticia.creado | date('m/d/Y') }}","dateModified":"{{ noticia.creado | date('m/d/Y') }}"}</script>
 {% endblock %}
 
 {% block content %}
