@@ -3,7 +3,7 @@
 {% block body %}
     <!-- Nota Principal full screen -->
     <div class=" w-full mx-auto mt-28" style="height: 92vh;">
-        <img src="{{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_NOTICIA')}}{{ noticiaGlobal.imagenPrincipal }}" alt="{{ noticiaGlobal.pieDeFoto }}" class="h-full w-full bg-top object-cover object-top filter brightness-75">
+        <img src="{{constant('App\\IcUtils\\IcConfig::IC_IMAGENES_NOTICIA')}}{{ noticiaGlobal.imagenPrincipal }}" alt="{{ noticiaGlobal.pieDeFoto }}" loading="lazy" class="h-full w-full bg-top object-cover object-top filter brightness-75">
         {#<video class="h-screen w-screen object-cover object-center bg-top filter brightness-75" muted autoplay loop playsinline data-video="0" style="height: 87vh;">
             <source src="https://api.xolos.com.mx/pics/dia-muertos-clubtijuana.mp4" type="video/mp4">
         </video>#}

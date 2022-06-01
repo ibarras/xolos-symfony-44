@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1 class=" text-center text-4xl mt-44 mb-10 text-gray-700">GALERÍA: {{ app.request.get('slug') |slug(' ') }}</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-1 mx-5 md:mx-10 lg:mx-20 place-content-center items-center justify-center gap-5 mb-10">
+        <div id="galeria" data-nanogallery2=
+        '{
+            "thumbnailHeight":  200,
+            "thumbnailWidth":   "auto",
+            "locationHash":     false,
+            "colorScheme": {
+            "thumbnail": {
+                "borderColor": "rgb(220 38 38)"
+              }
+            },
+            "thumbnailDisplayOutsideScreen" : false,
+            "galleryPaginationTopButtons" : false,
+            "galleryDisplayMode": "pagination",
+            "galleryMaxRows": 3,
+            "thumbnailL1GutterWidth": 10,
+            "thumbnailL1GutterHeight": 10,
+            "itemsBaseURL":     "http://av2.xolos.com.mx/uploads/galeria/foto_equipo/"
+        }'>
+
+        {% for foto in galeria %}
+            <a href="https://admin.xolos.com.mx/uploads/galeria/foto_equipo/{{ foto.foto }}" data-ngthumb="https://admin.xolos.com.mx/uploads/galeria/foto_equipo/{{ foto.foto }}">{{ foto.descripcion }}</a>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock %}
