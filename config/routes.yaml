@@ -156,3 +156,11 @@ frontend_fut7:
 frontend_rooms:
     path:       /blackroom
     controller: App\Controller\Frontend\ComunicacionController:rooms
+
+frontend_boletos:
+    path:       /boletos
+    controller: App\Controller\Frontend\ComunicacionController:boletos
+
+frontend_mapa_estadio:
+    path:       /mapa-estadio
+    controller: App\Controller\Frontend\ComunicacionController:mapa

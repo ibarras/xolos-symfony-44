@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <div class="w-full mx-auto mt-36 flex justify-center">
+{#        <div class="w-full mx-auto mt-20 bg-black bg-no-repea bg-center bg-cover text-center flex justify-center filter brightness-75" style="background-image: url(pics/img/rooms.jpg); height: 90vh;"></div>#}
+        <p class="text-5xl md:text-5xl lg:text-5xl text-gray-700 filter-none text-center"> BOLETOS </p>
+    </div>
+
+    <div class=" mx-5 xl:mx-20 grid grid-cols-1 md:grid-cols-2 rounded-l-md py-16 gap-2">
+        <div class="col-span-1 w-full h-full bg-cover bg-center" >
+            {% if boleto is empty %}
+                <a href="https://xolos.xtixs.com/entradas/eventList" target="_blank">
+                    <img src="https://dummyimage.com/1280x720/000/fff.png&text=Boletos Individuales" loading="lazy" alt="Boletos Individuales">
+                </a>
+            {% else %}
+                <a href="{{ boleto.link }}" target="_blank">
+                    <img src="{{ constant('App\\IcUtils\\IcConfig::IC_IMAGEN_APP') }}{{ boleto.imagen }}" loading="lazy" alt="Boletos Individuales">
+                </a>
+            {% endif %}
+        </div>
+
+        <div class="w-full col-span-1 h-full bg-cover bg-center">
+            {% if xolopass is empty %}
+                <a href="{{ path('frontend_xolopass')}}">
+                    <img src="https://dummyimage.com/1280x720/000/fff.png&text=Xolopass" loading="lazy" alt="Xolopass">
+                </a>
+            {% else %}
+                <a href="{{ path('frontend_xolopass')}}">
+                    <img src="{{ constant('App\\IcUtils\\IcConfig::IC_IMAGEN_APP') }}{{ xolopass.imagen }}" loading="lazy" alt="Xolopass">
+                </a>
+            {% endif %}
+        </div>
+
+        <div class="w-full col-span-1 h-full bg-cover bg-center">
+            {% if mapa is empty %}
+                <a href="{{ path('frontend_mapa_estadio') }}">
+                    <img src="https://dummyimage.com/1280x720/000/fff.png&text=Mapa Estadio Caliente" loading="lazy" alt="Mapa Estadio">
+                </a>
+            {% else %}
+                <a href="{{ path('frontend_mapa_estadio') }}">
+                    <img src="{{ constant('App\\IcUtils\\IcConfig::IC_IMAGEN_APP') }}{{ mapa.imagen }}" loading="lazy" alt="Mapa Estadio">
+                </a>
+            {% endif %}
+        </div>
+
+        <div class="w-full col-span-1 h-full bg-cover bg-center">
+            {% if contacto is empty %}
+                <a href="{{ path('frontend_estadioContacto')}}">
+                    <img src="https://dummyimage.com/1280x720/000/fff.png&text=Contactanos" loading="lazy" alt="Contacto Afición Xoloitzcuintle">
+                </a>
+            {% else %}
+                <a href="{{ path('frontend_estadioContacto')}}">
+                    <img src="{{ constant('App\\IcUtils\\IcConfig::IC_IMAGEN_APP') }}{{ contacto.imagen }}" loading="lazy" alt="Contacto Afición Xoloitzcuintle">
+                </a>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}

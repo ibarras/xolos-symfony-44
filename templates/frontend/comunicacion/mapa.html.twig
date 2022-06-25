@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+<div class="w-full mx-auto mt-36 flex justify-center">
+    <p class="text-5xl md:text-5xl lg:text-5xl text-gray-700 filter-none text-center"> MAPA ESTADIO CALIENTE </p>
+</div>
+<div class=" mx-5 xl:mx-20 grid grid-cols-1 rounded-l-md py-16 justify-items-center">
+    <img src="{{ constant('App\\IcUtils\\IcConfig::IC_IMAGEN_APP') }}{{ mapa.imagen }}" alt="Mapa Estadio Caliente">
+</div>
+
+{% endblock content %}

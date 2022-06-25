@@ -60,4 +60,13 @@ const PRIMER_EQUIPO_FEMENIL				= 6;
     const IC_IMAGE_TOP_NEWSLETTER           = 10; //10
     const IC_IMAGE_PROMO_NEWSLETTER         = 11; //11
 
+    const IC_INFORMACION                    = 'Xolopass'; //contenido del campo titulo
+    const IC_IMAGEN_BENEFICIO               = 'https://admin.xolos.com.mx/uploads/galeria/socios_xolopass/';
+    const IC_IMAGEN_APP                     = 'https://admin.xolos.com.mx/uploads/galeria/App/';
+    const IC_IMAGE_MAPA                     = 5; //Imagen del mapa
+    const IC_IMAGE_BOLETOS                  = 9; //Imagen para seccion boletos individuales
+    const IC_IMAGE_XOLOPASS                 = 12; //Imagen para seccion Xolopass
+    const IC_IMAGE_SECCION_MAPA             = 13; //Imagen para seccion Mapa
+    const IC_IMAGE_CONTACTANOS              = 14; //Imagen para seccion contactanos atencion al aficionado
+
 }

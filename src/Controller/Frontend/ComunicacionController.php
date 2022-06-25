@@ -3,12 +3,18 @@
 namespace App\Controller\Frontend;
 
 use App\Entity\IcTraduccion;
+use App\Form\ContactoType;
 use App\IcUtils\IcConfig;
+use App\Repository\IcBeneficioRepository;
+use App\Repository\IcImagenAppRepository;
+use App\Repository\IcInformacionRepository;
 use App\Repository\IcTraduccionRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ComunicacionController extends AbstractController
@@ -97,9 +103,31 @@ class ComunicacionController extends AbstractController
 
     }
 
-    public function estadioContacto(){
+    public function estadioContacto(Request $request, MailerInterface $mailer){
 
-        return $this->render('frontend/comunicacion/estadioContacto.html.twig');
+        $form = $this->createForm(ContactoType::class);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            /*$email = (new Email())
+                ->from('julio.flores@xolos.com.mx')
+                ->to('fekems@gmail.com')
+                ->subject($form->getData()['asunto'])
+                ->html('<p>' . $form->getData()['nombre'] . '</p>'.
+                    '<p>' . $form->getData()['telefono'] . '</p>'.
+                    '<p>' . $form->getData()['correo'] . '</p>'.
+                    '<p>' . $form->getData()['mensaje'] . '</p>'.
+                    '<p>Este correo fue enviado desde la pagina de contacto del sitio: <a href="https://xolos.com.mx" target="_blank">xolos.com.mx</a></p>'
+                );
+            $mailer->send($email);
+            $this->addFlash('success', 'Tu correo ha sido enviado, pronto nos pondremos en contacto contigo.');
+            return $this->redirect($this->generateUrl('frontend_estadioContacto'));*/
+        }
+
+        return $this->render('frontend/comunicacion/estadioContacto.html.twig', array(
+            'form' => $form->createView()
+        ));
 
     }
 
@@ -139,9 +167,21 @@ class ComunicacionController extends AbstractController
 
     }
 
-    public function xolopass(){
-
-        return $this->render('frontend/comunicacion/xolopass.html.twig');
+    public function xolopass(IcInformacionRepository $repository, IcBeneficioRepository $beneficioRepository)
+    {
+        //Retorna la informacion en base al campo titulo = "Xolopass"
+        $informacion = $repository->findOneBy(['titulo' => IcConfig::IC_INFORMACION]);
+        if (!$informacion)
+            $informacion = null;
+        //Retorna todos los beneficios registrados
+        $beneficios = $beneficioRepository->findAll();
+        if (!$beneficios)
+            $beneficios = null;
+        return $this->render('frontend/comunicacion/xolopass.html.twig',
+            [
+                'informacion'=>$informacion,
+                'beneficios' =>$beneficios
+            ]);
 
     }
 
@@ -163,4 +203,31 @@ class ComunicacionController extends AbstractController
 
     }
 
+    public function boletos(IcImagenAppRepository $repository){
+        $boleto = $repository->findOneBy(['idTipoImagen' => IcConfig::IC_IMAGE_BOLETOS]);
+        if (!$boleto)
+            $boleto = null;
+        $xolopass = $repository->findOneBy(['idTipoImagen' => IcConfig::IC_IMAGE_XOLOPASS]);
+        if (!$xolopass)
+            $xolopass = null;
+        $mapa = $repository->findOneBy(['idTipoImagen' => IcConfig::IC_IMAGE_SECCION_MAPA]);
+        if (!$mapa)
+            $mapa = null;
+        $contacto = $repository->findOneBy(['idTipoImagen' => IcConfig::IC_IMAGE_CONTACTANOS]);
+        if (!$contacto)
+            $contacto = null;
+        return $this->render('frontend/comunicacion/boletos.html.twig',[
+            'boleto' => $boleto,
+            'xolopass' => $xolopass,
+            'mapa' => $mapa,
+            'contacto' => $contacto
+        ]);
+    }
+
+    public function mapa(IcImagenAppRepository $repository){
+        $mapa = $repository->findOneBy(['idTipoImagen' => IcConfig::IC_IMAGE_MAPA]);
+        return $this->render('frontend/comunicacion/mapa.html.twig', [
+            'mapa' => $mapa
+        ]);
+    }
 }

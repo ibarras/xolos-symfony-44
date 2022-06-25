@@ -345,3 +345,48 @@
 .w-fit {
     width: fit-content;
 }
+/* Estilos para la barra de scroll en el overlay de beneficios */
+.overlay-red::-webkit-scrollbar {
+    width: 5px;                 /* ancho de la barra */
+}
+
+.overlay-red::-webkit-scrollbar-track {
+    background: #dc2626;        /* color del area de deslizamiento de la barra */
+}
+
+.overlay-red::-webkit-scrollbar-thumb {
+    background-color: darkred;  /* color de la barra */
+    border-radius: 20px;        /* bordes redondeados de la barra */
+}
+
+/*animacion para cerrar el toast alert*/
+.alert-toast input:checked~* {
+    -webkit-animation: slide-out-bottom 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    animation: slide-out-bottom 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+@keyframes slide-out-bottom {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1
+    }
+
+    100% {
+        -webkit-transform: translateY(1000px);
+        transform: translateY(1000px);
+        opacity: 0
+    }
+}
+@keyframes fade-out-right {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1
+    }
+
+    100% {
+        -webkit-transform: translateX(50px);
+        transform: translateX(50px);
+        opacity: 0
+    }
+}
