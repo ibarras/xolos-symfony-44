@@ -2,6 +2,7 @@
 
 namespace App\Controller\Frontend;
 
+use App\Entity\IcInformacion;
 use App\Entity\IcTraduccion;
 use App\Form\ContactoType;
 use App\IcUtils\IcConfig;
@@ -9,6 +10,7 @@ use App\Repository\IcBeneficioRepository;
 use App\Repository\IcImagenAppRepository;
 use App\Repository\IcInformacionRepository;
 use App\Repository\IcTraduccionRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
