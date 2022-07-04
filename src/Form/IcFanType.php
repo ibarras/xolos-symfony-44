@@ -12,8 +12,8 @@ class IcFanType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
-            ->add('email')
+            ->add('name' )
+            ->add('email' )
             ->add('card_image')
             ->add('face_image')
             ->add('created_at')
