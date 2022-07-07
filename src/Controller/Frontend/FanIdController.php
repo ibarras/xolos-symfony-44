@@ -21,12 +21,11 @@ class FanIdController extends AbstractController
 {
 
     /**
+     * @Route("/storePost", name="post.store")
      * @param Request $request
-     * @param EntityManagerInterface $em
-     * @return JsonResponse
-     * @Route("/fanid/sendmail", name="sendmail")
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
-    public function new(Request $request, EntityManagerInterface $em, MailerInterface $mailer): Response
+    public function storePos(Request $request, EntityManagerInterface $em, MailerInterface $mailer): Response
     {
         $em->beginTransaction();
         try{
@@ -49,7 +48,7 @@ class FanIdController extends AbstractController
                 return $this->json(['message' => 'Se ha enviado un correo de confirmación, verifique su correo electronico.']);
             }
 
-            return $this->render('frontend/fan/verificationEmail.html.twig', [
+            return $this->render('frontend/fan/register.html.twig', [
                 'form' => $form,
             ]);
 
