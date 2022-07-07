@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\Fan;
+use App\Entity\IcFan;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -25,7 +25,7 @@ class IcFanType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Fan::class,
+            'data_class' => IcFan::class,
         ]);
     }
 }

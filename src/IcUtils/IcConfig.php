@@ -15,6 +15,9 @@ const CATEGORIA_SOCIAL 						= 21;
 const EQUIPO_LOCAL								= 21;
 const PRIMER_EQUIPO_FEMENIL				= 6;
 */
+    const FAN_ID_SECRET                     = 'The$ophiaseed';
+    const NOREPLY_USER                      = 'contacto@xolos.com.mx';
+    const IC_URL_IMAGE_FANID                = 'https://xolos.com.mx/fanid';
 
     const CATEGORIA_NOTICIA_PRIMER_EQUIPO 	= 1;
     const CATEGORIA_NOTICIA_FUERZAS_BASICAS	= 24;
