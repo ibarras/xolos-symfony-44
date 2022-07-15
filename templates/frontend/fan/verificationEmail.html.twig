@@ -1,23 +1,120 @@
-{% extends 'base.html.twig' %}
-{% block content %}
-<div class="flex items-center justify-center min-h-screen bg-gray-100 p-5 min-w-screen pt-28">
-    <div class="max-w-xl p-8 text-center text-gray-800 bg-white shadow-xl lg:max-w-3xl rounded-3xl lg:p-12">
-        <h3 class="text-2xl">Gracias por registrarte en Xolos Fan ID!</h3>
-        <div class="flex justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-24 h-24 text-red-600" fill="none"
-                 viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
-                      d="M3 19v-8.93a2 2 0 01.89-1.664l7-4.666a2 2 0 012.22 0l7 4.666A2 2 0 0121 10.07V19M3 19a2 2 0 002 2h14a2 2 0 002-2M3 19l6.75-4.5M21 19l-6.75-4.5M3 10l6.75 4.5M21 10l-6.75 4.5m0 0l-1.14.76a2 2 0 01-2.22 0l-1.14-.76" />
-            </svg>
-        </div>
-
-        <p>Nos alegra de que estés aquí. <h2 class="text-xl text-red-600 py-2"> Nombre de Usuario </h2>Verifiquemos su dirección de correo electrónico:</p>
-        <div class="mt-4">
-            <button class="px-2 py-2 text-white bg-red-600 rounded hover:bg-red-700">Haga clic para verificar el correo electrónico</button>
-            <p class="mt-4 text-sm">Si tiene problemas para hacer clic en el botón "Verificar dirección de correo electrónico", copie y pegue la siguiente URL en su navegador web:
-                <a href="#" class="text-blue-600 underline">https://localhost:8000/email/verify/3/1ab7a09a3</a>
-            </p>
-        </div>
-    </div>
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>Confirmacion de Correo electrónico</title>
+    <!--[if mso]>
+    <style>
+        table {border-collapse:collapse;border-spacing:0;border:none;margin:0;}
+        div, td {padding:0;}
+        div {margin:0 !important;}
+    </style>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+    <style>
+        table, td, div, h1, p {
+            font-family: Arial, sans-serif;
+        }
+        @media screen and (max-width: 530px) {
+            .unsub {
+                display: block;
+                padding: 8px;
+                margin-top: 14px;
+                border-radius: 6px;
+                background-color: #555555;
+                text-decoration: none !important;
+                font-weight: bold;
+            }
+            .col-lge {
+                max-width: 100% !important;
+            }
+        }
+        @media screen and (min-width: 531px) {
+            .col-sml {
+                max-width: 27% !important;
+            }
+            .col-lge {
+                max-width: 73% !important;
+            }
+        }
+    </style>
+</head>
+<body style="margin:0;padding:0;word-spacing:normal;background-color:#F3F4F6;">
+<div role="article" aria-roledescription="email" lang="en" style="text-size-adjust:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;background-color:#F3F4F6;">
+    <table role="presentation" style="width:100%;border:none;border-spacing:0;">
+        <tr>
+            <td align="center" style="padding:0;">
+                <!--[if mso]>
+                <table role="presentation" align="center" style="width:600px;">
+                    <tr>
+                        <td>
+                <![endif]-->
+                <table role="presentation" style="width:94%;max-width:600px;border:none;border-spacing:0;text-align:left;font-family:Arial,sans-serif;font-size:16px;line-height:22px;color:#363636;background-color: #FFFFFF;">
+                    <tr>
+                        <td style="padding:40px 30px 30px 30px;text-align:center;font-size:24px;font-weight:bold;">
+                            <img src="https://localhost:8000/pics/img/red_mail_envelope_icon.png" alt="mail icon" style="width: 165px; max-width: 80%; color: #DC2626;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:30px;background-color:#ffffff;">
+                            <h1 style="margin-top:0;margin-bottom:16px;font-size:26px;line-height:32px;font-weight:bold;letter-spacing:-0.02em;text-align:center;">Gracias por registrarte en Xolos Fan ID!</h1>
+                            <p style="margin:0;text-align:center;">Nos alegra de que estés aquí.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0;font-size:24px;line-height:28px;font-weight:bold;">
+                            <h1 style="font-size: 20px;line-height: 16px;text-align: center; text-decoration: underline;color:#DC2626;margin: 18px;">
+                                USERNAME
+                            </h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:30px 30px 11px 30px;background-color:#ffffff;">
+                            <p style="margin:0;text-align:center;">Verifiquemos su dirección de correo electrónico:</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:11px 30px 11px 30px;background-color:#ffffff;text-align:center;">
+                            <p style="margin:0;"><a href="#" style="background:#DC2626; text-decoration: none; padding: 10px 25px; color: #ffffff; border-radius: 4px; display:inline-block; mso-padding-alt:0;text-underline-color:#ff3884"><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%;mso-text-raise:20pt">&nbsp;</i><![endif]--><span style="mso-text-raise:10pt;font-weight:bold;">Haga clic para verificar el correo electrónico</span><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%">&nbsp;</i><![endif]--></a></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:11px 30px 30px 30px;text-align:center;font-size:13px;line-height:28px;background-color:#ffffff;border-bottom:1px solid #f0f0f5;border-color:rgba(201,201,207,.35);">
+                            <p style="margin:0;line-height:20px;color:#363636">Si tiene problemas para hacer clic en el botón "Verificar dirección de correo
+                                electrónico", copie y pegue la siguiente URL en su navegador web:<br>
+                                <a href="#" style="color: #dc2626;">https://localhost:8000/email/verify/3/1ab7a09a3</a>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:30px;text-align:center;font-size:12px;background-color:#404040;color:#cccccc;">
+                            <p style="margin:0 0 8px 0;">
+                                <a href="https://www.facebook.com/xoloitzcuintles/" style="text-decoration:none;">
+                                    <img src="https://localhost:8000/pics/img/facebook_icon.png" width="40" height="40" alt="f" style="display:inline-block;color:#cccccc;"></a>
+                                <a href="http://www.twitter.com/xolos" style="text-decoration:none;">
+                                    <img src="https://localhost:8000/pics/img/twitter_icon.png" width="40" height="40" alt="t" style="display:inline-block;color:#cccccc;">
+                                </a>
+                            </p>
+                            <p style="margin:0;font-size:14px;line-height:20px;">&reg; Club Tijuana Xoloitzcuintles de Caliente<br><a class="unsub" href="https://www.xolos.com.mx/" style="color:#cccccc;text-decoration:underline;">xolos.com.mx</a></p>
+                        </td>
+                    </tr>
+                </table>
+                <!--[if mso]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+            </td>
+        </tr>
+    </table>
 </div>
-{% endblock %}
+</body>
+</html>
