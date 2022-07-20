@@ -4,13 +4,18 @@ namespace App\Controller\Frontend;
 
 
 use App\Form\ContactoType;
+use App\Entity\IcGaleria;
+use App\Entity\IcGaleriaFotos;
+use App\Entity\IcTraduccion;
 use App\IcUtils\IcConfig;
 use App\Repository\IcBeneficioRepository;
 use App\Repository\IcImagenAppRepository;
 use App\Repository\IcInformacionRepository;
+use App\Repository\IcGaleriasRepository;
 use App\Repository\IcTraduccionRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
+use phpDocumentor\Reflection\Types\This;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -65,6 +70,19 @@ class ComunicacionController extends AbstractController
             ]
         );
 
+    }
+    public function showGalery(IcGaleriasRepository $repository, Request $request)
+    {
+        $galeria = $repository->getGaleriaFotos($request->get('galeria'));
+
+        if (!$galeria)
+            return $this->createNotFoundException('Galería no encontrada');
+
+        return $this->render('frontend/comunicacion/galeria.html.twig',
+            [
+                'galeria' => $galeria
+            ]
+        );
     }
 
     public function historia(){
