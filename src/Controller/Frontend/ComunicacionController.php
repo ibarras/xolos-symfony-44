@@ -248,4 +248,10 @@ class ComunicacionController extends AbstractController
             'mapa' => $mapa
         ]);
     }
+
+    public function snack(){
+
+        return $this->render('frontend/comunicacion/snackZone.html.twig');
+
+    }
 }

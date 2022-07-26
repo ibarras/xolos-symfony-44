@@ -164,3 +164,7 @@ frontend_boletos:
 frontend_mapa_estadio:
     path:       /mapa-estadio
     controller: App\Controller\Frontend\ComunicacionController:mapa
+
+frontend_snack:
+    path:       /snack-zone
+    controller: App\Controller\Frontend\ComunicacionController:snack

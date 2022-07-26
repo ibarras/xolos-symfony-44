@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <style>
+
+        .splide__pagination{
+            display: none;
+        }
+        /*Generic Slide*/
+           .splide__slide img {
+            display: block;
+            width: 100%;
+            border-radius: 8px;
+            transition: transform 400ms;
+            transform: scale(.9);
+            transform-origin: center center;
+        }
+        /*Active Slide*/
+           .splide__slide.is-active img {
+            transform: scale(1);
+        }
+    </style>
+
+    <div class="w-full mx-auto flex justify-center">
+        <div class="w-full mx-auto mt-20 bg-black bg-no-repea bg-center bg-cover text-center flex justify-center filter brightness-75"
+             style="background-image: url(/images/snackzone/bg-snack-zone.jpg); height: 90vh;"></div>
+        <div class="absolute h-44 w-auto top-80 md:top-72 left-50 grid grid-cols-2 gap-5 lg:gap-20">
+            <img src="{{ asset('/images/snackzone/que-comer.jpg') }}" alt="que comer?"
+                 class=" h-40 w-40 md:h-56 md:w-56 col-span-1" loading="lazy">
+            <img src="{{ asset('/images/snackzone/snack-zone.jpg') }}" alt="snack zone"
+                 class="h-40 w-40 md:h-56 md:w-56 col-span-1" loading="lazy">
+        </div>
+    </div>
+    <div id="splide" class="splide my-10 mx-5 lg:mx-20 lg:mx-auto flex justify-center">
+        <div class="splide__track">
+            <ul class="splide__list">
+                <li class="splide__slide"><img src="{{ asset('images/snackzone/catalan.png') }}"></li>
+                <li class="splide__slide"><img src="{{ asset('images/snackzone/hilet.png') }}"></li>
+                <li class="splide__slide"><img src="{{ asset('images/snackzone/mi chante.png') }}"></li>
+                <li class="splide__slide"><img src="{{ asset('images/snackzone/vargas.jpg') }}"></li>
+                <li class="splide__slide"><img src="{{ asset('images/snackzone/MENU-BOTANAS PREMIER.png') }}"></li>
+                <li class="splide__slide"><img src="{{ asset('images/snackzone/MENU-CARLS JR.png') }}"></li>
+                <li class="splide__slide"><img src="{{ asset('images/snackzone/MENU-CRUJIPAPAS.png') }}"></li>
+                <li class="splide__slide"><img src="{{ asset('images/snackzone/MENU-PIZZERIA DILLINGERS.png') }}"></li>
+                <li class="splide__slide"><img src="{{ asset('images/snackzone/MENU-SU KARNE.png') }}"></li>
+                <li class="splide__slide"><img src="{{ asset('images/snackzone/MENU-TORODOGO.png') }}"></li>
+                <li class="splide__slide"><img src="{{ asset('images/snackzone/MENU-TORTAS PERRONAS_.png') }}"></li>
+                <li class="splide__slide"><img src="{{ asset('images/snackzone/MENU-TOSTILOCOS JUMBO.png') }}"></li>
+                <li class="splide__slide"><img src="{{ asset('images/snackzone/MENU-WALKING TACOS.png') }}"></li>
+                <li class="splide__slide"><img src="{{ asset('images/snackzone/MENU-XURROS.png') }}"></li>
+                <li class="splide__slide"><img src="{{ asset('images/snackzone/MUNU-CARNE ASADA FRIES.png') }}"></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <!-- Script -->
+    <script>
+        var splide = new Splide( '#splide', {
+            type: 'loop',
+            padding: '.5rem',
+            focus: 'center',
+            perPage: 2,
+            lazyLoad: 'nearby',
+            gap: 3,
+            arrows: false,
+            autoplay: true,
+            interval: 5000,
+            flickMaxPages: 1,
+            breakpoints: {
+                1024: {
+                    perPage: 1,
+                    padding: '6%',
+                    gap: 1
+                }
+            }
+        });
+        splide.mount();
+    </script>
+{% endblock %}
