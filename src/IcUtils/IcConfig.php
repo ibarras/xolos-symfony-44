@@ -71,5 +71,7 @@ const PRIMER_EQUIPO_FEMENIL				= 6;
     const IC_IMAGE_XOLOPASS                 = 12; //Imagen para seccion Xolopass
     const IC_IMAGE_SECCION_MAPA             = 13; //Imagen para seccion Mapa
     const IC_IMAGE_CONTACTANOS              = 14; //Imagen para seccion contactanos atencion al aficionado
+    const IC_BG_PLANTEL_FEMENIL             = 15; //Background plantel femenil
+    const IC_BG_PLANTEL_VARONIL             = 16; //Background plantel varonil
 
 }

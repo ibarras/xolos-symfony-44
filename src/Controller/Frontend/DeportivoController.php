@@ -4,7 +4,9 @@ namespace App\Controller\Frontend;
 
 use App\Entity\IcCategoria;
 use App\Entity\IcTraduccion;
+use App\IcUtils\IcConfig;
 use App\Repository\IcCalendarioRepository;
+use App\Repository\IcImagenAppRepository;
 use App\Repository\IcJugadoresRepository;
 use App\Repository\IcTorneoRepository;
 use App\Repository\IcCuerpoTecnicoRepository;
@@ -17,10 +19,15 @@ use function PHPUnit\Framework\throwException;
 class DeportivoController extends AbstractController
 {
 
-    public function listPlayersByCategory(IcJugadoresRepository $jugadoresRepository, Request $request ): Response
+    public function listPlayersByCategory(IcJugadoresRepository $jugadoresRepository, Request $request, IcImagenAppRepository $imagenAppRepository): Response
     {
 
         $category = $request->get('category');
+        if ($category == 1)
+            $background = $imagenAppRepository->findOneBy(['idTipoImagen' => IcConfig::IC_BG_PLANTEL_VARONIL]);
+        else
+            $background = $imagenAppRepository->findOneBy(['idTipoImagen' => IcConfig::IC_BG_PLANTEL_FEMENIL]);
+
         $players = $jugadoresRepository->getPlayers(true,$category);
 
         if(!$players)
@@ -28,6 +35,7 @@ class DeportivoController extends AbstractController
 
         return $this->render('frontend/deportivo/players.html.twig', [
             'jugadores' => $players,
+            'background' => $background
             ]);
     }
 
